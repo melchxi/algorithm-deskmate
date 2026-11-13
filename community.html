@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="lab">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>社区数字课堂 · 算法同桌</title>
+<meta name="description" content="当 AI 走出校园：14 位社区老人、3 次工作坊和一张大字版识谣卡。一次不完美、但真实发生的数字素养实践。">
+<meta name="author" content="第七排观察组">
+<meta name="theme-color" content="#03070a">
+<meta property="og:title" content="社区数字课堂 · 算法同桌">
+<meta property="og:description" content="当 AI 走出校园：14 位社区老人、3 次工作坊和一张大字版识谣卡。一次不完美、但真实发生的数字素养实践。">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/img/og-cover.svg">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/pages.css">
+<link rel="stylesheet" href="assets/css/signal.css">
+<script>
+(function(){
+  document.documentElement.classList.add('js');
+  try {
+    var params = new URLSearchParams(window.location.search);
+    var q = params.get('theme');
+    var t = (q === 'paper' || q === 'lab') ? q : localStorage.getItem('adm-theme');
+    if (t === 'paper' || t === 'lab') document.documentElement.setAttribute('data-theme', t);
+    if (params.get('wipe') === '1') document.documentElement.classList.add('is-wiping');
+  } catch (e) {}
+})();
+</script>
+</head>
+<body data-page="community">
+<div class="page-wipe" aria-hidden="true">
+  <div class="page-wipe__panel">
+    <span class="page-wipe__mark">A/</span>
+    <span class="page-wipe__meta">OPENING ARCHIVE / 07 — ENTER</span>
+  </div>
+</div>
+
+<a class="skip-link" href="#main">跳到主要内容</a>
+<div class="read-progress" id="read-progress" aria-hidden="true"></div>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="home.html" aria-label="算法同桌 · 返回首页">
+      <span class="brand__mark" aria-hidden="true">A/</span>
+      <span class="brand__text">
+        <span class="brand__cn">算法同桌</span>
+        <span class="brand__en">ALGORITHM DESKMATE</span>
+      </span>
+    </a>
+    <nav class="nav" id="site-nav" aria-label="主导航">
+      <div class="nav-group"><button class="nav-link nav-toggle" type="button" aria-expanded="false">研究<span class="caret">▾</span></button><div class="nav-pop"><a href="about.html"><span class="num">01</span>项目缘起</a><a href="method.html"><span class="num">02</span>研究协议</a><a href="map.html"><span class="num">03</span>使用星图</a><a href="log.html"><span class="num">12</span>30 天日志</a></div></div><div class="nav-group"><button class="nav-link nav-toggle" type="button" aria-expanded="false">数据<span class="caret">▾</span></button><div class="nav-pop"><a href="dashboard.html"><span class="num">04</span>样本仪表盘</a><a href="personas.html"><span class="num">05</span>五种AI同桌</a><a href="hallucination.html"><span class="num">14</span>幻觉博物馆</a></div></div><div class="nav-group"><button class="nav-link nav-toggle" type="button" aria-expanded="false">人物<span class="caret">▾</span></button><div class="nav-pop"><a href="voices.html"><span class="num">06</span>访谈索引</a><a href="interview-li.html"><span class="num">07</span>李同学：第二大脑</a><a href="interview-chen.html"><span class="num">08</span>陈同学：不使用的理由</a><a href="interview-zhou.html"><span class="num">09</span>周老师：备课边界</a><a href="interview-grandma.html"><span class="num">10</span>王奶奶：第一次对话</a><a href="roundtable.html"><span class="num">11</span>教师圆桌</a></div></div><div class="nav-group"><button class="nav-link nav-toggle" type="button" aria-expanded="false">实验<span class="caret">▾</span></button><div class="nav-pop"><a href="prompt.html"><span class="num">13</span>提问实验室</a><a href="factcheck.html"><span class="num">15</span>核查挑战</a><a href="offline.html"><span class="num">16</span>无AI日</a><a href="rules.html"><span class="num">17</span>诚信红绿灯</a></div></div><div class="nav-group is-active"><button class="nav-link nav-toggle" type="button" aria-expanded="false">行动<span class="caret">▾</span></button><div class="nav-pop"><a href="community.html" class="is-current" aria-current="page"><span class="num">18</span>社区数字课堂</a><a href="charter.html"><span class="num">19</span>班级公约</a><a href="future.html"><span class="num">20</span>2035 教室</a><a href="proposal.html"><span class="num">21</span>给学校的提案</a></div></div><div class="nav-group"><button class="nav-link nav-toggle" type="button" aria-expanded="false">档案<span class="caret">▾</span></button><div class="nav-pop"><a href="toolkit.html"><span class="num">22</span>田野工具箱</a><a href="resources.html"><span class="num">23</span>开放资源</a><a href="quiz.html"><span class="num">24</span>AI学习者测试</a><a href="guestbook.html"><span class="num">25</span>留言与共创</a><a href="credits.html"><span class="num">26</span>版权与致谢</a></div></div>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn search-open" type="button" data-search-open aria-label="搜索全站">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"></circle><path d="m16 16 4.5 4.5"></path></svg><span class="search-label mono">SEARCH</span><kbd>/</kbd>
+      </button>
+      <button class="icon-btn theme-btn" type="button" data-theme-toggle aria-label="切换深色 / 浅色主题">
+        <span class="theme-icon-lab"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 15.2A8 8 0 0 1 8.8 4 8.2 8.2 0 1 0 20 15.2Z"></path></svg></span>
+        <span class="theme-icon-paper"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg></span>
+      </button>
+      <button class="icon-btn menu-btn" type="button" data-menu-toggle aria-label="打开菜单" aria-expanded="false" aria-controls="site-nav"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h18M3 12h18M3 17h18"></path></svg></button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+
+<section class="page-head">
+  <div class="container">
+    <div class="page-head__top mono">
+      <div class="crumbs"><a href="home.html">INDEX</a><span>/</span><span>ACTION</span><span>/</span><span>社区数字课堂</span></div>
+      <span class="file-tag">FILE <b>18</b> · 27 FILES</span>
+    </div>
+    <div class="page-head__body">
+      <div>
+        <div class="eyebrow">FIELD ACTION / 18</div>
+        <h1>把课堂，<br><span class="signal-stroke">搬到社区活动室</span>。</h1>
+        <p class="page-head__lead">我们发现，校园里争论的是“AI 会不会替我们思考”；社区里更紧迫的问题是“AI 会不会骗走我的钱”。同一个技术，在不同的人那里，意味着完全不同的风险。</p>
+      </div>
+      <div class="page-head__stamp" aria-hidden="true">
+        <b>18</b>
+        ACTION<br>COMMUNITY WORKSHOP
+      </div>
+    </div>
+    <div class="page-head__meta"><span class="item">南园社区 · 3 次工作坊</span><span class="item">14 位参与者 · 平均年龄 71 岁</span><span class="item">2025.11</span><span class="item">姓名与细节已匿名化</span></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="field-note-lead reveal">
+      <div class="field-note-lead__text">
+        <div class="eyebrow">WHY HERE / 为什么是社区</div>
+        <h2 class="mt-2" style="font-size:clamp(1.6rem,3.3vw,2.5rem);line-height:1.3">“你们教我别信 AI，可我先得知道，AI 是什么。”</h2>
+        <p class="dim mt-3" style="font-size:14px;line-height:2">第一次去社区时，我们带了一份很“完整”的讲义：什么是生成式 AI、什么是深度伪造、如何核查信息来源。讲到第二页，一位爷爷打断我们：“你就说，接到我孙子的电话要钱，我该咋办？”</p>
+        <p class="dim mt-2" style="font-size:14px;line-height:2">我们意识到，社区课堂需要的不是技术概念，而是一套在最紧张的时刻也能记住的动作。于是我们推翻教案，把三个小时的课程压缩成三步：<strong>先挂掉，再打回去，最后找一个人确认。</strong></p>
+      </div>
+      <aside class="field-note-lead__aside">
+        <div><div class="mono faint">FIELD NOTE / 11.15</div><div class="big">14</div><p>位社区老人，3 次工作坊。没有一个人从此“完全免疫”诈骗；但我们留下了 14 张可以贴在电话旁的卡片。</p></div>
+        <div class="mini-quote">“别讲那么复杂。你就告诉我，第一步做啥。”<cite>社区居民 / 工作坊现场</cite></div>
+      </aside>
+    </div>
+
+    <div class="split mt-5">
+      <div class="reveal">
+        
+<div class="section-head reveal">
+  <div class="section-head__left">
+    <div class="eyebrow">THE CARD / 大字版识谣卡</div>
+    <h2>把判断，缩成三个动作。</h2>
+    <p>我们用更大的字号重新排版，把术语删到只剩动词。这张卡后来被贴在了社区活动室的门后。</p>
+  </div>
+  
+</div>
+
+        <div class="large-type-card">
+          <div class="large-type-card__label">南园社区 × 算法同桌 / 识谣三步卡</div>
+          <h3>接到“熟人”要钱的电话，先做这三步</h3>
+          <ol>
+            <li><span><strong>先挂掉。</strong>不管对方说得多急，先结束通话。真的亲人可以等一分钟。</span></li>
+            <li><span><strong>自己拨回去。</strong>用通讯录里自己存的号码，不用对方打来的号码，也不用对方提供的新号码。</span></li>
+            <li><span><strong>找一个人确认。</strong>打给另一位家人、邻居或社区工作人员。骗局最喜欢让你“不要告诉别人”。</span></li>
+          </ol>
+          <p class="card-note">记住：声音、脸和视频都可能被伪造。真正的安全步骤，不依赖“听起来像不像”。<br>遇到转账要求，先停下来，不向任何人提供验证码。</p>
+        </div>
+        <div class="row mt-3"><a class="btn btn--sm" href="assets/downloads/community-card.md" download>下载大字卡文字版 <span class="arrow">↓</span></a><a class="link-arrow" href="interview-grandma.html">读王奶奶的访谈</a></div>
+      </div>
+      <div class="reveal" data-delay="1">
+        
+<div class="section-head reveal">
+  <div class="section-head__left">
+    <div class="eyebrow">WHAT CHANGED / 变化</div>
+    <h2>不是“教育老人”，<br>是一起找办法。</h2>
+    <p>我们只收集了工作坊前后的简短自评，n=14，不能证明长期效果。但这些数字提示我们：具体动作比抽象知识更容易被记住。</p>
+  </div>
+  
+</div>
+
+        <div class="confidence-pair">
+          <div class="confidence-pair__row"><span>能说出一个核查动作</span><span class="confidence-pair__bar"><i style="--w:36%"></i></span><b>36%</b></div>
+          <div class="confidence-pair__row"><span>工作坊之后</span><span class="confidence-pair__bar"><i style="--w:79%"></i></span><b>79%</b></div>
+          <div class="confidence-pair__row" style="margin-top:22px"><span>遇到陌生来电会先挂断</span><span class="confidence-pair__bar"><i style="--w:29%"></i></span><b>29%</b></div>
+          <div class="confidence-pair__row"><span>工作坊之后</span><span class="confidence-pair__bar"><i style="--w:71%"></i></span><b>71%</b></div>
+          <p class="mono faint" style="margin-top:18px;font-size:9px;line-height:1.8">SELF-REPORT / N=14 / 非严格前后测，不能代表长期行为改变</p>
+        </div>
+        <div class="note-strip mt-3"><b>WHAT WE FAILED AT</b> 两周后回访，一位参与者仍在转发未经核实的短视频。一次工作坊无法改变长期的信息习惯。我们把这个“失败”保留在记录里。</div>
+      </div>
+    </div>
+
+    <div class="community-quotes">
+      <div class="community-quote reveal"><p>“我女儿也在上海。你们说的那个‘声音’，我听过。以后我先挂掉。”</p><cite>参与者 A / 72 岁</cite></div>
+      <div class="community-quote reveal" data-delay="1"><p>“我不用 AI，但我会用手机。你们别把手机说得那么可怕，我还得用它看孙子。”</p><cite>参与者 B / 68 岁</cite></div>
+      <div class="community-quote reveal" data-delay="2"><p>“你们下次还来吗？我想学怎么把照片发给外孙女。”</p><cite>参与者 C / 75 岁</cite></div>
+    </div>
+
+    <div class="mt-5 reveal">
+      
+<div class="section-head reveal">
+  <div class="section-head__left">
+    <div class="eyebrow">WORKSHOP PROTOCOL / 三次工作坊</div>
+    <h2>不是一次“讲座”，而是三次反复练习。</h2>
+    <p>第一次认识风险，第二次练习动作，第三次把动作教给别人。真正的学习发生在重复和讲述里。</p>
+  </div>
+  <div class="section-head__aside">3 SESSIONS / 6 HOURS</div>
+</div>
+
+      <div class="workshop-steps">
+        <div class="workshop-step"><div class="workshop-step__time">SESSION 01<br>11.08</div><div><h4>从真实经历开始</h4><p>不先讲概念，先请每个人说一件“手机里遇到的怪事”。收集到 9 个故事，其中 3 个与冒充熟人有关。</p></div><div class="workshop-step__tag">LISTEN<br>不急着教</div></div>
+        <div class="workshop-step"><div class="workshop-step__time">SESSION 02<br>11.15</div><div><h4>只练三个动作</h4><p>用真实手机演练“挂断—回拨—找家人确认”。每个人至少完整做一遍；不做角色扮演，不制造恐惧。</p></div><div class="workshop-step__tag">PRACTICE<br>动作优先</div></div>
+        <div class="workshop-step"><div class="workshop-step__time">SESSION 03<br>11.22</div><div><h4>让参与者成为讲述者</h4><p>请两位老人把三步卡讲给新参与者听。我们退到旁边，只负责补充。讲述比听讲更能记住步骤。</p></div><div class="workshop-step__tag">HAND OVER<br>把讲台让出去</div></div>
+      </div>
+    </div>
+
+    <div class="panel panel--pad mt-5 reveal" style="border-left:2px solid var(--signal)">
+      <div class="split" style="align-items:center">
+        <div><div class="eyebrow">WHAT WE LEARNED / 反思</div><h2 class="mt-2" style="font-size:clamp(1.4rem,2.7vw,2rem)">数字素养不是“会用”，是“在不确定时知道找谁”。</h2></div>
+        <p class="dim" style="font-size:13px;line-height:2">我们带去的是一套知识，带回来的是一种提醒：技术教育如果只讲工具，会把人分成“会用的”和“不会用的”；如果讲关系与判断，它才可能真正帮到人。社区课堂也反过来改变了我们的研究——校园里的“AI 依赖”问题，和社区里的“AI 诈骗”问题，共享同一个前提：<strong>我们太容易相信一个流利、熟悉、及时的声音。</strong></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-brand__line"><span class="status-dot"></span><span class="mono">OPEN NOTEBOOK · 1.0.0</span></div>
+        <div class="footer-title">ALGORITHM<br>DESKMATE</div>
+        <p class="footer-desc">一份关于 AI、学习与人的数字田野报告。由三名高中生发起，在校园与社区之间完成。所有页面、图形与交互均由我们手写构建。</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h3>Explore / 浏览</h3>
+          <a href="about.html">项目缘起</a>
+          <a href="dashboard.html">样本仪表盘</a>
+          <a href="voices.html">人物访谈</a>
+          <a href="hallucination.html">幻觉博物馆</a>
+          <a href="toolkit.html">田野工具箱</a>
+        </div>
+        <div class="footer-col">
+          <h3>Participate / 参与</h3>
+          <a href="quiz.html">AI 学习者测试</a>
+          <a href="charter.html">签署班级公约</a>
+          <a href="guestbook.html">留言与共创</a>
+          <a href="resources.html">开放资源</a>
+          <a href="index.html">开屏动画</a>
+          <a href="credits.html">版权与致谢</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-giant" aria-hidden="true">A/ DESKMATE</div>
+    <div class="footer-bottom">
+      <span>© 2026 第七排观察组 · 内容与设计保留署名 · 数据为演示样本</span>
+      <span class="status"><i class="status-dot"></i> SYSTEM NOMINAL <span data-local-time>--:--:--</span></span>
+      <span>CC BY-NC-SA 4.0 · NO TRACKERS · NO COOKIES</span>
+    </div>
+  </div>
+</footer>
+<div class="toast-stack" id="toast-stack" aria-live="polite" aria-atomic="true"></div>
+
+
+<div class="search-overlay" id="search-overlay" role="dialog" aria-modal="true" aria-label="搜索全站">
+  <div class="search-panel">
+    <div class="search-bar">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"></circle><path d="m16 16 4.5 4.5"></path></svg>
+      <input id="search-input" type="search" placeholder="搜索页面、人物、概念…" autocomplete="off" spellcheck="false" aria-label="搜索关键词">
+      <span class="esc">ESC</span>
+    </div>
+    <div class="search-hint"><span>输入关键词即时检索</span><span>↑ ↓ 选择 · ENTER 打开</span></div>
+    <div class="search-results" id="search-results" role="listbox" aria-label="搜索结果"></div>
+    <div class="search-foot"><span>27 FILES INDEXED</span><span>尝试：AI · 依赖 · 幻觉 · 社区 · 公约</span></div>
+  </div>
+</div>
+<script src="assets/js/search-index.js"></script>
+<script src="assets/js/app.js" defer></script>
+<script src="assets/js/interactive.js" defer></script>
+</body>
+</html>

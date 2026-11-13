@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="lab">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>田野工具箱 · 算法同桌</title>
+<meta name="description" content="可以直接拿走的研究工具箱：提问卡、AI 内容核查清单、访谈提纲、30 天日志模板和开放数据。">
+<meta name="author" content="第七排观察组">
+<meta name="theme-color" content="#03070a">
+<meta property="og:title" content="田野工具箱 · 算法同桌">
+<meta property="og:description" content="可以直接拿走的研究工具箱：提问卡、AI 内容核查清单、访谈提纲、30 天日志模板和开放数据。">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/img/og-cover.svg">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/pages.css">
+<link rel="stylesheet" href="assets/css/signal.css">
+<script>
+(function(){
+  document.documentElement.classList.add('js');
+  try {
+    var params = new URLSearchParams(window.location.search);
+    var q = params.get('theme');
+    var t = (q === 'paper' || q === 'lab') ? q : localStorage.getItem('adm-theme');
+    if (t === 'paper' || t === 'lab') document.documentElement.setAttribute('data-theme', t);
+    if (params.get('wipe') === '1') document.documentElement.classList.add('is-wiping');
+  } catch (e) {}
+})();
+</script>
+</head>
+<body data-page="toolkit">
+<div class="page-wipe" aria-hidden="true">
+  <div class="page-wipe__panel">
+    <span class="page-wipe__mark">A/</span>
+    <span class="page-wipe__meta">OPENING ARCHIVE / 07 — ENTER</span>
+  </div>
+</div>
+
+<a class="skip-link" href="#main">跳到主要内容</a>
+<div class="read-progress" id="read-progress" aria-hidden="true"></div>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="home.html" aria-label="算法同桌 · 返回首页">
+      <span class="brand__mark" aria-hidden="true">A/</span>
+      <span class="brand__text">
+        <span class="brand__cn">算法同桌</span>
+        <span class="brand__en">ALGORITHM DESKMATE</span>
+      </span>
+    </a>
+    <nav class="nav" id="site-nav" aria-label="主导航">
+      <div class="nav-group"><button class="nav-link nav-toggle" type="button" aria-expanded="false">研究<span class="caret">▾</span></button><div class="nav-pop"><a href="about.html"><span class="num">01</span>项目缘起</a><a href="method.html"><span class="num">02</span>研究协议</a><a href="map.html"><span class="num">03</span>使用星图</a><a href="log.html"><span class="num">12</span>30 天日志</a></div></div><div class="nav-group"><button class="nav-link nav-toggle" type="button" aria-expanded="false">数据<span class="caret">▾</span></button><div class="nav-pop"><a href="dashboard.html"><span class="num">04</span>样本仪表盘</a><a href="personas.html"><span class="num">05</span>五种AI同桌</a><a href="hallucination.html"><span class="num">14</span>幻觉博物馆</a></div></div><div class="nav-group"><button class="nav-link nav-toggle" type="button" aria-expanded="false">人物<span class="caret">▾</span></button><div class="nav-pop"><a href="voices.html"><span class="num">06</span>访谈索引</a><a href="interview-li.html"><span class="num">07</span>李同学：第二大脑</a><a href="interview-chen.html"><span class="num">08</span>陈同学：不使用的理由</a><a href="interview-zhou.html"><span class="num">09</span>周老师：备课边界</a><a href="interview-grandma.html"><span class="num">10</span>王奶奶：第一次对话</a><a href="roundtable.html"><span class="num">11</span>教师圆桌</a></div></div><div class="nav-group"><button class="nav-link nav-toggle" type="button" aria-expanded="false">实验<span class="caret">▾</span></button><div class="nav-pop"><a href="prompt.html"><span class="num">13</span>提问实验室</a><a href="factcheck.html"><span class="num">15</span>核查挑战</a><a href="offline.html"><span class="num">16</span>无AI日</a><a href="rules.html"><span class="num">17</span>诚信红绿灯</a></div></div><div class="nav-group"><button class="nav-link nav-toggle" type="button" aria-expanded="false">行动<span class="caret">▾</span></button><div class="nav-pop"><a href="community.html"><span class="num">18</span>社区数字课堂</a><a href="charter.html"><span class="num">19</span>班级公约</a><a href="future.html"><span class="num">20</span>2035 教室</a><a href="proposal.html"><span class="num">21</span>给学校的提案</a></div></div><div class="nav-group is-active"><button class="nav-link nav-toggle" type="button" aria-expanded="false">档案<span class="caret">▾</span></button><div class="nav-pop"><a href="toolkit.html" class="is-current" aria-current="page"><span class="num">22</span>田野工具箱</a><a href="resources.html"><span class="num">23</span>开放资源</a><a href="quiz.html"><span class="num">24</span>AI学习者测试</a><a href="guestbook.html"><span class="num">25</span>留言与共创</a><a href="credits.html"><span class="num">26</span>版权与致谢</a></div></div>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn search-open" type="button" data-search-open aria-label="搜索全站">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"></circle><path d="m16 16 4.5 4.5"></path></svg><span class="search-label mono">SEARCH</span><kbd>/</kbd>
+      </button>
+      <button class="icon-btn theme-btn" type="button" data-theme-toggle aria-label="切换深色 / 浅色主题">
+        <span class="theme-icon-lab"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 15.2A8 8 0 0 1 8.8 4 8.2 8.2 0 1 0 20 15.2Z"></path></svg></span>
+        <span class="theme-icon-paper"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg></span>
+      </button>
+      <button class="icon-btn menu-btn" type="button" data-menu-toggle aria-label="打开菜单" aria-expanded="false" aria-controls="site-nav"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h18M3 12h18M3 17h18"></path></svg></button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+
+<section class="page-head">
+  <div class="container">
+    <div class="page-head__top mono">
+      <div class="crumbs"><a href="home.html">INDEX</a><span>/</span><span>ARCHIVE</span><span>/</span><span>田野工具箱</span></div>
+      <span class="file-tag">FILE <b>22</b> · 27 FILES</span>
+    </div>
+    <div class="page-head__body">
+      <div>
+        <div class="eyebrow">OPEN TOOLKIT / 22</div>
+        <h1>把方法，<br><span class="signal-stroke">交到别人手里</span>。</h1>
+        <p class="page-head__lead">研究不应该只留下一个漂亮的结论，还应该留下别人可以重复使用的工具。以下是我们在项目中实际用过的提问卡、核查清单与访谈提纲。你可以直接复制、修改，不需要署名。</p>
+      </div>
+      <div class="page-head__stamp" aria-hidden="true">
+        <b>22</b>
+        ARCHIVE<br>TAKE IT WITH YOU
+      </div>
+    </div>
+    <div class="page-head__meta"><span class="item">4 张提示卡</span><span class="item">7 项核查清单</span><span class="item">访谈提纲</span><span class="item">可下载 / 可改写</span></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="tool-tabs reveal" role="tablist" aria-label="工具箱分类">
+      <button type="button" class="is-active" data-tool-tab="prompts">01 / 提示词卡</button>
+      <button type="button" data-tool-tab="checklist">02 / 核查清单</button>
+      <button type="button" data-tool-tab="interview">03 / 访谈提纲</button>
+      <button type="button" data-tool-tab="downloads">04 / 开放文件</button>
+    </div>
+
+    <div class="tool-panel is-active" id="tool-prompts" role="tabpanel">
+      <div class="prompt-card-grid"><article class="prompt-card"><div class="prompt-card__tag"><span>01 / 拆解概念</span><span>PROMPT CARD</span></div><pre>“我是高二学生。请用三个不同层次的类比解释这个概念：生活经验、学科模型、反例。每解释完一个，停下来问我一个问题，确认我是否真的理解。”</pre><button class="copy-btn" type="button" data-copy-target="tp-1">复制提示词</button><span id="tp-1" hidden>“我是高二学生。请用三个不同层次的类比解释这个概念：生活经验、学科模型、反例。每解释完一个，停下来问我一个问题，确认我是否真的理解。”</span></article><article class="prompt-card"><div class="prompt-card__tag"><span>02 / 检查答案</span><span>PROMPT CARD</span></div><pre>“不要告诉我正确答案。请检查我的解题过程，只指出从哪一步开始出现问题，并给我一个不涉及答案的提示。”</pre><button class="copy-btn" type="button" data-copy-target="tp-2">复制提示词</button><span id="tp-2" hidden>“不要告诉我正确答案。请检查我的解题过程，只指出从哪一步开始出现问题，并给我一个不涉及答案的提示。”</span></article><article class="prompt-card"><div class="prompt-card__tag"><span>03 / 写作反馈</span><span>PROMPT CARD</span></div><pre>“这是我作文的第二稿。请先复述你读到的中心论点，然后指出一个证据不足的地方，再给我两个不直接替我写的修改方向。不要重写句子。”</pre><button class="copy-btn" type="button" data-copy-target="tp-3">复制提示词</button><span id="tp-3" hidden>“这是我作文的第二稿。请先复述你读到的中心论点，然后指出一个证据不足的地方，再给我两个不直接替我写的修改方向。不要重写句子。”</span></article><article class="prompt-card"><div class="prompt-card__tag"><span>04 / 识别谣言</span><span>PROMPT CARD</span></div><pre>“请把这条消息拆成事实主张、来源、情绪动员和行动要求四栏。对每一条标注‘可核查 / 无法核查’，并列出我应该去哪里查。不要下‘真 / 假’结论。”</pre><button class="copy-btn" type="button" data-copy-target="tp-4">复制提示词</button><span id="tp-4" hidden>“请把这条消息拆成事实主张、来源、情绪动员和行动要求四栏。对每一条标注‘可核查 / 无法核查’，并列出我应该去哪里查。不要下‘真 / 假’结论。”</span></article></div>
+      <p class="tool-note">提示词不是保证。请始终核查事实与来源；不要把同学、老师、家人的隐私信息放进提示词。</p>
+    </div>
+
+    <div class="tool-panel" id="tool-checklist" role="tabpanel">
+      <div class="split">
+        <div>
+          <div class="panel-head"><span><b>VERIFICATION CHECKLIST</b> / 7 个停顿</span><span id="toolkit-progress">0 / 7</span></div>
+          <div class="check-list"><label class="check-item"><input type="checkbox" data-toolkit-check><span class="box"></span><span class="check-text">这条信息最早出现在哪里？我能找到原始页面吗？</span></label><label class="check-item"><input type="checkbox" data-toolkit-check><span class="box"></span><span class="check-text">文件名、作者、DOI、数据是否可以在独立来源中检索到？</span></label><label class="check-item"><input type="checkbox" data-toolkit-check><span class="box"></span><span class="check-text">它是否把相关性说成了因果，或把个案说成了普遍规律？</span></label><label class="check-item"><input type="checkbox" data-toolkit-check><span class="box"></span><span class="check-text">它是否在利用恐惧、愤怒、紧迫感推动我立刻行动？</span></label><label class="check-item"><input type="checkbox" data-toolkit-check><span class="box"></span><span class="check-text">是否涉及转账、验证码、身份证号、健康或家庭隐私？</span></label><label class="check-item"><input type="checkbox" data-toolkit-check><span class="box"></span><span class="check-text">我是否因为“它说得很顺”而跳过了核查？</span></label><label class="check-item"><input type="checkbox" data-toolkit-check><span class="box"></span><span class="check-text">如果我错了，最坏的结果是什么？谁还能帮我确认？</span></label></div>
+          <p class="tool-note">勾选状态只保存在你的浏览器中。它不是考试，也没有正确答案——重要的是在转发或提交之前停一下。</p>
+        </div>
+        <div>
+          <div class="panel panel--pad corner-marks" style="background:var(--bg-raise)">
+            <div class="panel-head"><span>FIELD RULE / 01</span><span class="status-dot"></span></div>
+            <h3 style="font-size:22px;line-height:1.35">“找不到来源”本身就是一条重要信息。</h3>
+            <p class="dim mt-2" style="font-size:13px;line-height:1.9">当你无法确认一条信息的来源时，不要把它当作“可能是真的”。在需要做决定的场合，未知应该被明确标记为未知，而不是用语气补足。</p>
+            <div class="note-strip mt-3"><b>QUICK PATH</b> 找原始发布者 → 找到原文 / 原数据 → 检查时间与适用范围 → 再做决定。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tool-panel" id="tool-interview" role="tabpanel">
+      <div class="table-wrap">
+        <table class="data-table">
+          <caption>SEMI-STRUCTURED INTERVIEW / 半结构访谈提纲 · 约 30—40 分钟</caption>
+          <thead><tr><th>#</th><th>阶段</th><th>问题</th></tr></thead>
+          <tbody><tr><td class='num'>01</td><td>开场</td><td>最近一次使用 AI 是什么时候？当时在做什么？</td></tr><tr><td class='num'>02</td><td>行为</td><td>能打开给我看看你通常怎么问吗？你会怎么判断它的回答？</td></tr><tr><td class='num'>03</td><td>追因</td><td>如果那天没有 AI，你会怎么做？结果会有什么不同？</td></tr><tr><td class='num'>04</td><td>边界</td><td>有没有哪件事你绝对不会让 AI 替你做？为什么？</td></tr><tr><td class='num'>05</td><td>反例</td><td>有没有一次它帮了倒忙，或者让你改变了对它的看法？</td></tr><tr><td class='num'>06</td><td>规则</td><td>你们班 / 学校对 AI 的态度是什么？你觉得合理吗？</td></tr></tbody>
+        </table>
+      </div>
+      <div class="grid grid--3 mt-3">
+        <div class="note-strip"><b>先做</b> 说明用途、保存方式与匿名化；询问是否可以录音。</div>
+        <div class="note-strip"><b>多问</b> “能举个例子吗？”“当时你具体做了什么？”</div>
+        <div class="note-strip"><b>别做</b> 不诱导受访者说出你期待的观点；不把“不同意”当作访谈失败。</div>
+      </div>
+    </div>
+
+    <div class="tool-panel" id="tool-downloads" role="tabpanel">
+      <div class="download-list">
+        <div class="download-row"><div class="download-row__icon">TXT</div><div><h4>AI 内容核查清单</h4><p>可打印的一页纸版本，适合贴在书桌前。</p></div><a class="link-arrow" href="assets/downloads/ai-literacy-checklist.txt" download>下载</a></div>
+        <div class="download-row"><div class="download-row__icon">MD</div><div><h4>半结构访谈提纲</h4><p>包含知情同意说明、主问题与追问提示。</p></div><a class="link-arrow" href="assets/downloads/interview-guide.md" download>下载</a></div>
+        <div class="download-row"><div class="download-row__icon">CSV</div><div><h4>30 天使用日志模板</h4><p>日期、使用场景、时长、是否核查、一个感受。</p></div><a class="link-arrow" href="assets/downloads/ai-log-template.csv" download>下载</a></div>
+        <div class="download-row"><div class="download-row__icon">CSV</div><div><h4>问卷示例数据</h4><p>用于演示仪表盘结构的构造样本，不含真实个人信息。</p></div><a class="link-arrow" href="assets/downloads/survey-sample.csv" download>下载</a></div>
+        <div class="download-row"><div class="download-row__icon">MD</div><div><h4>社区大字版识谣卡</h4><p>大字号、短句、三个动作，可直接打印。</p></div><a class="link-arrow" href="assets/downloads/community-card.md" download>下载</a></div>
+      </div>
+      <div class="open-banner">
+        <div><h3>可以拿走，也欢迎改写。</h3><p>所有模板以 CC BY-NC-SA 4.0 许可开放，用于非商业教学与社团活动。你不需要署名，但如果能告诉我们你改了什么，我们会很高兴。</p></div>
+        <span class="license-mark">CC BY-NC-SA 4.0</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-brand__line"><span class="status-dot"></span><span class="mono">OPEN NOTEBOOK · 1.0.0</span></div>
+        <div class="footer-title">ALGORITHM<br>DESKMATE</div>
+        <p class="footer-desc">一份关于 AI、学习与人的数字田野报告。由三名高中生发起，在校园与社区之间完成。所有页面、图形与交互均由我们手写构建。</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h3>Explore / 浏览</h3>
+          <a href="about.html">项目缘起</a>
+          <a href="dashboard.html">样本仪表盘</a>
+          <a href="voices.html">人物访谈</a>
+          <a href="hallucination.html">幻觉博物馆</a>
+          <a href="toolkit.html">田野工具箱</a>
+        </div>
+        <div class="footer-col">
+          <h3>Participate / 参与</h3>
+          <a href="quiz.html">AI 学习者测试</a>
+          <a href="charter.html">签署班级公约</a>
+          <a href="guestbook.html">留言与共创</a>
+          <a href="resources.html">开放资源</a>
+          <a href="index.html">开屏动画</a>
+          <a href="credits.html">版权与致谢</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-giant" aria-hidden="true">A/ DESKMATE</div>
+    <div class="footer-bottom">
+      <span>© 2026 第七排观察组 · 内容与设计保留署名 · 数据为演示样本</span>
+      <span class="status"><i class="status-dot"></i> SYSTEM NOMINAL <span data-local-time>--:--:--</span></span>
+      <span>CC BY-NC-SA 4.0 · NO TRACKERS · NO COOKIES</span>
+    </div>
+  </div>
+</footer>
+<div class="toast-stack" id="toast-stack" aria-live="polite" aria-atomic="true"></div>
+
+
+<div class="search-overlay" id="search-overlay" role="dialog" aria-modal="true" aria-label="搜索全站">
+  <div class="search-panel">
+    <div class="search-bar">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"></circle><path d="m16 16 4.5 4.5"></path></svg>
+      <input id="search-input" type="search" placeholder="搜索页面、人物、概念…" autocomplete="off" spellcheck="false" aria-label="搜索关键词">
+      <span class="esc">ESC</span>
+    </div>
+    <div class="search-hint"><span>输入关键词即时检索</span><span>↑ ↓ 选择 · ENTER 打开</span></div>
+    <div class="search-results" id="search-results" role="listbox" aria-label="搜索结果"></div>
+    <div class="search-foot"><span>27 FILES INDEXED</span><span>尝试：AI · 依赖 · 幻觉 · 社区 · 公约</span></div>
+  </div>
+</div>
+<script src="assets/js/search-index.js"></script>
+<script src="assets/js/app.js" defer></script>
+<script src="assets/js/interactive.js" defer></script>
+</body>
+</html>

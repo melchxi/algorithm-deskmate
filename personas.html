@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="lab">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>五种 AI 同桌 · 算法同桌</title>
+<meta name="description" content="工具派、怀疑派、依赖派、创作派、规则派：基于问卷与访谈构造的五种使用类型。它不是心理测试，而是一张理解差异的地图。">
+<meta name="author" content="第七排观察组">
+<meta name="theme-color" content="#03070a">
+<meta property="og:title" content="五种 AI 同桌 · 算法同桌">
+<meta property="og:description" content="工具派、怀疑派、依赖派、创作派、规则派：基于问卷与访谈构造的五种使用类型。它不是心理测试，而是一张理解差异的地图。">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/img/og-cover.svg">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/pages.css">
+<link rel="stylesheet" href="assets/css/signal.css">
+<script>
+(function(){
+  document.documentElement.classList.add('js');
+  try {
+    var params = new URLSearchParams(window.location.search);
+    var q = params.get('theme');
+    var t = (q === 'paper' || q === 'lab') ? q : localStorage.getItem('adm-theme');
+    if (t === 'paper' || t === 'lab') document.documentElement.setAttribute('data-theme', t);
+    if (params.get('wipe') === '1') document.documentElement.classList.add('is-wiping');
+  } catch (e) {}
+})();
+</script>
+</head>
+<body data-page="personas">
+<div class="page-wipe" aria-hidden="true">
+  <div class="page-wipe__panel">
+    <span class="page-wipe__mark">A/</span>
+    <span class="page-wipe__meta">OPENING ARCHIVE / 07 — ENTER</span>
+  </div>
+</div>
+
+<a class="skip-link" href="#main">跳到主要内容</a>
+<div class="read-progress" id="read-progress" aria-hidden="true"></div>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="home.html" aria-label="算法同桌 · 返回首页">
+      <span class="brand__mark" aria-hidden="true">A/</span>
+      <span class="brand__text">
+        <span class="brand__cn">算法同桌</span>
+        <span class="brand__en">ALGORITHM DESKMATE</span>
+      </span>
+    </a>
+    <nav class="nav" id="site-nav" aria-label="主导航">
+      <div class="nav-group"><button class="nav-link nav-toggle" type="button" aria-expanded="false">研究<span class="caret">▾</span></button><div class="nav-pop"><a href="about.html"><span class="num">01</span>项目缘起</a><a href="method.html"><span class="num">02</span>研究协议</a><a href="map.html"><span class="num">03</span>使用星图</a><a href="log.html"><span class="num">12</span>30 天日志</a></div></div><div class="nav-group is-active"><button class="nav-link nav-toggle" type="button" aria-expanded="false">数据<span class="caret">▾</span></button><div class="nav-pop"><a href="dashboard.html"><span class="num">04</span>样本仪表盘</a><a href="personas.html" class="is-current" aria-current="page"><span class="num">05</span>五种AI同桌</a><a href="hallucination.html"><span class="num">14</span>幻觉博物馆</a></div></div><div class="nav-group"><button class="nav-link nav-toggle" type="button" aria-expanded="false">人物<span class="caret">▾</span></button><div class="nav-pop"><a href="voices.html"><span class="num">06</span>访谈索引</a><a href="interview-li.html"><span class="num">07</span>李同学：第二大脑</a><a href="interview-chen.html"><span class="num">08</span>陈同学：不使用的理由</a><a href="interview-zhou.html"><span class="num">09</span>周老师：备课边界</a><a href="interview-grandma.html"><span class="num">10</span>王奶奶：第一次对话</a><a href="roundtable.html"><span class="num">11</span>教师圆桌</a></div></div><div class="nav-group"><button class="nav-link nav-toggle" type="button" aria-expanded="false">实验<span class="caret">▾</span></button><div class="nav-pop"><a href="prompt.html"><span class="num">13</span>提问实验室</a><a href="factcheck.html"><span class="num">15</span>核查挑战</a><a href="offline.html"><span class="num">16</span>无AI日</a><a href="rules.html"><span class="num">17</span>诚信红绿灯</a></div></div><div class="nav-group"><button class="nav-link nav-toggle" type="button" aria-expanded="false">行动<span class="caret">▾</span></button><div class="nav-pop"><a href="community.html"><span class="num">18</span>社区数字课堂</a><a href="charter.html"><span class="num">19</span>班级公约</a><a href="future.html"><span class="num">20</span>2035 教室</a><a href="proposal.html"><span class="num">21</span>给学校的提案</a></div></div><div class="nav-group"><button class="nav-link nav-toggle" type="button" aria-expanded="false">档案<span class="caret">▾</span></button><div class="nav-pop"><a href="toolkit.html"><span class="num">22</span>田野工具箱</a><a href="resources.html"><span class="num">23</span>开放资源</a><a href="quiz.html"><span class="num">24</span>AI学习者测试</a><a href="guestbook.html"><span class="num">25</span>留言与共创</a><a href="credits.html"><span class="num">26</span>版权与致谢</a></div></div>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn search-open" type="button" data-search-open aria-label="搜索全站">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"></circle><path d="m16 16 4.5 4.5"></path></svg><span class="search-label mono">SEARCH</span><kbd>/</kbd>
+      </button>
+      <button class="icon-btn theme-btn" type="button" data-theme-toggle aria-label="切换深色 / 浅色主题">
+        <span class="theme-icon-lab"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 15.2A8 8 0 0 1 8.8 4 8.2 8.2 0 1 0 20 15.2Z"></path></svg></span>
+        <span class="theme-icon-paper"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg></span>
+      </button>
+      <button class="icon-btn menu-btn" type="button" data-menu-toggle aria-label="打开菜单" aria-expanded="false" aria-controls="site-nav"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h18M3 12h18M3 17h18"></path></svg></button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+
+<section class="page-head">
+  <div class="container">
+    <div class="page-head__top mono">
+      <div class="crumbs"><a href="home.html">INDEX</a><span>/</span><span>DATA</span><span>/</span><span>五种 AI 同桌</span></div>
+      <span class="file-tag">FILE <b>05</b> · 27 FILES</span>
+    </div>
+    <div class="page-head__body">
+      <div>
+        <div class="eyebrow">PERSONA INDEX / 05</div>
+        <h1>五种同桌，<br><span class="signal-stroke">五种距离</span>。</h1>
+        <p class="page-head__lead">我们根据使用动机、核查习惯、依赖程度与规则意识，把访谈和问卷中的行为倾向归为五类。它们不是固定人格，更像是一个人可能在不同科目、不同情境里切换的五个位置。</p>
+      </div>
+      <div class="page-head__stamp" aria-hidden="true">
+        <b>05</b>
+        DATA<br>FIVE POSITIONS
+      </div>
+    </div>
+    <div class="page-head__meta"><span class="item">类型学：基于 16 次访谈与 312 份问卷</span><span class="item">非心理测量工具</span><span class="item">可切换查看</span><span class="item">类型占比为演示数据</span></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="persona-switch reveal" role="tablist" aria-label="五种 AI 同桌"><button type="button" data-persona="operator" class="is-active" aria-pressed="true"><span class="ps-index">01 / 31%</span><span class="ps-name">工具派<span class="ps-en">THE OPERATOR</span></span></button><button type="button" data-persona="auditor" class="" aria-pressed="false"><span class="ps-index">02 / 18%</span><span class="ps-name">怀疑派<span class="ps-en">THE AUDITOR</span></span></button><button type="button" data-persona="passenger" class="" aria-pressed="false"><span class="ps-index">03 / 22%</span><span class="ps-name">依赖派<span class="ps-en">THE PASSENGER</span></span></button><button type="button" data-persona="remixer" class="" aria-pressed="false"><span class="ps-index">04 / 17%</span><span class="ps-name">创作派<span class="ps-en">THE REMIXER</span></span></button><button type="button" data-persona="diplomat" class="" aria-pressed="false"><span class="ps-index">05 / 12%</span><span class="ps-name">规则派<span class="ps-en">THE DIPLOMAT</span></span></button></div>
+    <div class="persona-stage reveal" id="persona-stage">
+      <div class="persona-portrait">
+        <div id="persona-portrait" style="flex:1;display:flex">
+          
+<div class="signal-portrait signal-portrait--cyan" aria-hidden="true">
+  <span class="sp-orbit"></span>
+  <div class="sp-bars"><i></i><i></i><i></i><i></i></div>
+  <span class="sp-initial">T</span>
+  <span class="sp-caption"><span>PERSONA 01 </span><span> TYPE: OPERATOR</span></span>
+</div>
+        </div>
+        <div class="persona-portrait__foot"><span>SYNTHETIC PORTRAIT / 非真实人物</span><span id="persona-code">TYPE 01</span></div>
+      </div>
+      <div class="persona-detail" role="tabpanel" aria-live="polite">
+        <div class="persona-detail__top">
+          <div>
+            <div class="persona-detail__title" id="persona-name">工具派</div>
+            <div class="persona-detail__en" id="persona-en">THE OPERATOR / 效率优先</div>
+          </div>
+          <div class="persona-detail__share"><b id="persona-pct">31%</b><span>样本中的主要倾向</span></div>
+        </div>
+        <blockquote class="persona-detail__quote" id="persona-quote">“会用的人，不是问得更少，而是知道下一步该问什么。”</blockquote>
+        <p class="persona-detail__desc" id="persona-desc">把 AI 当作一组可以组合的工具：查词、拆题、做提纲、生成练习。最在意的是“有没有解决问题”，不太纠结工具本身。通常有稳定的使用流程，但核查往往取决于时间压力。</p>
+        <div class="persona-traits" id="persona-traits">
+          <div class="persona-trait"><span>效率</span><span class="pt-bar"><i style="width:88%"></i></span><span class="pt-val">88</span></div>
+          <div class="persona-trait"><span>核查</span><span class="pt-bar"><i style="width:62%"></i></span><span class="pt-val">62</span></div>
+          <div class="persona-trait"><span>依赖</span><span class="pt-bar"><i style="width:55%"></i></span><span class="pt-val">55</span></div>
+          <div class="persona-trait"><span>创造</span><span class="pt-bar"><i style="width:50%"></i></span><span class="pt-val">50</span></div>
+          <div class="persona-trait"><span>规则</span><span class="pt-bar"><i style="width:44%"></i></span><span class="pt-val">44</span></div>
+        </div>
+        <div class="persona-detail__bottom">
+          <div><h4>一句典型的话</h4><p id="persona-saying">“先让它跑一遍，错了我再改。”</p></div>
+          <div><h4>最需要警惕</h4><p id="persona-risk">把“完成”误认为“学会”。流程越顺，越不容易发现某个步骤已经被跳过。</p></div>
+        </div>
+      </div>
+    </div>
+    <p class="persona-note"><span class="status-dot status-dot--orange"></span> 类型不是标签，更不是诊断。它来自有限的样本与解释，一个人可能同时具有多种倾向。与其问“我是哪一类”，不如问“我在什么情境下更容易变成哪一类”。</p>
+
+    <div class="grid grid--3 mt-5">
+      <article class="panel panel--pad reveal"><span class="mono signal-text">DESIGN NOTE / 01</span><h3 class="mt-2" style="font-size:17px">类型来自行为，不来自态度。</h3><p class="dim mt-2" style="font-size:13px;line-height:1.9">“我觉得 AI 应该核查”与“我实际会核查”是两件事。我们优先用日志和追问到的具体行为划分，而不是直接采信自我描述。</p></article>
+      <article class="panel panel--pad reveal" data-delay="1"><span class="mono cyan-text">DESIGN NOTE / 02</span><h3 class="mt-2" style="font-size:17px">没有“最优类型”。</h3><p class="dim mt-2" style="font-size:13px;line-height:1.9">怀疑派也可能因为过度警惕而错过有效帮助；规则派也可能把规则当作免责声明。每种位置都有代价。</p></article>
+      <article class="panel panel--pad reveal" data-delay="2"><span class="mono orange-text">DESIGN NOTE / 03</span><h3 class="mt-2" style="font-size:17px">比例只描述样本。</h3><p class="dim mt-2" style="font-size:13px;line-height:1.9">31% / 18% / 22% / 17% / 12% 来自构造样本的倾向归类，不是精确的人群分布。请把它当作讨论的起点。</p></article>
+    </div>
+
+    <div class="action-band mt-5 reveal">
+      <div><div class="eyebrow">FIND YOUR POSITION / 找到你的位置</div><h2 style="font-size:clamp(1.5rem,2.8vw,2.1rem)">你是哪一种 AI 同桌？</h2><p>用 6 个情境问题做一次快速自测。结果不会告诉你“好或坏”，只会指出你当前最常站的位置。</p></div>
+      <a class="btn btn--primary" href="quiz.html">开始测试 <span class="arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-brand__line"><span class="status-dot"></span><span class="mono">OPEN NOTEBOOK · 1.0.0</span></div>
+        <div class="footer-title">ALGORITHM<br>DESKMATE</div>
+        <p class="footer-desc">一份关于 AI、学习与人的数字田野报告。由三名高中生发起，在校园与社区之间完成。所有页面、图形与交互均由我们手写构建。</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h3>Explore / 浏览</h3>
+          <a href="about.html">项目缘起</a>
+          <a href="dashboard.html">样本仪表盘</a>
+          <a href="voices.html">人物访谈</a>
+          <a href="hallucination.html">幻觉博物馆</a>
+          <a href="toolkit.html">田野工具箱</a>
+        </div>
+        <div class="footer-col">
+          <h3>Participate / 参与</h3>
+          <a href="quiz.html">AI 学习者测试</a>
+          <a href="charter.html">签署班级公约</a>
+          <a href="guestbook.html">留言与共创</a>
+          <a href="resources.html">开放资源</a>
+          <a href="index.html">开屏动画</a>
+          <a href="credits.html">版权与致谢</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-giant" aria-hidden="true">A/ DESKMATE</div>
+    <div class="footer-bottom">
+      <span>© 2026 第七排观察组 · 内容与设计保留署名 · 数据为演示样本</span>
+      <span class="status"><i class="status-dot"></i> SYSTEM NOMINAL <span data-local-time>--:--:--</span></span>
+      <span>CC BY-NC-SA 4.0 · NO TRACKERS · NO COOKIES</span>
+    </div>
+  </div>
+</footer>
+<div class="toast-stack" id="toast-stack" aria-live="polite" aria-atomic="true"></div>
+
+
+<div class="search-overlay" id="search-overlay" role="dialog" aria-modal="true" aria-label="搜索全站">
+  <div class="search-panel">
+    <div class="search-bar">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"></circle><path d="m16 16 4.5 4.5"></path></svg>
+      <input id="search-input" type="search" placeholder="搜索页面、人物、概念…" autocomplete="off" spellcheck="false" aria-label="搜索关键词">
+      <span class="esc">ESC</span>
+    </div>
+    <div class="search-hint"><span>输入关键词即时检索</span><span>↑ ↓ 选择 · ENTER 打开</span></div>
+    <div class="search-results" id="search-results" role="listbox" aria-label="搜索结果"></div>
+    <div class="search-foot"><span>27 FILES INDEXED</span><span>尝试：AI · 依赖 · 幻觉 · 社区 · 公约</span></div>
+  </div>
+</div>
+<script src="assets/js/search-index.js"></script>
+<script src="assets/js/app.js" defer></script>
+<script src="assets/js/interactive.js" defer></script>
+</body>
+</html>

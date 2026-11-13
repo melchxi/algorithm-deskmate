@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="lab">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>算法同桌 · 我们如何与 AI 一起学习</title>
+<meta name="description" content="《算法同桌》是一份关于中学生如何使用 AI 的数字田野报告：312 份问卷、16 次访谈、30 天使用日志，以及一次发生在社区里的数字素养实验。">
+<meta name="author" content="第七排观察组">
+<meta name="theme-color" content="#03070a">
+<meta property="og:title" content="算法同桌 · 我们如何与 AI 一起学习">
+<meta property="og:description" content="《算法同桌》是一份关于中学生如何使用 AI 的数字田野报告：312 份问卷、16 次访谈、30 天使用日志，以及一次发生在社区里的数字素养实验。">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/img/og-cover.svg">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/pages.css">
+<link rel="stylesheet" href="assets/css/signal.css">
+<script>
+(function(){
+  document.documentElement.classList.add('js');
+  try {
+    var params = new URLSearchParams(window.location.search);
+    var q = params.get('theme');
+    var t = (q === 'paper' || q === 'lab') ? q : localStorage.getItem('adm-theme');
+    if (t === 'paper' || t === 'lab') document.documentElement.setAttribute('data-theme', t);
+    if (params.get('wipe') === '1') document.documentElement.classList.add('is-wiping');
+  } catch (e) {}
+})();
+</script>
+</head>
+<body data-page="index">
+<div class="page-wipe" aria-hidden="true">
+  <div class="page-wipe__panel">
+    <span class="page-wipe__mark">A/</span>
+    <span class="page-wipe__meta">OPENING ARCHIVE / 07 — ENTER</span>
+  </div>
+</div>
+
+<a class="skip-link" href="#main">跳到主要内容</a>
+<div class="read-progress" id="read-progress" aria-hidden="true"></div>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="home.html" aria-label="算法同桌 · 返回首页">
+      <span class="brand__mark" aria-hidden="true">A/</span>
+      <span class="brand__text">
+        <span class="brand__cn">算法同桌</span>
+        <span class="brand__en">ALGORITHM DESKMATE</span>
+      </span>
+    </a>
+    <nav class="nav" id="site-nav" aria-label="主导航">
+      <div class="nav-group"><button class="nav-link nav-toggle" type="button" aria-expanded="false">研究<span class="caret">▾</span></button><div class="nav-pop"><a href="about.html"><span class="num">01</span>项目缘起</a><a href="method.html"><span class="num">02</span>研究协议</a><a href="map.html"><span class="num">03</span>使用星图</a><a href="log.html"><span class="num">12</span>30 天日志</a></div></div><div class="nav-group"><button class="nav-link nav-toggle" type="button" aria-expanded="false">数据<span class="caret">▾</span></button><div class="nav-pop"><a href="dashboard.html"><span class="num">04</span>样本仪表盘</a><a href="personas.html"><span class="num">05</span>五种AI同桌</a><a href="hallucination.html"><span class="num">14</span>幻觉博物馆</a></div></div><div class="nav-group"><button class="nav-link nav-toggle" type="button" aria-expanded="false">人物<span class="caret">▾</span></button><div class="nav-pop"><a href="voices.html"><span class="num">06</span>访谈索引</a><a href="interview-li.html"><span class="num">07</span>李同学：第二大脑</a><a href="interview-chen.html"><span class="num">08</span>陈同学：不使用的理由</a><a href="interview-zhou.html"><span class="num">09</span>周老师：备课边界</a><a href="interview-grandma.html"><span class="num">10</span>王奶奶：第一次对话</a><a href="roundtable.html"><span class="num">11</span>教师圆桌</a></div></div><div class="nav-group"><button class="nav-link nav-toggle" type="button" aria-expanded="false">实验<span class="caret">▾</span></button><div class="nav-pop"><a href="prompt.html"><span class="num">13</span>提问实验室</a><a href="factcheck.html"><span class="num">15</span>核查挑战</a><a href="offline.html"><span class="num">16</span>无AI日</a><a href="rules.html"><span class="num">17</span>诚信红绿灯</a></div></div><div class="nav-group"><button class="nav-link nav-toggle" type="button" aria-expanded="false">行动<span class="caret">▾</span></button><div class="nav-pop"><a href="community.html"><span class="num">18</span>社区数字课堂</a><a href="charter.html"><span class="num">19</span>班级公约</a><a href="future.html"><span class="num">20</span>2035 教室</a><a href="proposal.html"><span class="num">21</span>给学校的提案</a></div></div><div class="nav-group"><button class="nav-link nav-toggle" type="button" aria-expanded="false">档案<span class="caret">▾</span></button><div class="nav-pop"><a href="toolkit.html"><span class="num">22</span>田野工具箱</a><a href="resources.html"><span class="num">23</span>开放资源</a><a href="quiz.html"><span class="num">24</span>AI学习者测试</a><a href="guestbook.html"><span class="num">25</span>留言与共创</a><a href="credits.html"><span class="num">26</span>版权与致谢</a></div></div>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn search-open" type="button" data-search-open aria-label="搜索全站">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"></circle><path d="m16 16 4.5 4.5"></path></svg><span class="search-label mono">SEARCH</span><kbd>/</kbd>
+      </button>
+      <button class="icon-btn theme-btn" type="button" data-theme-toggle aria-label="切换深色 / 浅色主题">
+        <span class="theme-icon-lab"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 15.2A8 8 0 0 1 8.8 4 8.2 8.2 0 1 0 20 15.2Z"></path></svg></span>
+        <span class="theme-icon-paper"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg></span>
+      </button>
+      <button class="icon-btn menu-btn" type="button" data-menu-toggle aria-label="打开菜单" aria-expanded="false" aria-controls="site-nav"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h18M3 12h18M3 17h18"></path></svg></button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="hero">
+  <canvas id="signal-canvas" aria-hidden="true"></canvas>
+  <div class="container hero__inner">
+    <div class="hero__left">
+      <div class="hero__status">
+        <span><i class="status-dot"></i> OPEN FIELD STUDY / 2025—2026</span>
+        <span class="sep">/</span>
+        <span>SCHOOL × COMMUNITY</span>
+        <span class="sep">/</span>
+        <span>27 OPEN FILES</span>
+      </div>
+      <h1>
+        <span class="line"><span>算法</span></span>
+        <span class="line"><span class="outline">同桌</span><span class="accent">.</span></span>
+        <span class="line cn"><span>我们如何与 AI<br>一起学习？</span></span>
+      </h1>
+      <div class="hero__en">A DIGITAL FIELD REPORT ON LEARNING WITH AI</div>
+      <p class="hero__sub">AI 已经坐进了教室，甚至比同桌更早给出答案。我们花了一个学期，记录它如何改变<strong>提问、判断与信任</strong>，也记录那些它无法替代的部分。</p>
+      <div class="hero__actions">
+        <a class="btn btn--primary" href="about.html">进入研究 <span class="arrow">→</span></a>
+        <a class="btn" href="dashboard.html">先看数据 <span class="arrow">↗</span></a>
+      </div>
+      <div class="hero__meta">
+        <span>发起：第七排观察组</span>
+        <span>地点：校园 × 社区</span>
+        <span>方法：问卷 / 访谈 / 日志</span>
+        <span>版本 1.0</span>
+      </div>
+    </div>
+
+    <div class="console" aria-label="研究样本实时摘要">
+      <div class="console__bar">
+        <span class="left"><i class="status-dot"></i> SESSION 07 / LIVE NOTEBOOK</span>
+        <span class="console__lights"><i></i><i></i><i></i></span>
+      </div>
+      <div class="console__body">
+        <div class="console__scan"></div>
+        <div class="console__big">
+          <div class="num" data-count="61" data-suffix="%">61<small>%</small></div>
+          <div class="label">每周至少使用一次 AI<br>N = 312 / 演示样本</div>
+        </div>
+        <div class="console__label">使用频率 · 自我报告 · 2025.10</div>
+        <div class="console__chart" aria-hidden="true">
+          <i style="height:22%"></i><i style="height:35%"></i><i style="height:18%"></i><i style="height:41%"></i><i style="height:53%"></i><i style="height:30%"></i><i style="height:46%"></i><i style="height:61%"></i><i style="height:38%"></i><i style="height:52%"></i><i style="height:44%"></i><i style="height:70%"></i><i style="height:56%"></i><i style="height:43%"></i><i style="height:64%"></i><i style="height:50%"></i><i style="height:72%"></i><i style="height:39%"></i><i style="height:58%"></i><i style="height:48%"></i><i style="height:66%"></i><i style="height:55%"></i><i style="height:47%"></i><i style="height:75%"></i><i style="height:62%"></i><i style="height:41%"></i><i style="height:55%"></i><i style="height:68%"></i><i style="height:52%"></i><i style="height:46%"></i><i style="height:63%"></i><i style="height:74%"></i>
+        </div>
+        <div class="console__rows">
+          <div class="console__row"><span>TOP USE / 最常用</span><b>资料搜索 83%</b></div>
+          <div class="console__row"><span>TOP FEAR / 最担心</span><b>真假难辨 58%</b></div>
+          <div class="console__row"><span>BLIND SPOT / 未标注</span><b>47%</b></div>
+        </div>
+        <div class="console__terminal">
+          <div><span class="prompt">&gt;</span> 正在读取 30 天实验日志…</div>
+          <div><span class="prompt">&gt;</span> <span class="typed" id="hero-typed">一个会犯错、却从不说“我不确定”的同桌，可信吗？</span></div>
+        </div>
+        <div class="console__foot"><span>DEMO DATASET / REPLACEABLE</span><span>UPDATED 2026.11.12</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="hero__ticker" aria-label="项目摘要">
+    <div class="ticker-track"><span><b>研究范围</b> / 一所中学 × 一个社区</span><i></i><span><b>有效问卷</b> / 312 份</span><i></i><span><b>深度访谈</b> / 16 人</span><i></i><span><b>自我实验</b> / 30 天</span><i></i><span><b>社区课堂</b> / 14 位老人</span><i></i><span><b>当前状态</b> / 开放档案 / 持续修订</span><i></i><span><b>数据性质</b> / 演示样本</span><i></i><span><b>研究范围</b> / 一所中学 × 一个社区</span><i></i><span><b>有效问卷</b> / 312 份</span><i></i><span><b>深度访谈</b> / 16 人</span><i></i><span><b>自我实验</b> / 30 天</span><i></i><span><b>社区课堂</b> / 14 位老人</span><i></i><span><b>当前状态</b> / 开放档案 / 持续修订</span><i></i><span><b>数据性质</b> / 演示样本</span><i></i></div>
+  </div>
+</section>
+
+<section class="section section--line">
+  <div class="container">
+    <div class="manifesto">
+      <div class="reveal">
+        <div class="eyebrow">WHY THIS QUESTION / 为什么是这个问题</div>
+        <p class="manifesto__statement" style="margin-top:18px">AI 不是一个遥远的技术名词。它已经坐进了我们的教室，<span class="dim">甚至比同桌更早给出答案。</span></p>
+        <div class="manifesto__side">
+          <div><b>312</b><span>有效问卷 / SURVEY</span></div>
+          <div><b>16</b><span>深度访谈 / INTERVIEWS</span></div>
+          <div><b>30</b><span>连续日志 / DAYS</span></div>
+          <div><b>14</b><span>社区参与者 / ELDERS</span></div>
+        </div>
+      </div>
+      <div class="manifesto__body reveal" data-delay="1">
+        <p>这不是一份“AI 工具测评”，也不是一篇劝大家远离技术的告示。我们更想知道：当答案变得便宜，什么东西反而变得昂贵？当效率被不断放大，哪些学习过程仍然不能被跳过？</p>
+        <p>我们把镜头对准自己：在早读前问 AI 一道物理题，在作文卡住时让它给三个开头，在考试后让它分析错因；也在社区活动室里，看一位 68 岁的奶奶第一次听见“孙子”的声音从手机里借走一万块钱。</p>
+        <p>技术没有统一的答案。我们只交出一份可以复核、可以质疑、也可以继续改写的观察档案。</p>
+        <a class="link-arrow" href="about.html">阅读项目缘起</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--line">
+  <div class="container">
+    
+<div class="section-head reveal">
+  <div class="section-head__left">
+    <div class="eyebrow">THREE LINES OF INQUIRY / 三条线索</div>
+    <h2>我们不问“AI 好不好”，<br>只问它正在改变什么。</h2>
+    <p>从使用，到信任，再到边界。三个问题串起整份报告，也对应三种可以亲手操作的实验。</p>
+  </div>
+  <div class="section-head__aside">RESEARCH MAP<br>01—03</div>
+</div>
+
+    <div class="thread-grid">
+      <article class="thread-card reveal" data-index="01">
+        <div class="thread-card__top"><span class="chip chip--cyan">USE / 使用</span><span class="signal-mark">↗</span></div>
+        <h3>它替我们做了什么？<span class="en">WHAT DOES IT REPLACE?</span></h3>
+        <p>从资料搜索到写作润色，AI 已经进入六种学习场景。我们记录频率，也记录那些被悄悄省掉的思考步骤。</p>
+        <a class="link-arrow" href="map.html">打开使用星图</a>
+      </article>
+      <article class="thread-card reveal" data-index="02" data-delay="1">
+        <div class="thread-card__top"><span class="chip chip--orange">TRUST / 信任</span><span class="signal-mark">?</span></div>
+        <h3>流利就等于可信吗？<span class="en">FLUENT ≠ TRUE</span></h3>
+        <p>AI 可以伪造一条看起来无懈可击的文献。我们收集了 11 次被识破的“一本正经胡说八道”，把它们放进博物馆。</p>
+        <a class="link-arrow" href="hallucination.html">参观幻觉博物馆</a>
+      </article>
+      <article class="thread-card reveal" data-index="03" data-delay="2">
+        <div class="thread-card__top"><span class="chip chip--violet">BOUNDARY / 边界</span><span class="signal-mark">⌁</span></div>
+        <h3>哪些步骤不能外包？<span class="en">WHAT MUST STAY HUMAN?</span></h3>
+        <p>效率与成长并不总是同向。我们和老师、同学一起，把模糊的“能不能用”拆成可以讨论的具体情境。</p>
+        <a class="link-arrow" href="rules.html">查看诚信红绿灯</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section section--raise section--line">
+  <div class="container">
+    <div class="data-teaser">
+      <div class="data-teaser__big reveal">
+        <div class="data-teaser__number">83<small>%</small></div>
+        <p class="data-teaser__caption">把 AI 当作“资料搜索工具”的同学占比最高。但搜索之后，只有 39% 的人会主动回到原始来源核对。</p>
+        <div class="data-teaser__chart" aria-hidden="true">
+          <div class="teaser-bar"><span>资料搜索</span><i style="--w:83%"></i><b>83%</b></div>
+          <div class="teaser-bar"><span>概念解释</span><i style="--w:74%"></i><b>74%</b></div>
+          <div class="teaser-bar"><span>写作润色</span><i style="--w:57%"></i><b>57%</b></div>
+          <div class="teaser-bar"><span>直接要答案</span><i style="--w:33%"></i><b>33%</b></div>
+        </div>
+      </div>
+      <div class="data-teaser__copy reveal" data-delay="1">
+        <div class="eyebrow">DATA SNAPSHOT / 数据切片</div>
+        <h2>把感受，拆成可以核对的东西。</h2>
+        <p>“大家都在用 AI”是一句感受。它到底发生在哪些场景、由谁使用、使用后是否核查，才是可以被讨论的事实。这份仪表盘不是结论，而是一张提问的地图。</p>
+        <div class="data-teaser__points">
+          <div><span>01</span><p><b>使用很普遍，但使用方式差异很大。</b> 有人把它当苏格拉底式教练，有人把它当答案自动售货机。</p></div>
+          <div><span>02</span><p><b>信任与核查并不同步。</b> 51% 的同学“半信半疑”，却只有不到四成会寻找第二来源。</p></div>
+          <div><span>03</span><p><b>规则认知存在空白。</b> 只有 39% 的人表示清楚学校对 AI 使用的具体要求。</p></div>
+        </div>
+        <div class="row mt-3"><a class="btn" href="dashboard.html">查看完整仪表盘 <span class="arrow">→</span></a><span class="sim-note"><i class="status-dot status-dot--orange"></i> 演示数据，可替换</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--line">
+  <div class="container">
+    
+<div class="section-head reveal">
+  <div class="section-head__left">
+    <div class="eyebrow">VOICES / 四张面孔</div>
+    <h2>每个人都在和不同的 AI 说话。</h2>
+    <p>四段访谈不是四种立场，而是四种处境。一个“用得很深”的竞赛生，也可能在一个伪造公式前停下；一个拒绝使用的人，也在用纸笔守护某种学习感。</p>
+  </div>
+  <div class="section-head__aside">16 INTERVIEWS<br>4 FULL TRANSCRIPTS</div>
+</div>
+
+    <div class="voices-preview">
+      <a class="voice-mini reveal" href="interview-li.html">
+        
+<div class="signal-portrait signal-portrait--cyan signal-portrait--wide" aria-hidden="true">
+  <span class="sp-orbit"></span>
+  <div class="sp-bars"><i></i><i></i><i></i><i></i></div>
+  <span class="sp-initial">L</span>
+  <span class="sp-caption"><span>VOICE 01 </span><span> 高二 · 竞赛生</span></span>
+</div>
+        <div class="voice-mini__body">
+          <div class="voice-mini__type">STUDENT / 使用深度：高</div>
+          <h3>李同学：把 AI 当“第二大脑”</h3>
+          <p>“我不怕它错。我怕我不查。”</p>
+          <span class="link-arrow">阅读访谈</span>
+        </div>
+      </a>
+      <a class="voice-mini reveal" data-delay="1" href="interview-chen.html">
+        
+<div class="signal-portrait signal-portrait--orange signal-portrait--wide" aria-hidden="true">
+  <span class="sp-orbit"></span>
+  <div class="sp-bars"><i></i><i></i><i></i><i></i></div>
+  <span class="sp-initial">C</span>
+  <span class="sp-caption"><span>VOICE 02 </span><span> 高二 · 语文课代表</span></span>
+</div>
+        <div class="voice-mini__body">
+          <div class="voice-mini__type">STUDENT / 使用深度：零</div>
+          <h3>陈同学：不使用的理由</h3>
+          <p>“我只是想确认，这句话是不是我写的。”</p>
+          <span class="link-arrow">阅读访谈</span>
+        </div>
+      </a>
+      <a class="voice-mini reveal" data-delay="2" href="interview-grandma.html">
+        
+<div class="signal-portrait signal-portrait--signal signal-portrait--wide" aria-hidden="true">
+  <span class="sp-orbit"></span>
+  <div class="sp-bars"><i></i><i></i><i></i><i></i></div>
+  <span class="sp-initial">王</span>
+  <span class="sp-caption"><span>VOICE 04 </span><span> 68 岁 · 社区居民</span></span>
+</div>
+        <div class="voice-mini__body">
+          <div class="voice-mini__type">COMMUNITY / 第一次对话</div>
+          <h3>王奶奶：声音也会骗人吗？</h3>
+          <p>“先挂掉，再打回去。这个办法好。”</p>
+          <span class="link-arrow">阅读访谈</span>
+        </div>
+      </a>
+    </div>
+    <div class="row mt-4"><a class="link-arrow" href="voices.html">查看全部访谈与圆桌</a></div>
+  </div>
+</section>
+
+<section class="section section--line">
+  <div class="container">
+    <div class="terminal-demo reveal">
+      <div class="terminal-demo__head">
+        <span class="dots"><i></i><i></i><i></i></span>
+        <span>HALLUCINATION SPECIMEN / 馆藏 001</span>
+        <span>CONFIDENCE 96%</span>
+      </div>
+      <div class="terminal-demo__claim">
+        <span class="mono">AI 的回答 / 未经核实</span>
+        根据教育部 2024 年发布的《中小学人工智能使用管理办法》，中小学生每天使用 AI 的时间不得超过 15 分钟。
+      </div>
+      <div class="terminal-demo__meta">
+        <span>特征：文件名合理 / 数字具体 / 语气权威</span>
+        <span>问题：该文件并不存在</span>
+      </div>
+      <div class="terminal-demo__action">
+        <span class="mono dim">它听起来越像真的，我们越需要慢一点。</span>
+        <button class="btn btn--sm" type="button" data-reveal-target="home-claim-reveal">拆开展示 <span class="arrow">＋</span></button>
+      </div>
+      <div class="terminal-demo__reveal" id="home-claim-reveal">
+        <b>核查路径：</b>先找原始文件，再查发布机构与发布日期。结果：教育部官网无此文，所谓“每天 15 分钟”在多个 AI 回答中被反复复制，却无法追溯到任何官方来源。流利、具体和权威感，都不是事实本身。
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--tight section--line">
+  <div class="container">
+    <div class="action-band reveal">
+      <div>
+        <div class="eyebrow">FROM OBSERVATION TO ACTION / 从记录到行动</div>
+        <h2>如果答案变便宜，<br>我们要练习什么？</h2>
+        <p>我们把问卷里的发现带回班会，也带进社区活动室：一起写班级使用公约，教老人识别 AI 伪造的声音。研究不是旁观，它应该改变研究者自己。</p>
+        <div class="row">
+          <a class="btn btn--primary" href="community.html">进入社区课堂 <span class="arrow">→</span></a>
+          <a class="btn" href="charter.html">参与班级公约</a>
+        </div>
+      </div>
+      <div class="stat" style="border:1px solid var(--line);min-width:210px;background:var(--bg)">
+        <div class="stat__top"><span class="mono faint">FIELD ACTION</span><i class="status-dot"></i></div>
+        <div class="stat__value">14<small> 人</small></div>
+        <div class="stat__label">第一次社区数字课堂参与者。我们没有“教会所有人”，但留下了一套可以继续使用的判断步骤。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-brand__line"><span class="status-dot"></span><span class="mono">OPEN NOTEBOOK · 1.0.0</span></div>
+        <div class="footer-title">ALGORITHM<br>DESKMATE</div>
+        <p class="footer-desc">一份关于 AI、学习与人的数字田野报告。由三名高中生发起，在校园与社区之间完成。所有页面、图形与交互均由我们手写构建。</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h3>Explore / 浏览</h3>
+          <a href="about.html">项目缘起</a>
+          <a href="dashboard.html">样本仪表盘</a>
+          <a href="voices.html">人物访谈</a>
+          <a href="hallucination.html">幻觉博物馆</a>
+          <a href="toolkit.html">田野工具箱</a>
+        </div>
+        <div class="footer-col">
+          <h3>Participate / 参与</h3>
+          <a href="quiz.html">AI 学习者测试</a>
+          <a href="charter.html">签署班级公约</a>
+          <a href="guestbook.html">留言与共创</a>
+          <a href="resources.html">开放资源</a>
+          <a href="index.html">开屏动画</a>
+          <a href="credits.html">版权与致谢</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-giant" aria-hidden="true">A/ DESKMATE</div>
+    <div class="footer-bottom">
+      <span>© 2026 第七排观察组 · 内容与设计保留署名 · 数据为演示样本</span>
+      <span class="status"><i class="status-dot"></i> SYSTEM NOMINAL <span data-local-time>--:--:--</span></span>
+      <span>CC BY-NC-SA 4.0 · NO TRACKERS · NO COOKIES</span>
+    </div>
+  </div>
+</footer>
+<div class="toast-stack" id="toast-stack" aria-live="polite" aria-atomic="true"></div>
+
+
+<div class="search-overlay" id="search-overlay" role="dialog" aria-modal="true" aria-label="搜索全站">
+  <div class="search-panel">
+    <div class="search-bar">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"></circle><path d="m16 16 4.5 4.5"></path></svg>
+      <input id="search-input" type="search" placeholder="搜索页面、人物、概念…" autocomplete="off" spellcheck="false" aria-label="搜索关键词">
+      <span class="esc">ESC</span>
+    </div>
+    <div class="search-hint"><span>输入关键词即时检索</span><span>↑ ↓ 选择 · ENTER 打开</span></div>
+    <div class="search-results" id="search-results" role="listbox" aria-label="搜索结果"></div>
+    <div class="search-foot"><span>27 FILES INDEXED</span><span>尝试：AI · 依赖 · 幻觉 · 社区 · 公约</span></div>
+  </div>
+</div>
+<script src="assets/js/search-index.js"></script>
+<script src="assets/js/app.js" defer></script>
+<script src="assets/js/interactive.js" defer></script>
+</body>
+</html>

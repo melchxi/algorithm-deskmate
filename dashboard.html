@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="lab">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>样本仪表盘 · 算法同桌</title>
+<meta name="description" content="312 份问卷的使用数据：中学生用 AI 做什么、信多少、是否核查、规则是否清楚。可按年级切换查看，附方法说明。">
+<meta name="author" content="第七排观察组">
+<meta name="theme-color" content="#03070a">
+<meta property="og:title" content="样本仪表盘 · 算法同桌">
+<meta property="og:description" content="312 份问卷的使用数据：中学生用 AI 做什么、信多少、是否核查、规则是否清楚。可按年级切换查看，附方法说明。">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/img/og-cover.svg">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/pages.css">
+<link rel="stylesheet" href="assets/css/signal.css">
+<script>
+(function(){
+  document.documentElement.classList.add('js');
+  try {
+    var params = new URLSearchParams(window.location.search);
+    var q = params.get('theme');
+    var t = (q === 'paper' || q === 'lab') ? q : localStorage.getItem('adm-theme');
+    if (t === 'paper' || t === 'lab') document.documentElement.setAttribute('data-theme', t);
+    if (params.get('wipe') === '1') document.documentElement.classList.add('is-wiping');
+  } catch (e) {}
+})();
+</script>
+</head>
+<body data-page="dashboard">
+<div class="page-wipe" aria-hidden="true">
+  <div class="page-wipe__panel">
+    <span class="page-wipe__mark">A/</span>
+    <span class="page-wipe__meta">OPENING ARCHIVE / 07 — ENTER</span>
+  </div>
+</div>
+
+<a class="skip-link" href="#main">跳到主要内容</a>
+<div class="read-progress" id="read-progress" aria-hidden="true"></div>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="home.html" aria-label="算法同桌 · 返回首页">
+      <span class="brand__mark" aria-hidden="true">A/</span>
+      <span class="brand__text">
+        <span class="brand__cn">算法同桌</span>
+        <span class="brand__en">ALGORITHM DESKMATE</span>
+      </span>
+    </a>
+    <nav class="nav" id="site-nav" aria-label="主导航">
+      <div class="nav-group"><button class="nav-link nav-toggle" type="button" aria-expanded="false">研究<span class="caret">▾</span></button><div class="nav-pop"><a href="about.html"><span class="num">01</span>项目缘起</a><a href="method.html"><span class="num">02</span>研究协议</a><a href="map.html"><span class="num">03</span>使用星图</a><a href="log.html"><span class="num">12</span>30 天日志</a></div></div><div class="nav-group is-active"><button class="nav-link nav-toggle" type="button" aria-expanded="false">数据<span class="caret">▾</span></button><div class="nav-pop"><a href="dashboard.html" class="is-current" aria-current="page"><span class="num">04</span>样本仪表盘</a><a href="personas.html"><span class="num">05</span>五种AI同桌</a><a href="hallucination.html"><span class="num">14</span>幻觉博物馆</a></div></div><div class="nav-group"><button class="nav-link nav-toggle" type="button" aria-expanded="false">人物<span class="caret">▾</span></button><div class="nav-pop"><a href="voices.html"><span class="num">06</span>访谈索引</a><a href="interview-li.html"><span class="num">07</span>李同学：第二大脑</a><a href="interview-chen.html"><span class="num">08</span>陈同学：不使用的理由</a><a href="interview-zhou.html"><span class="num">09</span>周老师：备课边界</a><a href="interview-grandma.html"><span class="num">10</span>王奶奶：第一次对话</a><a href="roundtable.html"><span class="num">11</span>教师圆桌</a></div></div><div class="nav-group"><button class="nav-link nav-toggle" type="button" aria-expanded="false">实验<span class="caret">▾</span></button><div class="nav-pop"><a href="prompt.html"><span class="num">13</span>提问实验室</a><a href="factcheck.html"><span class="num">15</span>核查挑战</a><a href="offline.html"><span class="num">16</span>无AI日</a><a href="rules.html"><span class="num">17</span>诚信红绿灯</a></div></div><div class="nav-group"><button class="nav-link nav-toggle" type="button" aria-expanded="false">行动<span class="caret">▾</span></button><div class="nav-pop"><a href="community.html"><span class="num">18</span>社区数字课堂</a><a href="charter.html"><span class="num">19</span>班级公约</a><a href="future.html"><span class="num">20</span>2035 教室</a><a href="proposal.html"><span class="num">21</span>给学校的提案</a></div></div><div class="nav-group"><button class="nav-link nav-toggle" type="button" aria-expanded="false">档案<span class="caret">▾</span></button><div class="nav-pop"><a href="toolkit.html"><span class="num">22</span>田野工具箱</a><a href="resources.html"><span class="num">23</span>开放资源</a><a href="quiz.html"><span class="num">24</span>AI学习者测试</a><a href="guestbook.html"><span class="num">25</span>留言与共创</a><a href="credits.html"><span class="num">26</span>版权与致谢</a></div></div>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn search-open" type="button" data-search-open aria-label="搜索全站">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"></circle><path d="m16 16 4.5 4.5"></path></svg><span class="search-label mono">SEARCH</span><kbd>/</kbd>
+      </button>
+      <button class="icon-btn theme-btn" type="button" data-theme-toggle aria-label="切换深色 / 浅色主题">
+        <span class="theme-icon-lab"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 15.2A8 8 0 0 1 8.8 4 8.2 8.2 0 1 0 20 15.2Z"></path></svg></span>
+        <span class="theme-icon-paper"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg></span>
+      </button>
+      <button class="icon-btn menu-btn" type="button" data-menu-toggle aria-label="打开菜单" aria-expanded="false" aria-controls="site-nav"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h18M3 12h18M3 17h18"></path></svg></button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+
+<section class="page-head">
+  <div class="container">
+    <div class="page-head__top mono">
+      <div class="crumbs"><a href="home.html">INDEX</a><span>/</span><span>DATA</span><span>/</span><span>样本仪表盘</span></div>
+      <span class="file-tag">FILE <b>04</b> · 27 FILES</span>
+    </div>
+    <div class="page-head__body">
+      <div>
+        <div class="eyebrow">SAMPLE DASHBOARD / 04</div>
+        <h1>把“大家都在用”<br><span class="signal-stroke">变成一张图</span>。</h1>
+        <p class="page-head__lead">以下数据来自 312 份有效问卷。你可以切换年级，看不同群体的差异；但请不要把它们当作全国中学生的缩影。样本是便利抽样，结论只在“我们身边”成立。</p>
+      </div>
+      <div class="page-head__stamp" aria-hidden="true">
+        <b>04</b>
+        DATA<br>DEMO DATASET
+      </div>
+    </div>
+    <div class="page-head__meta"><span class="item">N = 312</span><span class="item">3 所中学 · 非概率抽样</span><span class="item">2025.10</span><span class="item">演示样本 / SIMULATED DATA</span></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="dash-toolbar reveal">
+      <div>
+        <div class="eyebrow">FILTER / 选择样本</div>
+        <div class="grade-switch mt-2" role="group" aria-label="按年级筛选">
+          <button type="button" data-grade="all" class="is-active">全体 <span>N=312</span></button>
+          <button type="button" data-grade="g1">高一 <span>N=104</span></button>
+          <button type="button" data-grade="g2">高二 <span>N=112</span></button>
+          <button type="button" data-grade="g3">高三 <span>N=96</span></button>
+        </div>
+      </div>
+      <div class="sim-note"><i class="status-dot status-dot--orange"></i> DEMO DATA / 可替换为真实调研</div>
+    </div>
+
+    <div class="stat-grid reveal">
+      <div class="stat"><div class="stat__top"><span class="mono faint">WEEKLY USE</span><span class="mono signal-text">61%</span></div><div class="stat__value" data-dash-stat="weekly">61<small>%</small></div><div class="stat__label">每周至少使用一次 AI</div></div>
+      <div class="stat"><div class="stat__top"><span class="mono faint">DAILY USE</span><span class="mono faint">23%</span></div><div class="stat__value" data-dash-stat="daily">23<small>%</small></div><div class="stat__label">每天使用 AI</div></div>
+      <div class="stat"><div class="stat__top"><span class="mono faint">KNOWN RULES</span><span class="mono faint">39%</span></div><div class="stat__value" data-dash-stat="rules">39<small>%</small></div><div class="stat__label">清楚学校对 AI 使用的规定</div></div>
+      <div class="stat"><div class="stat__top"><span class="mono faint">NOT DISCLOSED</span><span class="mono orange-text">47%</span></div><div class="stat__value" data-dash-stat="undisclosed">47<small>%</small></div><div class="stat__label">使用过 AI 但未主动标注</div></div>
+    </div>
+
+    <div class="dash-grid mt-3">
+      <div class="dash-card reveal">
+        <div class="panel-head"><span><b>USAGE / 使用目的</b> · 多选</span><span id="dash-scope-label">全体样本</span></div>
+        <div class="bar-list" id="purpose-bars" aria-live="polite">
+          <div class="bar-row"><span class="bar-row__label">资料搜索</span><span class="bar-track"><i class="bar-fill" style="width:83%"></i></span><span class="bar-row__value">83%</span></div>
+          <div class="bar-row"><span class="bar-row__label">概念理解</span><span class="bar-track"><i class="bar-fill" style="width:74%"></i></span><span class="bar-row__value">74%</span></div>
+          <div class="bar-row"><span class="bar-row__label">作业检查</span><span class="bar-track"><i class="bar-fill" style="width:61%"></i></span><span class="bar-row__value">61%</span></div>
+          <div class="bar-row"><span class="bar-row__label">写作润色</span><span class="bar-track"><i class="bar-fill" style="width:57%"></i></span><span class="bar-row__value">57%</span></div>
+          <div class="bar-row"><span class="bar-row__label">创意生成</span><span class="bar-track"><i class="bar-fill" style="width:48%"></i></span><span class="bar-row__value">48%</span></div>
+          <div class="bar-row"><span class="bar-row__label">直接生成答案</span><span class="bar-track"><i class="bar-fill" style="width:33%"></i></span><span class="bar-row__value">33%</span></div>
+          <div class="bar-row"><span class="bar-row__label">口语练习</span><span class="bar-track"><i class="bar-fill" style="width:22%"></i></span><span class="bar-row__value">22%</span></div>
+        </div>
+        <div class="dash-card__note"><b>READ:</b> 使用集中在“获取与整理”，而不是“创造与练习”。越靠近答案的终点，使用率越高。</div>
+      </div>
+
+      <div class="dash-card reveal" data-delay="1">
+        <div class="panel-head"><span><b>TRUST / 信任程度</b></span><span>1—5 分</span></div>
+        <div class="donut-wrap">
+          <div class="donut" id="trust-donut" aria-hidden="true">
+            <div class="donut__center"><b>51%</b><span>半信半疑</span></div>
+          </div>
+          <div class="legend" id="trust-legend">
+            <div class="legend-row"><span><i></i>完全信任</span><b>4%</b></div>
+            <div class="legend-row"><span><i></i>比较信任</span><b>27%</b></div>
+            <div class="legend-row"><span><i></i>半信半疑</span><b>51%</b></div>
+            <div class="legend-row"><span><i></i>不太信任</span><b>16%</b></div>
+            <div class="legend-row"><span><i></i>完全不信</span><b>2%</b></div>
+          </div>
+        </div>
+        <div class="dash-card__note"><b>READ:</b> 超过一半的人“半信半疑”。但信任不确定，并不自动带来核查行为。</div>
+      </div>
+
+      <div class="dash-card reveal">
+        <div class="panel-head"><span><b>FREQUENCY / 频率与核查</b></span><span>自我报告</span></div>
+        <div class="gauges" id="freq-gauges">
+          <div class="gauge"><div class="gauge__ring" style="--v:61"><b>61<small>%</small></b></div><div class="gauge__label">每周使用</div></div>
+          <div class="gauge"><div class="gauge__ring" style="--v:39"><b>39<small>%</small></b></div><div class="gauge__label">经常核对来源</div></div>
+          <div class="gauge"><div class="gauge__ring" style="--v:24"><b>24<small>%</small></b></div><div class="gauge__label">使用后会标注</div></div>
+        </div>
+        <div class="dash-card__note"><b>GAP:</b> 从“使用”到“核查”再到“公开标注”，每一步都在流失。</div>
+      </div>
+
+      <div class="dash-card reveal" data-delay="1">
+        <div class="panel-head"><span><b>BOUNDARY / 规则认知</b></span><span>可多选</span></div>
+        <div class="bar-list">
+          <div class="bar-row"><span class="bar-row__label">应标注 AI 参与</span><span class="bar-track"><i class="bar-fill" style="width:68%"></i></span><span class="bar-row__value">68%</span></div>
+          <div class="bar-row"><span class="bar-row__label">知道学校具体规定</span><span class="bar-track"><i class="bar-fill" style="width:39%"></i></span><span class="bar-row__value">39%</span></div>
+          <div class="bar-row"><span class="bar-row__label">用过 AI 写作文</span><span class="bar-track"><i class="bar-fill" style="width:44%"></i></span><span class="bar-row__value">44%</span></div>
+          <div class="bar-row"><span class="bar-row__label">认为“老师能看出来”</span><span class="bar-track"><i class="bar-fill" style="width:29%"></i></span><span class="bar-row__value">29%</span></div>
+        </div>
+        <div class="dash-card__note"><b>TENSION:</b> 多数人认同“应该标注”，但只有少数人清楚“具体怎么标”。规范停留在价值层面。</div>
+      </div>
+
+      <div class="dash-card dash-card--wide reveal">
+        <div class="dash-grid" style="grid-template-columns:1.1fr .9fr;gap:24px">
+          <div class="insight-box" id="dash-insight">
+            <div class="insight-box__label">AUTO READING / 当前筛选</div>
+            <p>全体样本中，<b>资料搜索（83%）</b>和<b>概念理解（74%）</b>是最常见的使用方式；但只有 <b>39%</b> 的同学会经常回到原始来源核对。使用率与核查率之间，存在一道明显的缝。</p>
+          </div>
+          <div>
+            <div class="panel-head" style="margin-bottom:8px"><span><b>GRADE COMPARISON / 年级差异</b></span><span>关键指标</span></div>
+            <div class="table-wrap" style="border:0">
+              <table class="data-table" style="min-width:0">
+                <thead><tr><th>群体</th><th>N</th><th>周使用</th><th>搜索</th><th>未标注</th><th>规则清楚</th></tr></thead>
+                <tbody><tr><td>高一</td><td class='num'>104</td><td class='num'>58%</td><td class='num'>81%</td><td class='num'>44%</td><td class='num'>36%</td></tr><tr><td>高二</td><td class='num'>112</td><td class='num'>64%</td><td class='num'>85%</td><td class='num'>50%</td><td class='num'>38%</td></tr><tr><td>高三</td><td class='num'>96</td><td class='num'>62%</td><td class='num'>82%</td><td class='num'>42%</td><td class='num'>44%</td></tr><tr><td>全体</td><td class='num'>312</td><td class='num'>61%</td><td class='num'>83%</td><td class='num'>47%</td><td class='num'>39%</td></tr></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="toolbar mt-3" style="padding-top:13px;border-top:1px solid var(--line)">
+          <span class="sim-note"><i class="status-dot status-dot--orange"></i> SIMULATED SAMPLE / 界面演示数据</span>
+          <a class="link-arrow" href="assets/downloads/survey-sample.csv" download>下载示例数据 CSV</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="note-strip mt-4 reveal"><b>READING RULE</b> 这是一份面向“身边”的描述性统计，不是因果研究。无法据此断言“AI 提高了 / 降低了成绩”。所有问题均为自我报告，可能受到记忆偏差与社会赞许偏差影响。完整限制见 <a href="method.html" class="text-link">研究协议</a>。</div>
+  </div>
+</section>
+
+<section class="section section--raise section--line">
+  <div class="container">
+    
+<div class="section-head reveal">
+  <div class="section-head__left">
+    <div class="eyebrow">BEFORE YOU INTERPRET / 读图之前</div>
+    <h2>三个容易误读的地方。</h2>
+    <p>一张图越好看，越容易被当成结论。我们把可能的误读提前写出来。</p>
+  </div>
+  <div class="section-head__aside">METHOD<br>NOTES</div>
+</div>
+
+    <div class="grid grid--3">
+      <article class="panel panel--pad reveal"><span class="mono signal-text">01 / 不是因果</span><h3 class="mt-2" style="font-size:17px">使用多，不等于依赖深。</h3><p class="dim mt-2" style="font-size:13px;line-height:1.9">高频使用者中，有人把它当“随叫随到的老师”，也有人只是频繁查询单词。频率只是一个维度。</p></article>
+      <article class="panel panel--pad reveal" data-delay="1"><span class="mono cyan-text">02 / 不是全部</span><h3 class="mt-2" style="font-size:17px">6% 的“从未使用”同样重要。</h3><p class="dim mt-2" style="font-size:13px;line-height:1.9">在一个几乎人人讨论 AI 的校园里，仍有同学主动选择不使用。他们的理由被单独记录在访谈中，而不是被平均掉。</p></article>
+      <article class="panel panel--pad reveal" data-delay="2"><span class="mono orange-text">03 / 不是中立</span><h3 class="mt-2" style="font-size:17px">问卷本身也在塑造答案。</h3><p class="dim mt-2" style="font-size:13px;line-height:1.9">我们在题目里使用“核查”“标注”等词，已经暗示了一种规范性期待。下一轮会把措辞改得更中性。</p></article>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-brand__line"><span class="status-dot"></span><span class="mono">OPEN NOTEBOOK · 1.0.0</span></div>
+        <div class="footer-title">ALGORITHM<br>DESKMATE</div>
+        <p class="footer-desc">一份关于 AI、学习与人的数字田野报告。由三名高中生发起，在校园与社区之间完成。所有页面、图形与交互均由我们手写构建。</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h3>Explore / 浏览</h3>
+          <a href="about.html">项目缘起</a>
+          <a href="dashboard.html">样本仪表盘</a>
+          <a href="voices.html">人物访谈</a>
+          <a href="hallucination.html">幻觉博物馆</a>
+          <a href="toolkit.html">田野工具箱</a>
+        </div>
+        <div class="footer-col">
+          <h3>Participate / 参与</h3>
+          <a href="quiz.html">AI 学习者测试</a>
+          <a href="charter.html">签署班级公约</a>
+          <a href="guestbook.html">留言与共创</a>
+          <a href="resources.html">开放资源</a>
+          <a href="index.html">开屏动画</a>
+          <a href="credits.html">版权与致谢</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-giant" aria-hidden="true">A/ DESKMATE</div>
+    <div class="footer-bottom">
+      <span>© 2026 第七排观察组 · 内容与设计保留署名 · 数据为演示样本</span>
+      <span class="status"><i class="status-dot"></i> SYSTEM NOMINAL <span data-local-time>--:--:--</span></span>
+      <span>CC BY-NC-SA 4.0 · NO TRACKERS · NO COOKIES</span>
+    </div>
+  </div>
+</footer>
+<div class="toast-stack" id="toast-stack" aria-live="polite" aria-atomic="true"></div>
+
+
+<div class="search-overlay" id="search-overlay" role="dialog" aria-modal="true" aria-label="搜索全站">
+  <div class="search-panel">
+    <div class="search-bar">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"></circle><path d="m16 16 4.5 4.5"></path></svg>
+      <input id="search-input" type="search" placeholder="搜索页面、人物、概念…" autocomplete="off" spellcheck="false" aria-label="搜索关键词">
+      <span class="esc">ESC</span>
+    </div>
+    <div class="search-hint"><span>输入关键词即时检索</span><span>↑ ↓ 选择 · ENTER 打开</span></div>
+    <div class="search-results" id="search-results" role="listbox" aria-label="搜索结果"></div>
+    <div class="search-foot"><span>27 FILES INDEXED</span><span>尝试：AI · 依赖 · 幻觉 · 社区 · 公约</span></div>
+  </div>
+</div>
+<script src="assets/js/search-index.js"></script>
+<script src="assets/js/app.js" defer></script>
+<script src="assets/js/interactive.js" defer></script>
+</body>
+</html>

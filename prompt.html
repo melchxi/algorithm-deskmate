@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="lab">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>提问实验室 · 算法同桌</title>
+<meta name="description" content="同一个问题，三种问法：看弱提示与强提示如何改变 AI 的回答，并用提示词生成器搭一个自己的学习提问。">
+<meta name="author" content="第七排观察组">
+<meta name="theme-color" content="#03070a">
+<meta property="og:title" content="提问实验室 · 算法同桌">
+<meta property="og:description" content="同一个问题，三种问法：看弱提示与强提示如何改变 AI 的回答，并用提示词生成器搭一个自己的学习提问。">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/img/og-cover.svg">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/pages.css">
+<link rel="stylesheet" href="assets/css/signal.css">
+<script>
+(function(){
+  document.documentElement.classList.add('js');
+  try {
+    var params = new URLSearchParams(window.location.search);
+    var q = params.get('theme');
+    var t = (q === 'paper' || q === 'lab') ? q : localStorage.getItem('adm-theme');
+    if (t === 'paper' || t === 'lab') document.documentElement.setAttribute('data-theme', t);
+    if (params.get('wipe') === '1') document.documentElement.classList.add('is-wiping');
+  } catch (e) {}
+})();
+</script>
+</head>
+<body data-page="prompt">
+<div class="page-wipe" aria-hidden="true">
+  <div class="page-wipe__panel">
+    <span class="page-wipe__mark">A/</span>
+    <span class="page-wipe__meta">OPENING ARCHIVE / 07 — ENTER</span>
+  </div>
+</div>
+
+<a class="skip-link" href="#main">跳到主要内容</a>
+<div class="read-progress" id="read-progress" aria-hidden="true"></div>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="home.html" aria-label="算法同桌 · 返回首页">
+      <span class="brand__mark" aria-hidden="true">A/</span>
+      <span class="brand__text">
+        <span class="brand__cn">算法同桌</span>
+        <span class="brand__en">ALGORITHM DESKMATE</span>
+      </span>
+    </a>
+    <nav class="nav" id="site-nav" aria-label="主导航">
+      <div class="nav-group"><button class="nav-link nav-toggle" type="button" aria-expanded="false">研究<span class="caret">▾</span></button><div class="nav-pop"><a href="about.html"><span class="num">01</span>项目缘起</a><a href="method.html"><span class="num">02</span>研究协议</a><a href="map.html"><span class="num">03</span>使用星图</a><a href="log.html"><span class="num">12</span>30 天日志</a></div></div><div class="nav-group"><button class="nav-link nav-toggle" type="button" aria-expanded="false">数据<span class="caret">▾</span></button><div class="nav-pop"><a href="dashboard.html"><span class="num">04</span>样本仪表盘</a><a href="personas.html"><span class="num">05</span>五种AI同桌</a><a href="hallucination.html"><span class="num">14</span>幻觉博物馆</a></div></div><div class="nav-group"><button class="nav-link nav-toggle" type="button" aria-expanded="false">人物<span class="caret">▾</span></button><div class="nav-pop"><a href="voices.html"><span class="num">06</span>访谈索引</a><a href="interview-li.html"><span class="num">07</span>李同学：第二大脑</a><a href="interview-chen.html"><span class="num">08</span>陈同学：不使用的理由</a><a href="interview-zhou.html"><span class="num">09</span>周老师：备课边界</a><a href="interview-grandma.html"><span class="num">10</span>王奶奶：第一次对话</a><a href="roundtable.html"><span class="num">11</span>教师圆桌</a></div></div><div class="nav-group is-active"><button class="nav-link nav-toggle" type="button" aria-expanded="false">实验<span class="caret">▾</span></button><div class="nav-pop"><a href="prompt.html" class="is-current" aria-current="page"><span class="num">13</span>提问实验室</a><a href="factcheck.html"><span class="num">15</span>核查挑战</a><a href="offline.html"><span class="num">16</span>无AI日</a><a href="rules.html"><span class="num">17</span>诚信红绿灯</a></div></div><div class="nav-group"><button class="nav-link nav-toggle" type="button" aria-expanded="false">行动<span class="caret">▾</span></button><div class="nav-pop"><a href="community.html"><span class="num">18</span>社区数字课堂</a><a href="charter.html"><span class="num">19</span>班级公约</a><a href="future.html"><span class="num">20</span>2035 教室</a><a href="proposal.html"><span class="num">21</span>给学校的提案</a></div></div><div class="nav-group"><button class="nav-link nav-toggle" type="button" aria-expanded="false">档案<span class="caret">▾</span></button><div class="nav-pop"><a href="toolkit.html"><span class="num">22</span>田野工具箱</a><a href="resources.html"><span class="num">23</span>开放资源</a><a href="quiz.html"><span class="num">24</span>AI学习者测试</a><a href="guestbook.html"><span class="num">25</span>留言与共创</a><a href="credits.html"><span class="num">26</span>版权与致谢</a></div></div>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn search-open" type="button" data-search-open aria-label="搜索全站">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"></circle><path d="m16 16 4.5 4.5"></path></svg><span class="search-label mono">SEARCH</span><kbd>/</kbd>
+      </button>
+      <button class="icon-btn theme-btn" type="button" data-theme-toggle aria-label="切换深色 / 浅色主题">
+        <span class="theme-icon-lab"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 15.2A8 8 0 0 1 8.8 4 8.2 8.2 0 1 0 20 15.2Z"></path></svg></span>
+        <span class="theme-icon-paper"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg></span>
+      </button>
+      <button class="icon-btn menu-btn" type="button" data-menu-toggle aria-label="打开菜单" aria-expanded="false" aria-controls="site-nav"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h18M3 12h18M3 17h18"></path></svg></button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+
+<section class="page-head">
+  <div class="container">
+    <div class="page-head__top mono">
+      <div class="crumbs"><a href="home.html">INDEX</a><span>/</span><span>LAB</span><span>/</span><span>提问实验室</span></div>
+      <span class="file-tag">FILE <b>13</b> · 27 FILES</span>
+    </div>
+    <div class="page-head__body">
+      <div>
+        <div class="eyebrow">PROMPT LAB / 13</div>
+        <h1>你怎样问，<br><span class="signal-stroke">决定它怎样答</span>。</h1>
+        <p class="page-head__lead">“帮我改作文”和“请指出我这篇作文里最弱的一处论证，不要重写，只问我三个问题”——这是两个完全不同的请求。提示词不是咒语，它是在告诉对方：你要扮演谁、做什么、不要做什么。</p>
+      </div>
+      <div class="page-head__stamp" aria-hidden="true">
+        <b>13</b>
+        LAB<br>BEFORE / AFTER
+      </div>
+    </div>
+    <div class="page-head__meta"><span class="item">3 个对照案例</span><span class="item">可复制提示词</span><span class="item">提示词生成器</span><span class="item">不保证输出质量，只改变协作方式</span></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="toolbar reveal">
+      <div class="eyebrow">CASE FILES / 选择案例</div>
+      <span class="mono faint">SAME MODEL, DIFFERENT ASK</span>
+    </div>
+    <div class="prompt-tabs reveal" role="tablist" aria-label="提示词案例">
+      <button type="button" class="is-active" data-prompt-case="history"><span>CASE 01 / HISTORY</span>历史题：为什么错？</button>
+      <button type="button" data-prompt-case="english"><span>CASE 02 / ENGLISH</span>英语作文：帮我改改</button>
+      <button type="button" data-prompt-case="rumor"><span>CASE 03 / COMMUNITY</span>这条消息是真的吗？</button>
+    </div>
+
+    <div class="prompt-compare reveal">
+      <div class="prompt-box prompt-box--weak">
+        <div class="prompt-box__head"><b>WEAK PROMPT / 弱提示</b><span>vague request</span></div>
+        <div class="prompt-box__text" id="prompt-weak">帮我分析这道历史题为什么错。</div>
+        <div class="prompt-box__foot"><span id="prompt-weak-note">问题：没有给材料、没有给答案，也没有说明“分析”要走到哪一步。</span><button class="copy-btn" type="button" data-copy-target="prompt-weak">复制</button></div>
+      </div>
+      <div class="prompt-arrow" aria-hidden="true">→</div>
+      <div class="prompt-box prompt-box--strong">
+        <div class="prompt-box__head"><b>STRONG PROMPT / 强提示</b><span>specific protocol</span></div>
+        <div class="prompt-box__text" id="prompt-strong">你是一位高中历史老师。下面是我对“辛亥革命”材料题的答案，请不要直接重写。先指出我答案中的一个史实错误和一个论证漏洞，然后每次只问我一个问题，引导我自己修改。最后用三行总结我的薄弱点。
+
+我的答案：
+[粘贴答案]
+
+材料：
+[粘贴材料]</div>
+        <div class="prompt-box__foot"><span id="prompt-strong-note">变化：明确角色、提供上下文、限制输出方式、把最终修改权留给自己。</span><button class="copy-btn" type="button" data-copy-target="prompt-strong">复制</button></div>
+      </div>
+    </div>
+    <div class="prompt-delta reveal" id="prompt-delta">
+      <div><b>WHAT CHANGED / 01</b><span>从“帮我判断”变成“帮我看见自己的判断”。</span></div>
+      <div><b>WHAT CHANGED / 02</b><span>AI 从答案生产器变成了追问者。</span></div>
+      <div><b>WHAT CHANGED / 03</b><span>仍然需要你核对史实与材料边界。</span></div>
+    </div>
+
+    <div class="note-strip mt-3 reveal"><b>NOT A MAGIC TRICK</b> 强提示不会消除幻觉，也不会保证更好的成绩。它只是让协作更具体，让你更容易发现输出中哪一部分需要检查。提示词的好坏，要看它是否帮助你保留了自己的判断。</div>
+
+    <div class="big-rule"></div>
+
+    
+<div class="section-head reveal">
+  <div class="section-head__left">
+    <div class="eyebrow">PROMPT BUILDER / 提示词生成器</div>
+    <h2>把“帮我一下”，拆成四个可回答的问题。</h2>
+    <p>选择角色、任务、限制和输出格式，生成一段可以直接修改的提示词。它是一张草稿，不是一条咒语。</p>
+  </div>
+  <div class="section-head__aside">TOOL / 01</div>
+</div>
+
+    <div class="prompt-builder reveal">
+      <div class="prompt-builder__form">
+        <div class="field"><label for="pb-role">01 / 让它扮演谁</label><select id="pb-role"><option value="严谨的学科教练">严谨的学科教练</option><option value="不断追问的苏格拉底式老师">苏格拉底式老师</option><option value="挑剔但友善的审稿人">挑剔的审稿人</option><option value="耐心的社区讲解员">社区讲解员</option></select></div>
+        <div class="field"><label for="pb-task">02 / 帮你做什么</label><select id="pb-task"><option value="分析我下面提交的答案">分析我的答案</option><option value="检查我论证中的逻辑漏洞">检查论证漏洞</option><option value="帮我生成三个不同角度的开头">生成三个开头</option><option value="判断一条信息中哪些内容需要核查">判断信息真伪</option></select></div>
+        <div class="field"><label for="pb-limit">03 / 不要做什么</label><select id="pb-limit"><option value="不要直接给出最终答案">不要直接给答案</option><option value="不要替我重写，只做标注和提问">不要替我重写</option><option value="不要假装知道没有来源的信息">不要编造来源</option><option value="不要使用超出我年级的术语">不要用超纲术语</option></select></div>
+        <div class="field"><label for="pb-format">04 / 输出成什么</label><select id="pb-format"><option value="先指出一个最关键的问题，再连续问我三个问题，最后用三行总结">问题 + 三个追问 + 总结</option><option value="用表格列出问题、证据与修改建议">三列表格</option><option value="先列出需要核查的三个点，再说明每一步怎么查">核查清单</option><option value="分别给出保守、平衡、大胆三个版本，并说明差异">三个版本对比</option></select></div>
+      </div>
+      <div class="prompt-builder__out">
+        <div class="panel-head"><span><b>GENERATED DRAFT</b> / 可编辑草稿</span><span id="pb-count">000 字</span></div>
+        <div class="prompt-builder__text" id="pb-output">你是一位严谨的学科教练。请分析我下面提交的答案。不要直接给出最终答案。先指出一个最关键的问题，再连续问我三个问题，最后用三行总结。
+
+我的问题 / 材料：
+[在这里补充]
+
+我目前的答案：
+[在这里粘贴]</div>
+        <div class="prompt-builder__foot"><span>修改后再使用 / 不要把隐私信息放进去</span><div class="row gap-sm"><button class="copy-btn" type="button" data-copy-target="pb-output">复制草稿</button></div></div>
+      </div>
+    </div>
+
+    <div class="principles reveal">
+      <div><b>01 / CONTEXT</b><h4>给上下文</h4><p>材料、年级、已有答案，越具体越不容易得到泛泛而谈。</p></div>
+      <div><b>02 / CONSTRAINT</b><h4>给限制</h4><p>告诉它不要做什么，往往比告诉它要做什么更有效。</p></div>
+      <div><b>03 / TRACE</b><h4>要过程</h4><p>要求暴露推理步骤，才有机会发现它在哪一步走偏。</p></div>
+      <div><b>04 / OWNERSHIP</b><h4>留决定权</h4><p>让它提问、给选项，但最后的判断与署名仍然属于你。</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--raise section--line">
+  <div class="container">
+    <div class="split">
+      <div class="prose reveal">
+        <div class="article-label">FIELD NOTE / 一次失败</div>
+        <h2 style="font-size:clamp(1.4rem,2.6vw,1.9rem)">我写了一段“完美提示词”，然后得到了一个更自信的错误。</h2>
+        <p>在设计这个实验室时，我用一段非常详细的提示词让 AI 解释一道物理题。我规定了角色、受众、步骤、语气，甚至要求它“标注每一步的依据”。它照做了，每一步都写得很清楚。</p>
+        <p>但它在一个关键公式的适用条件上错了。格式越完整，我越晚发现。那一刻我才明白：提示词能改善协作，但不能替代核查。它让错误变得更难被发现，有时甚至更危险。</p>
+        <p>所以这个页面没有“最佳提示词模板”。只有一组可以反复修改的动作：给上下文、设限制、要过程、自己核对。</p>
+      </div>
+      <div class="reveal" data-delay="1">
+        <div class="terminal-demo" style="padding:22px">
+          <div class="terminal-demo__head"><span class="dots"><i></i><i></i><i></i></span><span>LOG / 2025.10.30</span></div>
+          <div class="terminal-demo__claim" style="font-size:13px;padding:18px"><span class="mono">我的提示词</span>请严格按步骤解释，每一步都标注依据，不要省略任何推导。</div>
+          <div class="terminal-demo__reveal is-open" style="margin-top:14px"><b>结果：</b>回答结构完美，依据部分有一条伪造的定理名称。提示词没有让它更真实，只让它更有说服力。核查仍然发生在我这一侧。</div>
+        </div>
+        <div class="row mt-3"><a class="btn btn--sm" href="hallucination.html">去看幻觉博物馆 <span class="arrow">→</span></a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-brand__line"><span class="status-dot"></span><span class="mono">OPEN NOTEBOOK · 1.0.0</span></div>
+        <div class="footer-title">ALGORITHM<br>DESKMATE</div>
+        <p class="footer-desc">一份关于 AI、学习与人的数字田野报告。由三名高中生发起，在校园与社区之间完成。所有页面、图形与交互均由我们手写构建。</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h3>Explore / 浏览</h3>
+          <a href="about.html">项目缘起</a>
+          <a href="dashboard.html">样本仪表盘</a>
+          <a href="voices.html">人物访谈</a>
+          <a href="hallucination.html">幻觉博物馆</a>
+          <a href="toolkit.html">田野工具箱</a>
+        </div>
+        <div class="footer-col">
+          <h3>Participate / 参与</h3>
+          <a href="quiz.html">AI 学习者测试</a>
+          <a href="charter.html">签署班级公约</a>
+          <a href="guestbook.html">留言与共创</a>
+          <a href="resources.html">开放资源</a>
+          <a href="index.html">开屏动画</a>
+          <a href="credits.html">版权与致谢</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-giant" aria-hidden="true">A/ DESKMATE</div>
+    <div class="footer-bottom">
+      <span>© 2026 第七排观察组 · 内容与设计保留署名 · 数据为演示样本</span>
+      <span class="status"><i class="status-dot"></i> SYSTEM NOMINAL <span data-local-time>--:--:--</span></span>
+      <span>CC BY-NC-SA 4.0 · NO TRACKERS · NO COOKIES</span>
+    </div>
+  </div>
+</footer>
+<div class="toast-stack" id="toast-stack" aria-live="polite" aria-atomic="true"></div>
+
+
+<div class="search-overlay" id="search-overlay" role="dialog" aria-modal="true" aria-label="搜索全站">
+  <div class="search-panel">
+    <div class="search-bar">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"></circle><path d="m16 16 4.5 4.5"></path></svg>
+      <input id="search-input" type="search" placeholder="搜索页面、人物、概念…" autocomplete="off" spellcheck="false" aria-label="搜索关键词">
+      <span class="esc">ESC</span>
+    </div>
+    <div class="search-hint"><span>输入关键词即时检索</span><span>↑ ↓ 选择 · ENTER 打开</span></div>
+    <div class="search-results" id="search-results" role="listbox" aria-label="搜索结果"></div>
+    <div class="search-foot"><span>27 FILES INDEXED</span><span>尝试：AI · 依赖 · 幻觉 · 社区 · 公约</span></div>
+  </div>
+</div>
+<script src="assets/js/search-index.js"></script>
+<script src="assets/js/app.js" defer></script>
+<script src="assets/js/interactive.js" defer></script>
+</body>
+</html>

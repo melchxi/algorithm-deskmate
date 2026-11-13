@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="lab">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>版权与致谢 · 算法同桌</title>
+<meta name="description" content="《算法同桌》的项目信息、数据说明、版权许可、无障碍声明和建设记录。">
+<meta name="author" content="第七排观察组">
+<meta name="theme-color" content="#03070a">
+<meta property="og:title" content="版权与致谢 · 算法同桌">
+<meta property="og:description" content="《算法同桌》的项目信息、数据说明、版权许可、无障碍声明和建设记录。">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/img/og-cover.svg">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/pages.css">
+<link rel="stylesheet" href="assets/css/signal.css">
+<script>
+(function(){
+  document.documentElement.classList.add('js');
+  try {
+    var params = new URLSearchParams(window.location.search);
+    var q = params.get('theme');
+    var t = (q === 'paper' || q === 'lab') ? q : localStorage.getItem('adm-theme');
+    if (t === 'paper' || t === 'lab') document.documentElement.setAttribute('data-theme', t);
+    if (params.get('wipe') === '1') document.documentElement.classList.add('is-wiping');
+  } catch (e) {}
+})();
+</script>
+</head>
+<body data-page="credits">
+<div class="page-wipe" aria-hidden="true">
+  <div class="page-wipe__panel">
+    <span class="page-wipe__mark">A/</span>
+    <span class="page-wipe__meta">OPENING ARCHIVE / 07 — ENTER</span>
+  </div>
+</div>
+
+<a class="skip-link" href="#main">跳到主要内容</a>
+<div class="read-progress" id="read-progress" aria-hidden="true"></div>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="home.html" aria-label="算法同桌 · 返回首页">
+      <span class="brand__mark" aria-hidden="true">A/</span>
+      <span class="brand__text">
+        <span class="brand__cn">算法同桌</span>
+        <span class="brand__en">ALGORITHM DESKMATE</span>
+      </span>
+    </a>
+    <nav class="nav" id="site-nav" aria-label="主导航">
+      <div class="nav-group"><button class="nav-link nav-toggle" type="button" aria-expanded="false">研究<span class="caret">▾</span></button><div class="nav-pop"><a href="about.html"><span class="num">01</span>项目缘起</a><a href="method.html"><span class="num">02</span>研究协议</a><a href="map.html"><span class="num">03</span>使用星图</a><a href="log.html"><span class="num">12</span>30 天日志</a></div></div><div class="nav-group"><button class="nav-link nav-toggle" type="button" aria-expanded="false">数据<span class="caret">▾</span></button><div class="nav-pop"><a href="dashboard.html"><span class="num">04</span>样本仪表盘</a><a href="personas.html"><span class="num">05</span>五种AI同桌</a><a href="hallucination.html"><span class="num">14</span>幻觉博物馆</a></div></div><div class="nav-group"><button class="nav-link nav-toggle" type="button" aria-expanded="false">人物<span class="caret">▾</span></button><div class="nav-pop"><a href="voices.html"><span class="num">06</span>访谈索引</a><a href="interview-li.html"><span class="num">07</span>李同学：第二大脑</a><a href="interview-chen.html"><span class="num">08</span>陈同学：不使用的理由</a><a href="interview-zhou.html"><span class="num">09</span>周老师：备课边界</a><a href="interview-grandma.html"><span class="num">10</span>王奶奶：第一次对话</a><a href="roundtable.html"><span class="num">11</span>教师圆桌</a></div></div><div class="nav-group"><button class="nav-link nav-toggle" type="button" aria-expanded="false">实验<span class="caret">▾</span></button><div class="nav-pop"><a href="prompt.html"><span class="num">13</span>提问实验室</a><a href="factcheck.html"><span class="num">15</span>核查挑战</a><a href="offline.html"><span class="num">16</span>无AI日</a><a href="rules.html"><span class="num">17</span>诚信红绿灯</a></div></div><div class="nav-group"><button class="nav-link nav-toggle" type="button" aria-expanded="false">行动<span class="caret">▾</span></button><div class="nav-pop"><a href="community.html"><span class="num">18</span>社区数字课堂</a><a href="charter.html"><span class="num">19</span>班级公约</a><a href="future.html"><span class="num">20</span>2035 教室</a><a href="proposal.html"><span class="num">21</span>给学校的提案</a></div></div><div class="nav-group is-active"><button class="nav-link nav-toggle" type="button" aria-expanded="false">档案<span class="caret">▾</span></button><div class="nav-pop"><a href="toolkit.html"><span class="num">22</span>田野工具箱</a><a href="resources.html"><span class="num">23</span>开放资源</a><a href="quiz.html"><span class="num">24</span>AI学习者测试</a><a href="guestbook.html"><span class="num">25</span>留言与共创</a><a href="credits.html" class="is-current" aria-current="page"><span class="num">26</span>版权与致谢</a></div></div>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn search-open" type="button" data-search-open aria-label="搜索全站">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"></circle><path d="m16 16 4.5 4.5"></path></svg><span class="search-label mono">SEARCH</span><kbd>/</kbd>
+      </button>
+      <button class="icon-btn theme-btn" type="button" data-theme-toggle aria-label="切换深色 / 浅色主题">
+        <span class="theme-icon-lab"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 15.2A8 8 0 0 1 8.8 4 8.2 8.2 0 1 0 20 15.2Z"></path></svg></span>
+        <span class="theme-icon-paper"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg></span>
+      </button>
+      <button class="icon-btn menu-btn" type="button" data-menu-toggle aria-label="打开菜单" aria-expanded="false" aria-controls="site-nav"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h18M3 12h18M3 17h18"></path></svg></button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+
+<section class="page-head">
+  <div class="container">
+    <div class="page-head__top mono">
+      <div class="crumbs"><a href="home.html">INDEX</a><span>/</span><span>ARCHIVE</span><span>/</span><span>版权与致谢</span></div>
+      <span class="file-tag">FILE <b>26</b> · 27 FILES</span>
+    </div>
+    <div class="page-head__body">
+      <div>
+        <div class="eyebrow">COLOPHON / 26</div>
+        <h1>把话说清楚，<br><span class="signal-stroke">也是一种尊重</span>。</h1>
+        <p class="page-head__lead">这一页说明这份作品是谁做的、数据从哪里来、哪些内容为演示而构造、哪些资源可以继续使用。我们尽量不让读者在不知情的情况下相信一份虚构的样本。</p>
+      </div>
+      <div class="page-head__stamp" aria-hidden="true">
+        <b>26</b>
+        ARCHIVE<br>WHO / HOW / WHAT
+      </div>
+    </div>
+    <div class="page-head__meta"><span class="item">版本 v1.0</span><span class="item">最后更新 2026.11.12</span><span class="item">开放许可 CC BY-NC-SA 4.0</span><span class="item">无第三方追踪</span></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="stat-grid reveal">
+      <div class="stat"><div class="stat__top"><span class="mono faint">PAGES</span><span class="status-dot"></span></div><div class="stat__value">27<small> 页</small></div><div class="stat__label">包含首页、档案、互动与 404</div></div>
+      <div class="stat"><div class="stat__top"><span class="mono faint">DEPENDENCIES</span><span class="status-dot status-dot--cyan"></span></div><div class="stat__value">00<small> 库</small></div><div class="stat__label">纯 HTML / CSS / 原生 JavaScript</div></div>
+      <div class="stat"><div class="stat__top"><span class="mono faint">TRACKERS</span><span class="status-dot status-dot--orange"></span></div><div class="stat__value">00<small> 个</small></div><div class="stat__label">无统计脚本、无广告、无 Cookie</div></div>
+      <div class="stat"><div class="stat__top"><span class="mono faint">EXTERNAL IMAGES</span><span class="status-dot"></span></div><div class="stat__value">00<small> 张</small></div><div class="stat__label">全部图形由 CSS / SVG 生成</div></div>
+    </div>
+
+    <div class="credit-grid mt-5">
+      <div class="credit-block reveal">
+        <h3>Project / 项目</h3>
+        <p><b>《算法同桌》</b><br>ALGORITHM DESKMATE<br>一份关于 AI、学习与人的数字田野报告。</p>
+        <p class="mt-2"><b>发起与制作：</b>第七排观察组<br><b>项目周期：</b>2025.09—2026.11.12<br><b>地点：</b>某市 · 校园与南园社区<br><b>版本：</b>v1.0</p>
+        <p class="mt-2" style="font-size:12px;color:var(--faint)">“第七排观察组”为作品署名，非真实机构。请在上传或提交前替换为你的真实姓名 / 小组名称。</p>
+      </div>
+      <div class="credit-block reveal" data-delay="1">
+        <h3>Data / 数据说明</h3>
+        <p><b>重要：本作品中的数据为构造样本。</b></p>
+        <p class="mt-2">问卷比例、使用频率、访谈引语、30 天日志条目与社区前后测数据，均为展示网页结构与交互而设计，并非真实调研结果。人物均为化名，部分情节为典型化处理。</p>
+        <p class="mt-2">方法框架、伦理清单与工具箱可以直接复用。替换为真实数据前，请先取得受访者同意，并删除所有可识别信息。</p>
+      </div>
+      <div class="credit-block reveal">
+        <h3>Visual / 视觉</h3>
+        <p>全站未使用外部图片。数据图形、抽象声音肖像、星图、图标与纹理均由 CSS、内联 SVG 和 Canvas 生成。</p>
+        <p class="mt-2"><b>字体：</b>使用系统字体（MiSans / 苹方 / 微软雅黑 / Bahnschrift / 等宽字体），不加载外部字体文件。</p>
+        <p class="mt-2"><b>配色：</b>深空墨、信号青、荧光黄绿与警示橙。</p>
+      </div>
+      <div class="credit-block reveal" data-delay="1">
+        <h3>References / 参考与致谢</h3>
+        <p>感谢 16 位接受访谈的同学、老师、家长与社区居民，以及 312 位问卷填写者。感谢英语、数学与信息技术教研组提供的讨论空间。</p>
+        <p class="mt-2">方法上受 UNESCO AI 素养框架、OECD 教育研究、参与式行动研究与批判性数据素养的启发。完整阅读清单见 <a class="text-link" href="resources.html">开放资源</a>。</p>
+        <p class="mt-2" style="font-size:12px;color:var(--faint)">以上致谢同样属于演示文本，人物与机构为化名。</p>
+      </div>
+      <div class="credit-block reveal">
+        <h3>License / 许可</h3>
+        <p>本站原创文字、图形与代码采用 <b>CC BY-NC-SA 4.0</b> 许可：允许非商业性复制、改编与分享，需署名并以相同方式共享。</p>
+        <p class="mt-2"><a class="text-link" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans" target="_blank" rel="noopener noreferrer">查看许可协议全文 ↗</a></p>
+        <p class="mt-2">引用本作品建议使用：第七排观察组.《算法同桌：我们如何与 AI 一起学习》. 2026. 网页作品。</p>
+        <span class="license-mark mt-2">CC BY-NC-SA 4.0</span>
+      </div>
+      <div class="credit-block reveal" data-delay="1">
+        <h3>Tech &amp; Accessibility / 技术与无障碍</h3>
+        <p>纯静态网站，无框架、无构建依赖、无后端。全站可在本地打开；留言与测试结果只保存在浏览器中。</p>
+        <p class="mt-2">支持键盘导航、可见焦点、减少动态效果偏好、语义化标题与 ARIA 标签。正文在 1024px 及以上屏幕保持双栏阅读，移动端自动单栏。</p>
+        <p class="mt-2"><b>建议浏览环境：</b>Chrome / Edge / Safari 最新版；1024 × 768 及以上。</p>
+      </div>
+    </div>
+
+    <div class="mt-5 reveal">
+      
+<div class="section-head reveal">
+  <div class="section-head__left">
+    <div class="eyebrow">CHANGELOG / 建设记录</div>
+    <h2>一份作品也有自己的修改痕迹。</h2>
+    <p>我们保留版本变化，因为它记录了判断如何改变。</p>
+  </div>
+  <div class="section-head__aside">VERSION 1.0</div>
+</div>
+
+      <ul class="changelog">
+        <li><span>2026.11.12</span><div>完成开屏动画与全站「信号青」视觉改版，发布 v1.0。</div></li>
+        <li><span>2026.03</span><div>完成第一版 27 页静态网站、互动实验、工具箱与无障碍检查，进入视觉改版阶段。</div></li>
+        <li><span>2026.02</span><div>重写“教师圆桌”，保留三位教师之间的分歧，删除过早的共识总结。</div></li>
+        <li><span>2026.01</span><div>将“AI 使用测评”改为“位置测试”，移除“AI 依赖指数”等可能被误用的分数。</div></li>
+        <li><span>2025.12</span><div>社区课堂部分增加“失败记录”：一次工作坊无法改变长期信息习惯。</div></li>
+        <li><span>2025.11</span><div>完成 30 天日志与 16 次访谈；第一次公开分享，收到“结论太乐观”的批评。</div></li>
+        <li><span>2025.09</span><div>项目启动。最初的问题只有一句：“大家到底在用 AI 做什么？”</div></li>
+      </ul>
+    </div>
+
+    <div class="note-strip mt-5"><b>FOR TEACHERS &amp; EVALUATORS</b> 本作品是可直接运行的网页设计样片，适合作为“AI 素养 / 数字公民 / 研究性学习”主题的课程模板。数据与人物为演示内容，替换说明见随附 README。请勿将演示样本当作真实统计引用。</div>
+
+    <div class="row mt-4"><a class="btn" href="home.html">返回首页 <span class="arrow">→</span></a><a class="link-arrow" href="toolkit.html">下载开放模板</a></div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-brand__line"><span class="status-dot"></span><span class="mono">OPEN NOTEBOOK · 1.0.0</span></div>
+        <div class="footer-title">ALGORITHM<br>DESKMATE</div>
+        <p class="footer-desc">一份关于 AI、学习与人的数字田野报告。由三名高中生发起，在校园与社区之间完成。所有页面、图形与交互均由我们手写构建。</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h3>Explore / 浏览</h3>
+          <a href="about.html">项目缘起</a>
+          <a href="dashboard.html">样本仪表盘</a>
+          <a href="voices.html">人物访谈</a>
+          <a href="hallucination.html">幻觉博物馆</a>
+          <a href="toolkit.html">田野工具箱</a>
+        </div>
+        <div class="footer-col">
+          <h3>Participate / 参与</h3>
+          <a href="quiz.html">AI 学习者测试</a>
+          <a href="charter.html">签署班级公约</a>
+          <a href="guestbook.html">留言与共创</a>
+          <a href="resources.html">开放资源</a>
+          <a href="index.html">开屏动画</a>
+          <a href="credits.html">版权与致谢</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-giant" aria-hidden="true">A/ DESKMATE</div>
+    <div class="footer-bottom">
+      <span>© 2026 第七排观察组 · 内容与设计保留署名 · 数据为演示样本</span>
+      <span class="status"><i class="status-dot"></i> SYSTEM NOMINAL <span data-local-time>--:--:--</span></span>
+      <span>CC BY-NC-SA 4.0 · NO TRACKERS · NO COOKIES</span>
+    </div>
+  </div>
+</footer>
+<div class="toast-stack" id="toast-stack" aria-live="polite" aria-atomic="true"></div>
+
+
+<div class="search-overlay" id="search-overlay" role="dialog" aria-modal="true" aria-label="搜索全站">
+  <div class="search-panel">
+    <div class="search-bar">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"></circle><path d="m16 16 4.5 4.5"></path></svg>
+      <input id="search-input" type="search" placeholder="搜索页面、人物、概念…" autocomplete="off" spellcheck="false" aria-label="搜索关键词">
+      <span class="esc">ESC</span>
+    </div>
+    <div class="search-hint"><span>输入关键词即时检索</span><span>↑ ↓ 选择 · ENTER 打开</span></div>
+    <div class="search-results" id="search-results" role="listbox" aria-label="搜索结果"></div>
+    <div class="search-foot"><span>27 FILES INDEXED</span><span>尝试：AI · 依赖 · 幻觉 · 社区 · 公约</span></div>
+  </div>
+</div>
+<script src="assets/js/search-index.js"></script>
+<script src="assets/js/app.js" defer></script>
+<script src="assets/js/interactive.js" defer></script>
+</body>
+</html>

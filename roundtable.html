@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="lab">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>教师圆桌 · 算法同桌</title>
+<meta name="description" content="同一所学校，三种课堂边界：英语老师、数学老师与信息技术老师谈 AI 的使用、检测与评价。分歧被完整保留。">
+<meta name="author" content="第七排观察组">
+<meta name="theme-color" content="#03070a">
+<meta property="og:title" content="教师圆桌 · 算法同桌">
+<meta property="og:description" content="同一所学校，三种课堂边界：英语老师、数学老师与信息技术老师谈 AI 的使用、检测与评价。分歧被完整保留。">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/img/og-cover.svg">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/pages.css">
+<link rel="stylesheet" href="assets/css/signal.css">
+<script>
+(function(){
+  document.documentElement.classList.add('js');
+  try {
+    var params = new URLSearchParams(window.location.search);
+    var q = params.get('theme');
+    var t = (q === 'paper' || q === 'lab') ? q : localStorage.getItem('adm-theme');
+    if (t === 'paper' || t === 'lab') document.documentElement.setAttribute('data-theme', t);
+    if (params.get('wipe') === '1') document.documentElement.classList.add('is-wiping');
+  } catch (e) {}
+})();
+</script>
+</head>
+<body data-page="roundtable">
+<div class="page-wipe" aria-hidden="true">
+  <div class="page-wipe__panel">
+    <span class="page-wipe__mark">A/</span>
+    <span class="page-wipe__meta">OPENING ARCHIVE / 07 — ENTER</span>
+  </div>
+</div>
+
+<a class="skip-link" href="#main">跳到主要内容</a>
+<div class="read-progress" id="read-progress" aria-hidden="true"></div>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="home.html" aria-label="算法同桌 · 返回首页">
+      <span class="brand__mark" aria-hidden="true">A/</span>
+      <span class="brand__text">
+        <span class="brand__cn">算法同桌</span>
+        <span class="brand__en">ALGORITHM DESKMATE</span>
+      </span>
+    </a>
+    <nav class="nav" id="site-nav" aria-label="主导航">
+      <div class="nav-group"><button class="nav-link nav-toggle" type="button" aria-expanded="false">研究<span class="caret">▾</span></button><div class="nav-pop"><a href="about.html"><span class="num">01</span>项目缘起</a><a href="method.html"><span class="num">02</span>研究协议</a><a href="map.html"><span class="num">03</span>使用星图</a><a href="log.html"><span class="num">12</span>30 天日志</a></div></div><div class="nav-group"><button class="nav-link nav-toggle" type="button" aria-expanded="false">数据<span class="caret">▾</span></button><div class="nav-pop"><a href="dashboard.html"><span class="num">04</span>样本仪表盘</a><a href="personas.html"><span class="num">05</span>五种AI同桌</a><a href="hallucination.html"><span class="num">14</span>幻觉博物馆</a></div></div><div class="nav-group is-active"><button class="nav-link nav-toggle" type="button" aria-expanded="false">人物<span class="caret">▾</span></button><div class="nav-pop"><a href="voices.html"><span class="num">06</span>访谈索引</a><a href="interview-li.html"><span class="num">07</span>李同学：第二大脑</a><a href="interview-chen.html"><span class="num">08</span>陈同学：不使用的理由</a><a href="interview-zhou.html"><span class="num">09</span>周老师：备课边界</a><a href="interview-grandma.html"><span class="num">10</span>王奶奶：第一次对话</a><a href="roundtable.html" class="is-current" aria-current="page"><span class="num">11</span>教师圆桌</a></div></div><div class="nav-group"><button class="nav-link nav-toggle" type="button" aria-expanded="false">实验<span class="caret">▾</span></button><div class="nav-pop"><a href="prompt.html"><span class="num">13</span>提问实验室</a><a href="factcheck.html"><span class="num">15</span>核查挑战</a><a href="offline.html"><span class="num">16</span>无AI日</a><a href="rules.html"><span class="num">17</span>诚信红绿灯</a></div></div><div class="nav-group"><button class="nav-link nav-toggle" type="button" aria-expanded="false">行动<span class="caret">▾</span></button><div class="nav-pop"><a href="community.html"><span class="num">18</span>社区数字课堂</a><a href="charter.html"><span class="num">19</span>班级公约</a><a href="future.html"><span class="num">20</span>2035 教室</a><a href="proposal.html"><span class="num">21</span>给学校的提案</a></div></div><div class="nav-group"><button class="nav-link nav-toggle" type="button" aria-expanded="false">档案<span class="caret">▾</span></button><div class="nav-pop"><a href="toolkit.html"><span class="num">22</span>田野工具箱</a><a href="resources.html"><span class="num">23</span>开放资源</a><a href="quiz.html"><span class="num">24</span>AI学习者测试</a><a href="guestbook.html"><span class="num">25</span>留言与共创</a><a href="credits.html"><span class="num">26</span>版权与致谢</a></div></div>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn search-open" type="button" data-search-open aria-label="搜索全站">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"></circle><path d="m16 16 4.5 4.5"></path></svg><span class="search-label mono">SEARCH</span><kbd>/</kbd>
+      </button>
+      <button class="icon-btn theme-btn" type="button" data-theme-toggle aria-label="切换深色 / 浅色主题">
+        <span class="theme-icon-lab"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 15.2A8 8 0 0 1 8.8 4 8.2 8.2 0 1 0 20 15.2Z"></path></svg></span>
+        <span class="theme-icon-paper"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg></span>
+      </button>
+      <button class="icon-btn menu-btn" type="button" data-menu-toggle aria-label="打开菜单" aria-expanded="false" aria-controls="site-nav"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h18M3 12h18M3 17h18"></path></svg></button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+
+<section class="page-head">
+  <div class="container">
+    <div class="page-head__top mono">
+      <div class="crumbs"><a href="home.html">INDEX</a><span>/</span><span>VOICES</span><span>/</span><span>教师圆桌</span></div>
+      <span class="file-tag">FILE <b>11</b> · 27 FILES</span>
+    </div>
+    <div class="page-head__body">
+      <div>
+        <div class="eyebrow">ROUNDTABLE / 11</div>
+        <h1>三条不同的线，<br><span class="signal-stroke">没有标准答案</span>。</h1>
+        <p class="page-head__lead">我们邀请三位老师坐在同一张桌子前，不是为了让她们达成共识，而是为了看见：在同一所学校里，“AI 可以怎么用”其实有不止一种答案。</p>
+      </div>
+      <div class="page-head__stamp" aria-hidden="true">
+        <b>11</b>
+        VOICES<br>THREE LINES
+      </div>
+    </div>
+    <div class="page-head__meta"><span class="item">3 位教师 · 68 分钟</span><span class="item">英语 / 数学 / 信息技术</span><span class="item">分歧保留</span><span class="item">2025.11.07</span></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="roundtable-tabs reveal" role="tablist" aria-label="教师发言">
+      <button type="button" class="is-active" data-tab="t1" role="tab" aria-selected="true" aria-controls="panel-t1"><span>01 / ENGLISH</span>周老师 · 英语</button>
+      <button type="button" data-tab="t2" role="tab" aria-selected="false" aria-controls="panel-t2"><span>02 / MATH</span>何老师 · 数学</button>
+      <button type="button" data-tab="t3" role="tab" aria-selected="false" aria-controls="panel-t3"><span>03 / IT</span>赵老师 · 信息技术</button>
+    </div>
+
+    <div class="roundtable-panel is-active reveal" id="panel-t1" role="tabpanel">
+      <div class="roundtable-panel__head">
+        <div><h3>周老师：把过程留下来，比结果更重要。</h3><p>高二英语 · 教龄 6 年 · 每周约 4 次使用 AI 备课</p></div>
+        <span class="chip chip--violet">允许，但需可解释</span>
+      </div>
+      <div class="roundtable-panel__body">
+        <div class="prose">
+          <p>“我不反对学生用 AI 做头脑风暴和语言检查。我反对的是，他们交上来的东西，自己都说不清楚。”周老师的课堂要求是：可以生成，可以修改，但要能解释修改的理由。</p>
+          <p>她试过 AI 批改，最终停用。不是因为准确率低，而是因为评语过于通用。“它给每个学生写的评语都很像。学生需要的是‘你上次这里也错了’，不是‘论证可以更充分’。”</p>
+          <p>她承认检测工具不可靠。“如果一篇作文没有明显的 AI 味，就不能仅凭感觉判罚。与其抓，不如把任务设计成必须展示过程。”</p>
+        </div>
+        <div class="roundtable-notes">
+          <div class="mini-quote">“学生可以说不清楚一个单词，但不能说不清楚自己为什么改了这一句。”<cite>周老师</cite></div>
+          <div class="mini-quote">“AI 可以帮我写评语，但不能替我认识这个学生。”<cite>周老师</cite></div>
+          <div class="note-strip"><b>CLASS RULE</b> 允许用 AI 生成初稿，提交时附一条 50 字以上的修改说明。</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="roundtable-panel reveal" id="panel-t2" role="tabpanel">
+      <div class="roundtable-panel__head">
+        <div><h3>何老师：过程不能省，尤其是数学。</h3><p>高二数学 · 教龄 14 年 · 不要求学生使用 AI</p></div>
+        <span class="chip chip--orange">限制，关注过程</span>
+      </div>
+      <div class="roundtable-panel__body">
+        <div class="prose">
+          <p>“数学不是看答案，是看答案怎么来的。”何老师的要求很直接：作业必须保留推导过程，答案对但过程缺失，最多给一半分。他并不认为 AI 是作弊工具，但他担心学生把“看懂解答”误认为“会做”。</p>
+          <p>他曾在课堂上做过一次对比：同一道立体几何题，一组看 AI 的完整解答，一组只看一个提示。三天后的测验中，第二组的迁移题得分更高。“AI 的解答太完整，完整到没有留下让你自己补的空。”</p>
+          <p>他不反对学生用 AI 检查答案，但要求先独立完成。“如果一开始就打开它，你连自己哪里不会都不知道。”</p>
+        </div>
+        <div class="roundtable-notes">
+          <div class="mini-quote">“答案是可以搜到的，思考的过程不能。”<cite>何老师</cite></div>
+          <div class="mini-quote">“我不需要知道你有没有用 AI。我只需要看你能不能把过程讲明白。”<cite>何老师</cite></div>
+          <div class="note-strip"><b>CLASS RULE</b> 作业保留推导；用 AI 检查后，用红笔标出“我原来错在哪一步”。</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="roundtable-panel reveal" id="panel-t3" role="tabpanel">
+      <div class="roundtable-panel__head">
+        <div><h3>赵老师：把它当黑箱，才有必要拆开。</h3><p>信息技术 · 教龄 9 年 · 把 AI 作为课程内容</p></div>
+        <span class="chip chip--cyan">理解，强调机制</span>
+      </div>
+      <div class="roundtable-panel__body">
+        <div class="prose">
+          <p>“学生不需要会训练大模型，但需要知道它是怎么出错的。”赵老师的课不讲“怎么用提示词拿高分”，而是让学生用同一个问题反复测试，记录回答差异，再讨论为什么同一条信息会被说得不一样。</p>
+          <p>她认为，真正的数字素养包括三件事：知道系统如何工作、知道它可能在哪儿失败、知道出了问题时该找谁。“很多学生以为 AI 是一个全知全能的搜索框。你让他看到它连简单的计数都可能出错，他才会开始怀疑。”</p>
+          <p>她支持在课堂里公开讨论使用边界，而不是把 AI 当作禁忌。“越是不让说，越容易转入地下。公开讨论，至少能让规则变得可讨论。”</p>
+        </div>
+        <div class="roundtable-notes">
+          <div class="mini-quote">“不要先教怎么用，先教它会在哪里坏。”<cite>赵老师</cite></div>
+          <div class="mini-quote">“数字素养不是会用多少工具，是遇到不确定时知道怎么办。”<cite>赵老师</cite></div>
+          <div class="note-strip"><b>CLASS RULE</b> 每个小组保留一份“错误日志”，记录 AI 出错的具体位置与核查路径。</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="consensus-grid">
+      <div class="consensus-box reveal">
+        <h4>Consensus / 他们同意的事</h4>
+        <ul>
+          <li>AI 检测工具不能作为处罚的唯一依据。</li>
+          <li>“能解释自己的修改”比“是否使用”更重要。</li>
+          <li>学校需要一份清楚、可讨论的使用说明。</li>
+          <li>越靠近表达与思考的核心任务，越需要过程证据。</li>
+        </ul>
+      </div>
+      <div class="consensus-box reveal" data-delay="1">
+        <h4>Disagreement / 他们仍有分歧</h4>
+        <ul>
+          <li>课堂任务是应该“主动设计 AI 参与”，还是尽量不使用？</li>
+          <li>“过程分”会不会加重学生负担，甚至制造新的形式主义？</li>
+          <li>在评价制度不改变的情况下，个别课堂的规则能走多远？</li>
+          <li>数字素养应该由信息技术课承担，还是所有学科共同承担？</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="note-strip mt-4 reveal"><b>METHOD NOTE</b> 圆桌采用半结构讨论，时长 68 分钟。三位教师事先阅读了彼此的访谈摘要。本文按主题整理，保留了主要分歧；标题与部分语句经过可读性调整，未经观点合并。</div>
+
+    <div class="action-band mt-4 reveal">
+      <div><div class="eyebrow">NEXT / 从讨论到规则</div><h2 style="font-size:clamp(1.5rem,2.8vw,2.1rem)">如果规则必须由我们共同写。</h2><p>我们把圆桌里的分歧带回班级，用具体情境替代抽象争论，起草了八条可以修订的公约。</p></div>
+      <a class="btn btn--primary" href="charter.html">查看班级公约 <span class="arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-brand__line"><span class="status-dot"></span><span class="mono">OPEN NOTEBOOK · 1.0.0</span></div>
+        <div class="footer-title">ALGORITHM<br>DESKMATE</div>
+        <p class="footer-desc">一份关于 AI、学习与人的数字田野报告。由三名高中生发起，在校园与社区之间完成。所有页面、图形与交互均由我们手写构建。</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h3>Explore / 浏览</h3>
+          <a href="about.html">项目缘起</a>
+          <a href="dashboard.html">样本仪表盘</a>
+          <a href="voices.html">人物访谈</a>
+          <a href="hallucination.html">幻觉博物馆</a>
+          <a href="toolkit.html">田野工具箱</a>
+        </div>
+        <div class="footer-col">
+          <h3>Participate / 参与</h3>
+          <a href="quiz.html">AI 学习者测试</a>
+          <a href="charter.html">签署班级公约</a>
+          <a href="guestbook.html">留言与共创</a>
+          <a href="resources.html">开放资源</a>
+          <a href="index.html">开屏动画</a>
+          <a href="credits.html">版权与致谢</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-giant" aria-hidden="true">A/ DESKMATE</div>
+    <div class="footer-bottom">
+      <span>© 2026 第七排观察组 · 内容与设计保留署名 · 数据为演示样本</span>
+      <span class="status"><i class="status-dot"></i> SYSTEM NOMINAL <span data-local-time>--:--:--</span></span>
+      <span>CC BY-NC-SA 4.0 · NO TRACKERS · NO COOKIES</span>
+    </div>
+  </div>
+</footer>
+<div class="toast-stack" id="toast-stack" aria-live="polite" aria-atomic="true"></div>
+
+
+<div class="search-overlay" id="search-overlay" role="dialog" aria-modal="true" aria-label="搜索全站">
+  <div class="search-panel">
+    <div class="search-bar">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"></circle><path d="m16 16 4.5 4.5"></path></svg>
+      <input id="search-input" type="search" placeholder="搜索页面、人物、概念…" autocomplete="off" spellcheck="false" aria-label="搜索关键词">
+      <span class="esc">ESC</span>
+    </div>
+    <div class="search-hint"><span>输入关键词即时检索</span><span>↑ ↓ 选择 · ENTER 打开</span></div>
+    <div class="search-results" id="search-results" role="listbox" aria-label="搜索结果"></div>
+    <div class="search-foot"><span>27 FILES INDEXED</span><span>尝试：AI · 依赖 · 幻觉 · 社区 · 公约</span></div>
+  </div>
+</div>
+<script src="assets/js/search-index.js"></script>
+<script src="assets/js/app.js" defer></script>
+<script src="assets/js/interactive.js" defer></script>
+</body>
+</html>

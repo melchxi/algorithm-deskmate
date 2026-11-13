@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M60 0H0V60" fill="none" stroke="#e9f8f9" stroke-opacity=".08"/>
+    </pattern>
+    <radialGradient id="glow" cx="78%" cy="35%" r="55%">
+      <stop offset="0%" stop-color="#a8f7ff" stop-opacity=".18"/>
+      <stop offset="100%" stop-color="#a8f7ff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="14%" cy="84%" r="45%">
+      <stop offset="0%" stop-color="#4be6ff" stop-opacity=".13"/>
+      <stop offset="100%" stop-color="#4be6ff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="#03070a"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <rect width="1200" height="630" fill="url(#glow2)"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <g fill="none" stroke="#e9f8f9" stroke-opacity=".16">
+    <circle cx="890" cy="300" r="145"/>
+    <circle cx="890" cy="300" r="210" stroke-dasharray="4 8"/>
+    <circle cx="890" cy="300" r="285" stroke-opacity=".08"/>
+  </g>
+  <g fill="#a8f7ff" opacity=".55">
+    <circle cx="1010" cy="175" r="4"/><circle cx="780" cy="245" r="3"/><circle cx="930" cy="430" r="3"/>
+  </g>
+  <text x="72" y="116" font-family="Consolas, monospace" font-size="14" fill="#91a09f" letter-spacing="4">ALGORITHM DESKMATE / FIELD REPORT</text>
+  <text x="66" y="290" font-family="Microsoft YaHei, PingFang SC, sans-serif" font-size="132" font-weight="800" fill="#e9f8f9" letter-spacing="-8">算法</text>
+  <text x="66" y="408" font-family="Microsoft YaHei, PingFang SC, sans-serif" font-size="132" font-weight="800" fill="none" stroke="#e9f8f9" stroke-width="2" letter-spacing="-8">同桌</text>
+  <text x="346" y="408" font-family="Bahnschrift, Arial, sans-serif" font-size="132" font-weight="800" fill="#4be6ff">.</text>
+  <text x="74" y="486" font-family="Microsoft YaHei, PingFang SC, sans-serif" font-size="24" fill="#91a09f">我们如何与 AI 一起学习？ 一份来自校园与社区的数字田野报告</text>
+  <text x="74" y="558" font-family="Consolas, monospace" font-size="13" fill="#4be6ff" letter-spacing="2">27 OPEN FILES  /  312 SURVEY  /  16 INTERVIEWS  /  30 DAYS</text>
+  <g transform="translate(860,255)">
+    <circle cx="0" cy="0" r="86" fill="#0d141e" stroke="#4be6ff" stroke-opacity=".75"/>
+    <text x="0" y="-6" text-anchor="middle" font-family="Bahnschrift, Arial" font-size="58" font-weight="700" fill="#4be6ff">A/</text>
+    <text x="0" y="30" text-anchor="middle" font-family="Consolas, monospace" font-size="10" fill="#91a09f" letter-spacing="2">DESK 07</text>
+    <text x="0" y="46" text-anchor="middle" font-family="Consolas, monospace" font-size="9" fill="#5b696b">N = 312</text>
+  </g>
+</svg>

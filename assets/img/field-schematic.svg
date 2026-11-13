@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 700" width="1600" height="700">
+  <g fill="none" stroke="#a8f1fa" stroke-width="1" stroke-opacity=".27">
+    <path d="M0 104H1600M0 588H1600M0 632H1600"/>
+    <path d="M126 0V700M312 0V700M1422 0V700M1512 0V700"/>
+    <path d="M0 70H192M0 84H124M1440 664H1600M1502 648H1600"/>
+    <path d="M586 106H1188V182H1390V300H1540"/>
+    <path d="M486 554H760V510H1090V566H1300"/>
+    <path d="M720 0V92H772V0M968 700V598H1020V700"/>
+    <circle cx="350" cy="330" r="76"/>
+    <circle cx="350" cy="330" r="136" stroke-dasharray="2 12"/>
+    <circle cx="350" cy="330" r="228" stroke-opacity=".12"/>
+    <path d="M94 330H606M350 88V572M203 183L497 477M497 183L203 477" opacity=".5"/>
+    <rect x="260" y="240" width="180" height="180" stroke-opacity=".2"/>
+    <circle cx="350" cy="330" r="5"/>
+    <path d="M660 264l38 0-19-32zM716 264l38 0-19-32z"/>
+    <circle cx="1080" cy="330" r="92" stroke-dasharray="4 7"/>
+    <circle cx="1080" cy="330" r="160" stroke-opacity=".18"/>
+    <circle cx="1080" cy="330" r="262" stroke-opacity=".1"/>
+    <path d="M888 330H1280M1080 150V510" opacity=".45"/>
+    <circle cx="1080" cy="330" r="4"/>
+    <rect x="1180" y="430" width="184" height="40" opacity=".4"/>
+    <path d="M1180 450H1334M1180 461H1270" opacity=".45"/>
+    <rect x="1300" y="120" width="54" height="54"/>
+    <path d="M1312 132l30 30M1342 132l-30 30" opacity=".5"/>
+    <path d="M1348 240h96M1348 258h66M1348 276h110M1348 294h38"/>
+    <path d="M72 496H246M72 508H184"/>
+    <path d="M0 276l24-20M0 300l44-36M0 324l64-52M0 348l84-70"/>
+    <path d="M1464 508l30 30M1494 508l30 30M1524 508l30 30M1554 508l30 30"/>
+    <path d="M1040 74h12v12h-12zM1062 74h12v12h-12zM1084 74h12v12h-12zM1106 74h12v12h-12z"/>
+    <path d="M600 456v28M620 456v28M640 456v28M660 456v28M680 456v28M700 456v28"/>
+    <path d="M1280 610v28M1300 610v28M1320 610v28M1340 610v28M1360 610v28"/>
+    <path d="M720 330h44v44h-44z" stroke-opacity=".2"/>
+  </g>
+  <g fill="none" stroke="#6fe8f8" stroke-width="1" stroke-opacity=".42">
+    <circle cx="1080" cy="330" r="4"/>
+    <path d="M912 176v28M928 176v18M944 176v18"/>
+    <path d="M170 166h64M170 180h34"/>
+    <path d="M580 500h26v26h-26z"/>
+    <path d="M1240 330h16"/>
+  </g>
+  <g fill="#b9f7ff" fill-opacity=".4" font-family="Consolas, monospace" font-size="11" letter-spacing="1">
+    <text x="72" y="48">FIG. 07 / SIGNAL FIELD</text>
+    <text x="1220" y="86">AXIS / A—07</text>
+    <text x="486" y="590">NOTEBOOK / DATA LAYER</text>
+    <text x="1160" y="326">LOCK 03</text>
+    <text x="68" y="640">X : 03.817 / Y : 11.902</text>
+    <text x="1360" y="640">NO SIGNAL LOST</text>
+    <text x="606" y="216">FIELD STUDY / 2025—2026</text>
+    <text x="888" y="470" fill-opacity=".28">TRACE / 07</text>
+  </g>
+</svg>

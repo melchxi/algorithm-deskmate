@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="lab">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>李同学：第二大脑 · 算法同桌</title>
+<meta name="description" content="一个把 AI 用到极致的竞赛生，如何避免被它带着走？关于第二大脑、伪造公式和“核查是一种习惯”的访谈。">
+<meta name="author" content="第七排观察组">
+<meta name="theme-color" content="#03070a">
+<meta property="og:title" content="李同学：第二大脑 · 算法同桌">
+<meta property="og:description" content="一个把 AI 用到极致的竞赛生，如何避免被它带着走？关于第二大脑、伪造公式和“核查是一种习惯”的访谈。">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/img/og-cover.svg">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/pages.css">
+<link rel="stylesheet" href="assets/css/signal.css">
+<script>
+(function(){
+  document.documentElement.classList.add('js');
+  try {
+    var params = new URLSearchParams(window.location.search);
+    var q = params.get('theme');
+    var t = (q === 'paper' || q === 'lab') ? q : localStorage.getItem('adm-theme');
+    if (t === 'paper' || t === 'lab') document.documentElement.setAttribute('data-theme', t);
+    if (params.get('wipe') === '1') document.documentElement.classList.add('is-wiping');
+  } catch (e) {}
+})();
+</script>
+</head>
+<body data-page="interview-li">
+<div class="page-wipe" aria-hidden="true">
+  <div class="page-wipe__panel">
+    <span class="page-wipe__mark">A/</span>
+    <span class="page-wipe__meta">OPENING ARCHIVE / 07 — ENTER</span>
+  </div>
+</div>
+
+<a class="skip-link" href="#main">跳到主要内容</a>
+<div class="read-progress" id="read-progress" aria-hidden="true"></div>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="home.html" aria-label="算法同桌 · 返回首页">
+      <span class="brand__mark" aria-hidden="true">A/</span>
+      <span class="brand__text">
+        <span class="brand__cn">算法同桌</span>
+        <span class="brand__en">ALGORITHM DESKMATE</span>
+      </span>
+    </a>
+    <nav class="nav" id="site-nav" aria-label="主导航">
+      <div class="nav-group"><button class="nav-link nav-toggle" type="button" aria-expanded="false">研究<span class="caret">▾</span></button><div class="nav-pop"><a href="about.html"><span class="num">01</span>项目缘起</a><a href="method.html"><span class="num">02</span>研究协议</a><a href="map.html"><span class="num">03</span>使用星图</a><a href="log.html"><span class="num">12</span>30 天日志</a></div></div><div class="nav-group"><button class="nav-link nav-toggle" type="button" aria-expanded="false">数据<span class="caret">▾</span></button><div class="nav-pop"><a href="dashboard.html"><span class="num">04</span>样本仪表盘</a><a href="personas.html"><span class="num">05</span>五种AI同桌</a><a href="hallucination.html"><span class="num">14</span>幻觉博物馆</a></div></div><div class="nav-group is-active"><button class="nav-link nav-toggle" type="button" aria-expanded="false">人物<span class="caret">▾</span></button><div class="nav-pop"><a href="voices.html"><span class="num">06</span>访谈索引</a><a href="interview-li.html" class="is-current" aria-current="page"><span class="num">07</span>李同学：第二大脑</a><a href="interview-chen.html"><span class="num">08</span>陈同学：不使用的理由</a><a href="interview-zhou.html"><span class="num">09</span>周老师：备课边界</a><a href="interview-grandma.html"><span class="num">10</span>王奶奶：第一次对话</a><a href="roundtable.html"><span class="num">11</span>教师圆桌</a></div></div><div class="nav-group"><button class="nav-link nav-toggle" type="button" aria-expanded="false">实验<span class="caret">▾</span></button><div class="nav-pop"><a href="prompt.html"><span class="num">13</span>提问实验室</a><a href="factcheck.html"><span class="num">15</span>核查挑战</a><a href="offline.html"><span class="num">16</span>无AI日</a><a href="rules.html"><span class="num">17</span>诚信红绿灯</a></div></div><div class="nav-group"><button class="nav-link nav-toggle" type="button" aria-expanded="false">行动<span class="caret">▾</span></button><div class="nav-pop"><a href="community.html"><span class="num">18</span>社区数字课堂</a><a href="charter.html"><span class="num">19</span>班级公约</a><a href="future.html"><span class="num">20</span>2035 教室</a><a href="proposal.html"><span class="num">21</span>给学校的提案</a></div></div><div class="nav-group"><button class="nav-link nav-toggle" type="button" aria-expanded="false">档案<span class="caret">▾</span></button><div class="nav-pop"><a href="toolkit.html"><span class="num">22</span>田野工具箱</a><a href="resources.html"><span class="num">23</span>开放资源</a><a href="quiz.html"><span class="num">24</span>AI学习者测试</a><a href="guestbook.html"><span class="num">25</span>留言与共创</a><a href="credits.html"><span class="num">26</span>版权与致谢</a></div></div>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn search-open" type="button" data-search-open aria-label="搜索全站">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"></circle><path d="m16 16 4.5 4.5"></path></svg><span class="search-label mono">SEARCH</span><kbd>/</kbd>
+      </button>
+      <button class="icon-btn theme-btn" type="button" data-theme-toggle aria-label="切换深色 / 浅色主题">
+        <span class="theme-icon-lab"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 15.2A8 8 0 0 1 8.8 4 8.2 8.2 0 1 0 20 15.2Z"></path></svg></span>
+        <span class="theme-icon-paper"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg></span>
+      </button>
+      <button class="icon-btn menu-btn" type="button" data-menu-toggle aria-label="打开菜单" aria-expanded="false" aria-controls="site-nav"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h18M3 12h18M3 17h18"></path></svg></button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+
+<section class="page-head">
+  <div class="container">
+    <div class="page-head__top mono">
+      <div class="crumbs"><a href="home.html">INDEX</a><span>/</span><span>VOICES</span><span>/</span><span>李同学</span></div>
+      <span class="file-tag">FILE <b>07</b> · 27 FILES</span>
+    </div>
+    <div class="page-head__body">
+      <div>
+        <div class="eyebrow">INTERVIEW 01 / 07</div>
+        <h1>“第二大脑”<br><span class="signal-stroke">也需要体检</span>。</h1>
+        <p class="page-head__lead">李同学的同桌说他“像随身带了一个老师”。他确实用得多，但真正让他与众不同的，不是问了多少，而是每次停下来核查的那几秒。</p>
+      </div>
+      <div class="page-head__stamp" aria-hidden="true">
+        <b>07</b>
+        VOICES<br>THE SECOND BRAIN
+      </div>
+    </div>
+    <div class="page-head__meta"><span class="item">访谈时长 34 分钟</span><span class="item">地点：学校图书馆</span><span class="item">录音整理 + 二次确认</span><span class="item">人物为化名</span></div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="container article-layout">
+    <article class="prose reveal">
+      <div class="interview-kicker"><span class="status-dot"></span> INTERVIEW 01 / STUDENT <b>·</b> 使用深度：高</div>
+      <p class="interview-lead">李同学的手机里有一个命名为“难题”的文件夹，里面是 68 张截图：每张都是他问 AI 的一道题，以及后来自己补上的错误标注。他说这不是错题本，是“AI 的体检报告”。</p>
+      
+<div class="reading-meta-strip">
+  <span>INTERVIEW <b>01</b></span>
+  <span>时长 <b>34 MIN</b></span>
+  <span>记录 <b>2025.10.21</b></span>
+  <span>地点 <b>学校图书馆</b></span>
+  <span>引语经受访者确认</span>
+</div>
+
+      <div class="voice-strip"><span>REC</span><div class="waveform" aria-hidden="true"><i style="height:11px"></i><i style="height:12px"></i><i style="height:14px"></i><i style="height:16px"></i><i style="height:14px"></i><i style="height:9px"></i><i style="height:10px"></i><i style="height:24px"></i><i style="height:26px"></i><i style="height:20px"></i><i style="height:22px"></i><i style="height:8px"></i><i style="height:28px"></i><i style="height:30px"></i><i style="height:17px"></i><i style="height:18px"></i><i style="height:11px"></i><i style="height:12px"></i><i style="height:14px"></i><i style="height:16px"></i><i style="height:14px"></i><i style="height:9px"></i><i style="height:10px"></i><i style="height:24px"></i><i style="height:26px"></i><i style="height:20px"></i><i style="height:22px"></i><i style="height:8px"></i><i style="height:28px"></i><i style="height:30px"></i><i style="height:17px"></i><i style="height:18px"></i><i style="height:11px"></i><i style="height:12px"></i><i style="height:14px"></i><i style="height:16px"></i><i style="height:14px"></i><i style="height:9px"></i><i style="height:10px"></i><i style="height:24px"></i><i style="height:26px"></i><i style="height:20px"></i></div><span>00:34:18</span></div>
+
+      <p>我们约在午休。他带着一本翻旧了的物理竞赛书和一台屏幕有裂痕的手机。刚坐下，他就先问：“你们会写我用 AI 的事吗？我妈觉得我是在偷懒。”</p>
+      <p>这个担心并不奇怪。在他的描述里，AI 最初确实是“偷懒”的工具：不会的题直接拍照上传，等一个完整解答；作文卡住时，让它给三个开头；英语阅读看不懂，整段翻译。转折发生在高一下学期的一次模拟考——他在一道电磁学题上写了一个“看起来很高级”的公式，结果被老师指出根本不存在。</p>
+      <p>“那是我第一次意识到，它不是在骗我，它只是不知道自己在编。”他说。</p>
+
+      <div class="interview-section-label">01 / 一天里的四次提问</div>
+      <p>他给我看了一条典型的时间线：早上 6:50，用 AI 把昨晚没弄懂的一道题拆成三个小问题；午饭时，让它扮演面试官，追问一个物理概念；晚自习前，让它生成五道相似题；睡前，再把自己做错的步骤发给它，要求“只指出第一个错误，不要给答案”。</p>
+      <p>“最后一种最好用。”他说，“因为它逼我继续想。直接给答案的 AI 像一个特别热心的同学，帮你把作业写完了，但你其实什么都没学会。”</p>
+      <p>这套方法不是一开始就会的。他曾经连续一周让 AI 直接给答案，结果周测成绩反而下降。“我以为是 AI 不行。后来发现，是我把‘看懂’当成了‘会做’。”</p>
+
+      <blockquote class="pullquote">“我不怕它错。我怕我不查。”<cite>李同学 / 访谈 01</cite></blockquote>
+
+      <div class="interview-section-label">02 / 伪造公式事件</div>
+      <p>他翻到那张截图。AI 给出一道题的解法，中间用了一个符号，解释是“由某某定理可得”。他去搜，搜不到；问老师，老师也不知道；最后两个人在教材的附录里找到一个形式相似、条件完全不同的公式。</p>
+      <p>“它把两个公式混在一起了。而且混得非常自然。”他把截图放大，“你看，它连适用条件都写了，只是写错了。一个不熟的学生根本看不出来。”</p>
+      <p>这件事之后，他给自己加了一条规则：<strong>所有公式、年份、人名、文献，必须回到教材、论文或官方网站核对。</strong> 他不再把“AI 说”当作证据，只把它当作“一个需要被检查的候选答案”。</p>
+
+      <div class="observation">
+        <div class="observation__label">Observation / 观察笔记</div>
+        <p>他并没有因为一次被误导就远离 AI。相反，他使用得更多了，但动作发生了变化：从“直接要答案”变成“要求它暴露推理过程”，从“复制”变成“对照”。这可能是数字素养最具体的样子——不是抵制工具，而是改变与工具相处的方式。</p>
+      </div>
+
+      <div class="interview-section-label">03 / “第二大脑”的代价</div>
+      <p>我问他，用了这么多 AI，有没有觉得自己变懒了。</p>
+      <p>他想了很久。“有一点。不是身体上的懒，是不太愿意忍受‘不知道’的那段时间了。”以前一道题想半小时，现在五分钟没思路就会想打开手机；以前写作文先发十分钟呆，现在第一反应是找 AI 要开头。</p>
+      <p>他给自己设了一个“20 分钟规则”：任何题目，先自己写 20 分钟，才可以问 AI。“不是为了自虐，是想保留那个卡住的过程。卡住的时候，大脑在做一些 AI 替不了的事。”</p>
+      <p>他说自己未来想读物理。“如果我只是会用 AI 搜答案，那我可能连科研的门都摸不到。真正的研究里，没有人知道答案。”</p>
+
+      <div class="interview-section-label">04 / 给同龄人的三句话</div>
+      <ul>
+        <li>让 AI 先问你问题，而不是先给你答案。</li>
+        <li>公式、年份、引用，回到原始来源；找不到来源，就当作没有。</li>
+        <li>保留一段“没有 AI”的时间，哪怕只有 20 分钟。</li>
+      </ul>
+      <p>采访结束时，他还要赶去上竞赛课。走之前，他回头说了一句：“其实我不是特别相信 AI。我只是觉得，不相信它，也要有方法。”</p>
+      <div class="article-end">END OF INTERVIEW 01</div>
+      
+<div class="interview-next">
+  <div><div class="mono faint">NEXT / INTERVIEW 02</div><p style="margin-top:4px;font-size:14px">陈同学：不使用，也是一种选择</p></div>
+  <a class="btn btn--sm" href="interview-chen.html">继续阅读 <span class="arrow">→</span></a>
+</div>
+    </article>
+    
+<aside class="article-aside reveal" data-delay="1">
+  <div class="subject-card">
+    
+<div class="signal-portrait signal-portrait--cyan" aria-hidden="true">
+  <span class="sp-orbit"></span>
+  <div class="sp-bars"><i></i><i></i><i></i><i></i></div>
+  <span class="sp-initial">L</span>
+  <span class="sp-caption"><span>李同学 </span><span> 化名</span></span>
+</div>
+    <div class="subject-card__meta"><b>李同学</b><span>高二 · 物理竞赛生 · 17 岁</span></div>
+  </div>
+  <div class="article-aside__block"><div class="article-aside__label">Usage / 使用</div><p class="article-aside__text"><b>日均 38 分钟</b><br>30 天中 26 天使用；最常做的事是拆题与生成练习。</p></div><div class="article-aside__block"><div class="article-aside__label">Rule / 自定规则</div><p class="article-aside__text">先自己写 20 分钟；不让 AI 直接给最终答案；所有公式必须回到教材或论文核对。</p></div><div class="article-aside__block"><div class="article-aside__label">Catch / 抓错</div><p class="article-aside__text">30 天内发现 <b>7 次</b>错误，其中一次是伪造的物理公式。</p></div>
+  <div class="article-aside__block"><div class="article-aside__label">Related / 相关</div><nav><a href="method.html">研究协议</a><a href="roundtable.html">教师圆桌</a><a href="log.html">30 天日志</a></nav></div>
+</aside>
+
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-brand__line"><span class="status-dot"></span><span class="mono">OPEN NOTEBOOK · 1.0.0</span></div>
+        <div class="footer-title">ALGORITHM<br>DESKMATE</div>
+        <p class="footer-desc">一份关于 AI、学习与人的数字田野报告。由三名高中生发起，在校园与社区之间完成。所有页面、图形与交互均由我们手写构建。</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h3>Explore / 浏览</h3>
+          <a href="about.html">项目缘起</a>
+          <a href="dashboard.html">样本仪表盘</a>
+          <a href="voices.html">人物访谈</a>
+          <a href="hallucination.html">幻觉博物馆</a>
+          <a href="toolkit.html">田野工具箱</a>
+        </div>
+        <div class="footer-col">
+          <h3>Participate / 参与</h3>
+          <a href="quiz.html">AI 学习者测试</a>
+          <a href="charter.html">签署班级公约</a>
+          <a href="guestbook.html">留言与共创</a>
+          <a href="resources.html">开放资源</a>
+          <a href="index.html">开屏动画</a>
+          <a href="credits.html">版权与致谢</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-giant" aria-hidden="true">A/ DESKMATE</div>
+    <div class="footer-bottom">
+      <span>© 2026 第七排观察组 · 内容与设计保留署名 · 数据为演示样本</span>
+      <span class="status"><i class="status-dot"></i> SYSTEM NOMINAL <span data-local-time>--:--:--</span></span>
+      <span>CC BY-NC-SA 4.0 · NO TRACKERS · NO COOKIES</span>
+    </div>
+  </div>
+</footer>
+<div class="toast-stack" id="toast-stack" aria-live="polite" aria-atomic="true"></div>
+
+
+<div class="search-overlay" id="search-overlay" role="dialog" aria-modal="true" aria-label="搜索全站">
+  <div class="search-panel">
+    <div class="search-bar">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"></circle><path d="m16 16 4.5 4.5"></path></svg>
+      <input id="search-input" type="search" placeholder="搜索页面、人物、概念…" autocomplete="off" spellcheck="false" aria-label="搜索关键词">
+      <span class="esc">ESC</span>
+    </div>
+    <div class="search-hint"><span>输入关键词即时检索</span><span>↑ ↓ 选择 · ENTER 打开</span></div>
+    <div class="search-results" id="search-results" role="listbox" aria-label="搜索结果"></div>
+    <div class="search-foot"><span>27 FILES INDEXED</span><span>尝试：AI · 依赖 · 幻觉 · 社区 · 公约</span></div>
+  </div>
+</div>
+<script src="assets/js/search-index.js"></script>
+<script src="assets/js/app.js" defer></script>
+<script src="assets/js/interactive.js" defer></script>
+</body>
+</html>

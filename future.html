@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="lab">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2035 教室 · 算法同桌</title>
+<meta name="description" content="拉动四个变量，生成一间 2035 年的教室：AI 渗透程度、评价方式、教师角色与隐私规则，会组合出怎样不同的未来？">
+<meta name="author" content="第七排观察组">
+<meta name="theme-color" content="#03070a">
+<meta property="og:title" content="2035 教室 · 算法同桌">
+<meta property="og:description" content="拉动四个变量，生成一间 2035 年的教室：AI 渗透程度、评价方式、教师角色与隐私规则，会组合出怎样不同的未来？">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/img/og-cover.svg">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/pages.css">
+<link rel="stylesheet" href="assets/css/signal.css">
+<script>
+(function(){
+  document.documentElement.classList.add('js');
+  try {
+    var params = new URLSearchParams(window.location.search);
+    var q = params.get('theme');
+    var t = (q === 'paper' || q === 'lab') ? q : localStorage.getItem('adm-theme');
+    if (t === 'paper' || t === 'lab') document.documentElement.setAttribute('data-theme', t);
+    if (params.get('wipe') === '1') document.documentElement.classList.add('is-wiping');
+  } catch (e) {}
+})();
+</script>
+</head>
+<body data-page="future">
+<div class="page-wipe" aria-hidden="true">
+  <div class="page-wipe__panel">
+    <span class="page-wipe__mark">A/</span>
+    <span class="page-wipe__meta">OPENING ARCHIVE / 07 — ENTER</span>
+  </div>
+</div>
+
+<a class="skip-link" href="#main">跳到主要内容</a>
+<div class="read-progress" id="read-progress" aria-hidden="true"></div>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="home.html" aria-label="算法同桌 · 返回首页">
+      <span class="brand__mark" aria-hidden="true">A/</span>
+      <span class="brand__text">
+        <span class="brand__cn">算法同桌</span>
+        <span class="brand__en">ALGORITHM DESKMATE</span>
+      </span>
+    </a>
+    <nav class="nav" id="site-nav" aria-label="主导航">
+      <div class="nav-group"><button class="nav-link nav-toggle" type="button" aria-expanded="false">研究<span class="caret">▾</span></button><div class="nav-pop"><a href="about.html"><span class="num">01</span>项目缘起</a><a href="method.html"><span class="num">02</span>研究协议</a><a href="map.html"><span class="num">03</span>使用星图</a><a href="log.html"><span class="num">12</span>30 天日志</a></div></div><div class="nav-group"><button class="nav-link nav-toggle" type="button" aria-expanded="false">数据<span class="caret">▾</span></button><div class="nav-pop"><a href="dashboard.html"><span class="num">04</span>样本仪表盘</a><a href="personas.html"><span class="num">05</span>五种AI同桌</a><a href="hallucination.html"><span class="num">14</span>幻觉博物馆</a></div></div><div class="nav-group"><button class="nav-link nav-toggle" type="button" aria-expanded="false">人物<span class="caret">▾</span></button><div class="nav-pop"><a href="voices.html"><span class="num">06</span>访谈索引</a><a href="interview-li.html"><span class="num">07</span>李同学：第二大脑</a><a href="interview-chen.html"><span class="num">08</span>陈同学：不使用的理由</a><a href="interview-zhou.html"><span class="num">09</span>周老师：备课边界</a><a href="interview-grandma.html"><span class="num">10</span>王奶奶：第一次对话</a><a href="roundtable.html"><span class="num">11</span>教师圆桌</a></div></div><div class="nav-group"><button class="nav-link nav-toggle" type="button" aria-expanded="false">实验<span class="caret">▾</span></button><div class="nav-pop"><a href="prompt.html"><span class="num">13</span>提问实验室</a><a href="factcheck.html"><span class="num">15</span>核查挑战</a><a href="offline.html"><span class="num">16</span>无AI日</a><a href="rules.html"><span class="num">17</span>诚信红绿灯</a></div></div><div class="nav-group is-active"><button class="nav-link nav-toggle" type="button" aria-expanded="false">行动<span class="caret">▾</span></button><div class="nav-pop"><a href="community.html"><span class="num">18</span>社区数字课堂</a><a href="charter.html"><span class="num">19</span>班级公约</a><a href="future.html" class="is-current" aria-current="page"><span class="num">20</span>2035 教室</a><a href="proposal.html"><span class="num">21</span>给学校的提案</a></div></div><div class="nav-group"><button class="nav-link nav-toggle" type="button" aria-expanded="false">档案<span class="caret">▾</span></button><div class="nav-pop"><a href="toolkit.html"><span class="num">22</span>田野工具箱</a><a href="resources.html"><span class="num">23</span>开放资源</a><a href="quiz.html"><span class="num">24</span>AI学习者测试</a><a href="guestbook.html"><span class="num">25</span>留言与共创</a><a href="credits.html"><span class="num">26</span>版权与致谢</a></div></div>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn search-open" type="button" data-search-open aria-label="搜索全站">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"></circle><path d="m16 16 4.5 4.5"></path></svg><span class="search-label mono">SEARCH</span><kbd>/</kbd>
+      </button>
+      <button class="icon-btn theme-btn" type="button" data-theme-toggle aria-label="切换深色 / 浅色主题">
+        <span class="theme-icon-lab"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 15.2A8 8 0 0 1 8.8 4 8.2 8.2 0 1 0 20 15.2Z"></path></svg></span>
+        <span class="theme-icon-paper"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg></span>
+      </button>
+      <button class="icon-btn menu-btn" type="button" data-menu-toggle aria-label="打开菜单" aria-expanded="false" aria-controls="site-nav"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h18M3 12h18M3 17h18"></path></svg></button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+
+<section class="page-head">
+  <div class="container">
+    <div class="page-head__top mono">
+      <div class="crumbs"><a href="home.html">INDEX</a><span>/</span><span>ACTION</span><span>/</span><span>2035 教室</span></div>
+      <span class="file-tag">FILE <b>20</b> · 27 FILES</span>
+    </div>
+    <div class="page-head__body">
+      <div>
+        <div class="eyebrow">SCENARIO SIMULATOR / 20</div>
+        <h1>未来不是一种，<br><span class="signal-stroke">是一组组合</span>。</h1>
+        <p class="page-head__lead">关于“AI 会怎样改变教育”，最容易出现的回答是“会更好”或“会更糟”。我们想做的是拆开变量，看看不同选择会把我们带到哪一间教室。</p>
+      </div>
+      <div class="page-head__stamp" aria-hidden="true">
+        <b>20</b>
+        ACTION<br>CLASSROOM 2035
+      </div>
+    </div>
+    <div class="page-head__meta"><span class="item">交互情景模拟器</span><span class="item">4 个变量 · 81 种组合</span><span class="item">不是预测，是推演</span><span class="item">想象基于 2025—2026 年观察</span></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="sim-grid">
+      <div class="sim-panel reveal">
+        <div class="eyebrow">VARIABLE PANEL / 调整变量</div>
+        <h3 class="mt-2">装配一间 2035 年的教室</h3>
+        <p>每一次选择都会改变下面那段场景。没有“正确组合”，也没有技术必然论。</p>
+        <div class="sim-option-group">
+          <div class="sim-option-group__label"><span>01 / AI 渗透</span><span id="sim-ai-label">嵌入式</span></div>
+          <div class="sim-options" data-sim-group="ai">
+            <button type="button" data-value="工具化">工具化</button>
+            <button type="button" class="is-active" data-value="嵌入式">嵌入式</button>
+            <button type="button" data-value="受限式">受限式</button>
+          </div>
+        </div>
+        <div class="sim-option-group">
+          <div class="sim-option-group__label"><span>02 / 评价方式</span><span id="sim-eval-label">过程记录</span></div>
+          <div class="sim-options" data-sim-group="eval">
+            <button type="button" data-value="分数排名">分数排名</button>
+            <button type="button" data-value="作品集">作品集</button>
+            <button type="button" class="is-active" data-value="过程记录">过程记录</button>
+          </div>
+        </div>
+        <div class="sim-option-group">
+          <div class="sim-option-group__label"><span>03 / 教师角色</span><span id="sim-teacher-label">学习设计师</span></div>
+          <div class="sim-options" data-sim-group="teacher">
+            <button type="button" data-value="讲授者">讲授者</button>
+            <button type="button" data-value="教练">教练</button>
+            <button type="button" class="is-active" data-value="学习设计师">学习设计师</button>
+          </div>
+        </div>
+        <div class="sim-option-group">
+          <div class="sim-option-group__label"><span>04 / 隐私规则</span><span id="sim-privacy-label">分层授权</span></div>
+          <div class="sim-options" data-sim-group="privacy">
+            <button type="button" data-value="严格本地">严格本地</button>
+            <button type="button" data-value="平台集中">平台集中</button>
+            <button type="button" class="is-active" data-value="分层授权">分层授权</button>
+          </div>
+        </div>
+        <div class="sim-actions"><button class="btn btn--sm" type="button" id="sim-random">随机组合 <span class="arrow">⟳</span></button><button class="btn btn--sm" type="button" data-copy-target="future-copy">复制场景</button></div>
+      </div>
+
+      <div class="future-output reveal" data-delay="1">
+        <div class="future-output__top"><div><div class="mono">SCENARIO OUTPUT / 推演</div><div class="future-output__year" id="future-year">2035</div></div><div><span class="chip chip--signal">SPECULATIVE</span></div></div>
+        <div class="future-output__body">
+          <div class="future-output__kicker" id="future-kicker">一间不太安静、也不太确定的教室</div>
+          <h3 id="future-title">当每个学生都有一个 AI 学伴，评价开始记录过程。</h3>
+          <div class="future-output__text" id="future-text">
+            <p>早晨 7:40，教室的屏幕上已经出现了每个人今天的学习建议。AI 学伴记得你上周在哪一类题上卡住，也知道你今天睡得不晚。老师没有站在讲台上讲课，而是在各组之间来回，判断哪一段“卡住”值得全班停下来讨论。</p>
+            <p>期末不再只有一张卷子。你的作品集、修改记录和 AI 对话摘要一起构成评价材料。规则要求标注 AI 参与，但如何判断“哪些思考属于你”，仍然是老师与学生之间最难、也最重要的争论。</p>
+          </div>
+          <div class="future-tags" id="future-tags"><span class="chip chip--cyan">AI 学伴</span><span class="chip">过程证据</span><span class="chip">分层授权</span></div>
+        </div>
+        <div class="future-classroom" aria-hidden="true">
+          <div class="is-ai">AI 学伴 / 个性化提示</div><div class="is-human">教师 / 现场判断</div><div class="is-human">同伴 / 共同卡住</div>
+          <div>过程档案 / 修改记录</div><div class="is-ai">评估模型 / 预警</div><div>学生 / 最终决定</div>
+        </div>
+        <div class="future-output__foot"><span id="future-copy-text">SCENARIO: ai=embedded / eval=process / teacher=designer / privacy=tiered</span><span>NON-PREDICTIVE / 仅供讨论</span></div>
+      </div>
+    </div>
+
+    <div class="future-signals reveal">
+      <div class="future-signal"><div class="future-signal__no">SIGNAL / 01</div><h4>“个性化”可能同时意味着“被看见”与“被监控”。</h4><p>当系统记录每一次停顿、修改和放弃，学习的全过程可能变成可分析的数据。便利与隐私，需要同时被讨论。</p></div>
+      <div class="future-signal"><div class="future-signal__no">SIGNAL / 02</div><h4>评价方式决定 AI 的位置。</h4><p>如果最终只看分数，AI 更容易成为“答案加速器”；如果评价过程与修改，学生才有理由展示自己如何思考。</p></div>
+      <div class="future-signal"><div class="future-signal__no">SIGNAL / 03</div><h4>未来不是自然到来的。</h4><p>每间教室的规则、预算、教师培训与隐私政策，都会影响技术以什么方式落地。选择权并不只在技术公司手里。</p></div>
+    </div>
+
+    <div class="split mt-5">
+      <div class="prose reveal">
+        <div class="article-label">DESIGN NOTE / 不做什么预测</div>
+        <h2 style="font-size:clamp(1.4rem,2.6vw,1.9rem)">我们不想把未来写成一份产品说明书。</h2>
+        <p>这个模拟器没有接入任何真实模型，也不会给出“最佳配置”。它只是把我们在访谈中听到的变量摆上桌面：有人期待个性化学习，有人担心监控；有人认为 AI 会解放教师，有人担心教师被降级为“系统管理员”。</p>
+        <p>组合本身没有意义，讨论才有。我们希望你在得到一个场景后，追问一句：<strong>在这个未来里，谁获益，谁承担风险，谁没有发言权？</strong></p>
+      </div>
+      <div class="reveal" data-delay="1">
+        <div class="panel panel--pad">
+          <div class="panel-head"><span>DESIGN PRINCIPLES / 推演原则</span><span>04</span></div>
+          <div class="timeline" style="padding-left:22px">
+            <div class="timeline-item" style="padding-bottom:20px"><div class="timeline-date">01 / 拒绝技术必然论</div><p>技术不会自动带来更好的教育。制度与关系决定它被如何使用。</p></div>
+            <div class="timeline-item" style="padding-bottom:20px"><div class="timeline-date">02 / 允许多种未来</div><p>81 种组合不是 81 个预测，而是 81 个可以讨论的价值选择。</p></div>
+            <div class="timeline-item" style="padding-bottom:20px"><div class="timeline-date">03 / 把学生放回中心</div><p>不是“学生适应 AI”，而是“AI 是否帮助学生成为更主动的人”。</p></div>
+            <div class="timeline-item"><div class="timeline-date">04 / 保留不确定性</div><p>所有这些场景都可能错。重要的是我们提前练习如何争论。</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-brand__line"><span class="status-dot"></span><span class="mono">OPEN NOTEBOOK · 1.0.0</span></div>
+        <div class="footer-title">ALGORITHM<br>DESKMATE</div>
+        <p class="footer-desc">一份关于 AI、学习与人的数字田野报告。由三名高中生发起，在校园与社区之间完成。所有页面、图形与交互均由我们手写构建。</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h3>Explore / 浏览</h3>
+          <a href="about.html">项目缘起</a>
+          <a href="dashboard.html">样本仪表盘</a>
+          <a href="voices.html">人物访谈</a>
+          <a href="hallucination.html">幻觉博物馆</a>
+          <a href="toolkit.html">田野工具箱</a>
+        </div>
+        <div class="footer-col">
+          <h3>Participate / 参与</h3>
+          <a href="quiz.html">AI 学习者测试</a>
+          <a href="charter.html">签署班级公约</a>
+          <a href="guestbook.html">留言与共创</a>
+          <a href="resources.html">开放资源</a>
+          <a href="index.html">开屏动画</a>
+          <a href="credits.html">版权与致谢</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-giant" aria-hidden="true">A/ DESKMATE</div>
+    <div class="footer-bottom">
+      <span>© 2026 第七排观察组 · 内容与设计保留署名 · 数据为演示样本</span>
+      <span class="status"><i class="status-dot"></i> SYSTEM NOMINAL <span data-local-time>--:--:--</span></span>
+      <span>CC BY-NC-SA 4.0 · NO TRACKERS · NO COOKIES</span>
+    </div>
+  </div>
+</footer>
+<div class="toast-stack" id="toast-stack" aria-live="polite" aria-atomic="true"></div>
+
+
+<div class="search-overlay" id="search-overlay" role="dialog" aria-modal="true" aria-label="搜索全站">
+  <div class="search-panel">
+    <div class="search-bar">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"></circle><path d="m16 16 4.5 4.5"></path></svg>
+      <input id="search-input" type="search" placeholder="搜索页面、人物、概念…" autocomplete="off" spellcheck="false" aria-label="搜索关键词">
+      <span class="esc">ESC</span>
+    </div>
+    <div class="search-hint"><span>输入关键词即时检索</span><span>↑ ↓ 选择 · ENTER 打开</span></div>
+    <div class="search-results" id="search-results" role="listbox" aria-label="搜索结果"></div>
+    <div class="search-foot"><span>27 FILES INDEXED</span><span>尝试：AI · 依赖 · 幻觉 · 社区 · 公约</span></div>
+  </div>
+</div>
+<script src="assets/js/search-index.js"></script>
+<script src="assets/js/app.js" defer></script>
+<script src="assets/js/interactive.js" defer></script>
+</body>
+</html>
