@@ -275,8 +275,13 @@
     const bar = $("#read-progress");
     if (!bar) return;
     let ticking = false;
+    let scrollable = 0;
+    // Read the document height only when the document actually changes size,
+    // never inside the scroll frame itself.
+    const measure = () => {
+      scrollable = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
+    };
     const update = () => {
-      const scrollable = document.documentElement.scrollHeight - window.innerHeight;
       const value = scrollable > 0 ? Math.min(1, Math.max(0, window.scrollY / scrollable)) : 0;
       bar.style.width = (value * 100).toFixed(2) + "%";
       ticking = false;
@@ -287,6 +292,11 @@
         ticking = true;
       }
     }, { passive: true });
+    window.addEventListener("resize", measure, { passive: true });
+    if ("ResizeObserver" in window) {
+      new ResizeObserver(measure).observe(document.body);
+    }
+    measure();
     update();
   }
 
@@ -296,7 +306,7 @@
     if (!canvas) return;
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
-    let width = 0, height = 0, dpr = 1, nodes = [], raf = 0;
+    let width = 0, height = 0, dpr = 1, nodes = [], raf = 0, visible = true;
     let colorA = "#62e3d5", colorB = "#c9ff4d";
 
     const readColors = () => {
@@ -335,8 +345,9 @@
         for (let j = i + 1; j < nodes.length; j++) {
           const b = nodes[j];
           const dx = a.x - b.x, dy = a.y - b.y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-          if (dist < 118) {
+          const d2 = dx * dx + dy * dy;
+          if (d2 < 13924) {
+            const dist = Math.sqrt(d2);
             const alpha = (1 - dist / 118) * 0.16;
             ctx.strokeStyle = `rgba(145, 180, 171, ${alpha})`;
             ctx.lineWidth = 0.6;
@@ -371,7 +382,7 @@
         }
         ctx.globalAlpha = 1;
       });
-      if (!reduced) raf = window.requestAnimationFrame(draw);
+      if (!reduced && visible) raf = window.requestAnimationFrame(draw);
     };
 
     resize();
@@ -389,6 +400,20 @@
       if (document.hidden) window.cancelAnimationFrame(raf);
       else { window.cancelAnimationFrame(raf); draw(); }
     });
+    // Stop the animation loop entirely while the hero is scrolled out of view.
+    if ("IntersectionObserver" in window) {
+      new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          const next = entry.isIntersecting;
+          if (next === visible) return;
+          visible = next;
+          if (visible && !reduced) {
+            window.cancelAnimationFrame(raf);
+            draw(performance.now());
+          }
+        });
+      }, { threshold: 0 }).observe(canvas);
+    }
   }
 
   /* ---------------- Hero typewriter & counters ---------------- */
@@ -414,12 +439,18 @@
       let start = null;
       const suffix = el.getAttribute("data-suffix") || "";
       const duration = 1200;
+      // Build the <small> once and only rewrite the number afterwards.
+      const small = document.createElement("small");
+      small.textContent = suffix;
+      const number = document.createTextNode(String(el.textContent || "").replace(suffix, ""));
+      el.textContent = "";
+      el.appendChild(number);
+      el.appendChild(small);
       const step = (ts) => {
         if (!start) start = ts;
         const p = Math.min(1, (ts - start) / duration);
         const eased = 1 - Math.pow(1 - p, 3);
-        const value = Math.round(target * eased);
-        el.innerHTML = `${value}<small>${suffix}</small>`;
+        number.nodeValue = String(Math.round(target * eased));
         if (p < 1) window.requestAnimationFrame(step);
       };
       window.setTimeout(() => window.requestAnimationFrame(step), 650);
@@ -430,9 +461,10 @@
   function initClock() {
     const els = $$("[data-local-time]");
     if (!els.length) return;
+    // One formatter for the page instead of building one on every tick.
+    const formatter = new Intl.DateTimeFormat("zh-CN", { hour12: false, hour: "2-digit", minute: "2-digit", second: "2-digit" });
     const tick = () => {
-      const now = new Date();
-      const value = now.toLocaleTimeString("zh-CN", { hour12: false });
+      const value = formatter.format(new Date());
       els.forEach((el) => { el.textContent = value; });
     };
     tick();

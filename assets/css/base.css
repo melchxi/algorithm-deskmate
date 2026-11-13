@@ -718,7 +718,7 @@ html.js .reveal[data-delay="3"] { transition-delay: .24s; }
 /* print */
 @media print {
   body { background: #fff !important; color: #111 !important; }
-  .site-header, .site-footer, .search-overlay, .toast-stack, .read-progress, body::before, .no-print { display: none !important; }
+  .site-header, .site-footer, .search-overlay, .toast-stack, .read-progress, body::before, body::after, .no-print { display: none !important; }
   main { padding: 0 !important; }
   a { color: #111 !important; }
   .container, .container--article { width: 100% !important; max-width: none !important; }
