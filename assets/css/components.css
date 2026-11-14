@@ -670,7 +670,7 @@
   .stat-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .stat:nth-child(2) { border-right: 0; }
   .stat:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
-  .article-layout { grid-template-columns: 1fr; }
+  .article-layout { grid-template-columns: minmax(0, 1fr); }
   .article-aside { position: static; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; order: -1; padding-bottom: 24px; border-bottom: 1px solid var(--line); }
   .article-aside nav { display: none; }
   .page-head__body { grid-template-columns: 1fr; }

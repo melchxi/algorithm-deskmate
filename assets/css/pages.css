@@ -594,9 +594,9 @@
    ========================================================= */
 .log-layout { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(300px, .75fr); gap: 18px; align-items: start; margin-top: 24px; }
 .log-calendar-card { border: 1px solid var(--line); background: var(--surface); padding: clamp(18px, 2.5vw, 28px); }
-.log-weekdays { display: grid; grid-template-columns: repeat(7, 1fr); gap: 3px; margin-bottom: 7px; }
+.log-weekdays { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 3px; margin-bottom: 7px; }
 .log-weekdays span { color: var(--faint); font-family: var(--font-mono); font-size: 10px; letter-spacing: .05em; text-align: center; }
-.log-calendar { display: grid; grid-template-columns: repeat(7, 1fr); gap: 3px; }
+.log-calendar { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 3px; }
 .log-day {
   position: relative;
   aspect-ratio: 1;
@@ -1108,11 +1108,11 @@
   .data-teaser__big { max-width: 540px; }
   .voices-preview { grid-template-columns: repeat(2, 1fr); }
   .voice-mini:last-child { display: none; }
-  .dash-grid { grid-template-columns: 1fr; }
+  .dash-grid { grid-template-columns: minmax(0, 1fr); }
   .map-layout { grid-template-columns: 1fr; }
   .orbit-stage { min-height: 520px; }
   .map-inspect { min-height: 320px; }
-  .log-layout { grid-template-columns: 1fr; }
+  .log-layout { grid-template-columns: minmax(0, 1fr); }
   .log-detail { position: static; }
   .voice-feature { grid-template-columns: minmax(230px, .7fr) minmax(0, 1.3fr); }
   .voice-feature__media, .voice-feature__media .signal-portrait { min-height: 280px; }
@@ -1141,7 +1141,7 @@
 }
 
 @media (max-width: 760px) {
-  .dash-card--wide .dash-grid { grid-template-columns: 1fr !important; }
+  .dash-card--wide .dash-grid { grid-template-columns: minmax(0, 1fr) !important; }
   .hero { min-height: auto; }
   .hero__inner { padding: 38px 0 30px; }
   .hero h1 { font-size: clamp(3.5rem, 16vw, 6rem); }
@@ -1169,7 +1169,7 @@
   .orbit-core b { font-size: 28px; }
   .persona-switch { grid-template-columns: repeat(2, 1fr); }
   .persona-switch button:last-child { grid-column: span 2; min-height: 58px; }
-  .persona-stage { grid-template-columns: 1fr; }
+  .persona-stage { grid-template-columns: minmax(0, 1fr); }
   .persona-portrait .signal-portrait { min-height: 260px; aspect-ratio: 16 / 11; }
   .persona-detail__title { font-size: 2.6rem; }
   .voice-feature { grid-template-columns: 1fr; }
@@ -1220,6 +1220,9 @@
 
 @media (max-width: 460px) {
   .hero h1 { font-size: 3.3rem; }
+.action-band { grid-template-columns: minmax(0, 1fr); gap: 16px; }
+  .action-band .row { flex-direction: column; align-items: stretch; }
+  .action-band .row .btn { width: 100%; justify-content: center; }
   .hero__meta { gap: 6px 12px; }
   .hero__meta span { font-size: 10px; }
   .hero__status { gap: 6px 10px; font-size: 10px; }
