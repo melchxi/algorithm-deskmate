@@ -1551,10 +1551,22 @@
       }
     }
 
-    function step() {
-      fctx.globalCompositeOperation = "destination-out";
-      fctx.fillStyle = "rgba(0,0,0,0.062)";
-      fctx.fillRect(0, 0, W, H);
+    // 粒子痕迹：轨迹按真实时间衰减，约 10 秒后消失
+    var TRAIL_LIFE_MS = 10000;
+    var TRAIL_TAU_MS = TRAIL_LIFE_MS / Math.log(50); // 约 10 秒后残留 2%
+    var TRAIL_TICK_MS = 200; // 每 0.2 秒擦除一步，绕开 8 位画布量化造成的残留
+    var lastStepAt = 0, trailPendingMs = 0;
+    function step(nowMs) {
+      var stepDt = lastStepAt ? Math.min(100, Math.max(1, nowMs - lastStepAt)) : 1000 / 60;
+      lastStepAt = nowMs;
+      trailPendingMs += stepDt;
+      if (trailPendingMs >= TRAIL_TICK_MS) {
+        var trailFade = 1 - Math.exp(-trailPendingMs / TRAIL_TAU_MS);
+        trailPendingMs = 0;
+        fctx.globalCompositeOperation = "destination-out";
+        fctx.fillStyle = "rgba(0,0,0," + trailFade.toFixed(5) + ")";
+        fctx.fillRect(0, 0, W, H);
+      }
       fctx.globalCompositeOperation = "lighter";
       fctx.lineCap = "round";
 
@@ -1660,9 +1672,9 @@
       ctx.globalCompositeOperation = "source-over";
     }
 
-    function loop() {
+    function loop(now) {
       t += 1 / 60;
-      step();
+      step(now || performance.now());
       draw();
       raf = window.requestAnimationFrame(loop);
     }
@@ -1680,7 +1692,7 @@
     resize();
     if (reduced) {
       // 静态一帧：保留质感但不做动画
-      for (var i = 0; i < 90; i++) { t += 1 / 60; step(); }
+      for (var i = 0; i < 90; i++) { t += 1 / 60; step(i * (1000 / 60)); }
       draw();
     } else {
       start();
