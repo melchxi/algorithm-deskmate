@@ -14,8 +14,11 @@
   --surface-3: #0e242c;
   --text: #e9f8f9;
   --text-strong: #ffffff;
-  --muted: #8da5ac;
-  --faint: #5b737a;
+  --muted: #b7cdd2;
+  --faint: #97b0b6;
+  /* original values, kept for decorative fills so backgrounds stay identical */
+  --muted-ink: #8da5ac;
+  --faint-ink: #5b737a;
   --line: rgba(196, 248, 255, .14);
   --line-mid: rgba(196, 248, 255, .26);
   --line-strong: rgba(196, 248, 255, .44);
@@ -40,44 +43,6 @@
   --header-bg: rgba(2, 7, 10, .84);
   --shadow: 0 28px 80px rgba(0, 0, 0, .5);
   --invert: #eefeff;
-}
-
-:root[data-theme="paper"] {
-  color-scheme: light;
-  --bg: #e9f2f2;
-  --bg-deep: #dce9ea;
-  --bg-raise: #f2f9f9;
-  --surface: #f8fcfc;
-  --surface-2: #eaf3f4;
-  --surface-3: #d9e8ea;
-  --text: #062226;
-  --text-strong: #001316;
-  --muted: #4f6b70;
-  --faint: #7a9296;
-  --line: rgba(7, 42, 48, .16);
-  --line-mid: rgba(7, 42, 48, .28);
-  --line-strong: rgba(7, 42, 48, .45);
-  --signal: #007b8b;
-  --signal-fill: #a6f2ff;
-  --signal-hover: #86edff;
-  --signal-ink: #001417;
-  --signal-soft: rgba(0, 123, 139, .08);
-  --cyan: #006d7d;
-  --cyan-soft: rgba(0, 109, 125, .08);
-  --orange: #b64b31;
-  --orange-soft: rgba(182, 75, 49, .09);
-  --violet: #475fbe;
-  --violet-soft: rgba(71, 95, 190, .09);
-  --danger: #b33434;
-  --ok: #137b52;
-  --warn: #8f6100;
-  --paper: #fbfefe;
-  --paper-ink: #031517;
-  --grid-color: rgba(7, 42, 48, .055);
-  --noise-opacity: .12;
-  --header-bg: rgba(233, 242, 242, .88);
-  --shadow: 0 26px 70px rgba(3, 32, 38, .13);
-  --invert: #062226;
 }
 
 html {
@@ -157,7 +122,7 @@ html.is-wiping .page-wipe { display: block; }
   top: 12vh;
   color: var(--signal);
   font-family: var(--font-mono);
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: .1em;
 }
 @keyframes pageWipeOut {
@@ -687,62 +652,6 @@ html.is-wiping body { overflow: hidden; }
 .status-dot--orange { background: var(--orange); box-shadow: 0 0 0 3px var(--orange-soft); }
 .status-dot--cyan { background: var(--cyan); box-shadow: 0 0 0 3px var(--cyan-soft); }
 
-/* paper mode: no schematic photograph of a dark board, only a cool lab sheet */
-:root[data-theme="paper"] .page-head {
-  background-color: #e9f3f3;
-  background-image:
-    linear-gradient(rgba(7, 42, 48, .05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(7, 42, 48, .05) 1px, transparent 1px),
-    radial-gradient(ellipse 60% 70% at 86% 12%, rgba(0, 123, 139, .08), transparent 66%);
-  background-size: 80px 80px, 80px 80px, auto;
-  background-position: 0 0, 0 0, center;
-  background-repeat: repeat, repeat, no-repeat;
-}
-:root[data-theme="paper"] .page-head::before {
-  background: linear-gradient(180deg, rgba(0, 123, 139, .1), rgba(0, 123, 139, .015));
-  border-color: rgba(0, 123, 139, .25);
-}
-:root[data-theme="paper"] .page-head::after {
-  border-color: rgba(0, 123, 139, .15);
-  box-shadow: 0 0 0 34px rgba(0, 123, 139, .025), 0 0 0 86px rgba(0, 123, 139, .018);
-}
-:root[data-theme="paper"] .page-head h1 .signal-stroke { -webkit-text-stroke-width: 1.55px; }
-:root[data-theme="paper"] .hero {
-  background-color: #eaf4f4;
-  background-image:
-    linear-gradient(90deg, transparent calc(50% - .5px), var(--line) 50%, transparent calc(50% + .5px)),
-    linear-gradient(rgba(7, 42, 48, .045) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(7, 42, 48, .045) 1px, transparent 1px),
-    radial-gradient(ellipse 60% 52% at 82% 28%, rgba(0, 123, 139, .07), transparent 64%);
-  background-size: auto, 80px 80px, 80px 80px, auto;
-  background-position: center, 0 0, 0 0, center;
-  background-repeat: no-repeat, repeat, repeat, no-repeat;
-}
-:root[data-theme="paper"] .hero::after {
-  background: linear-gradient(90deg, rgba(0, 123, 139, .08), rgba(0, 123, 139, .012) 88%, transparent);
-  border-color: rgba(0, 123, 139, .25);
-}
-:root[data-theme="paper"] .console { background: rgba(248, 252, 252, .9); }
-:root[data-theme="paper"] .console__row { background: rgba(235, 245, 245, .9); }
-:root[data-theme="paper"] .console__terminal { background: rgba(224, 239, 240, .9); }
-:root[data-theme="paper"] .large-type-card { background: #f8fdfd; }
-:root[data-theme="paper"] .document-sheet { background: #f8fdfd; }
-:root[data-theme="paper"] .site-footer { background: #dce9ea; }
-:root[data-theme="paper"] .footer-giant { -webkit-text-stroke-color: rgba(0, 123, 139, .17); }
-:root[data-theme="paper"] .section--raise { background: rgba(226, 240, 240, .56); }
-:root[data-theme="paper"] .terminal-demo,
-:root[data-theme="paper"] .future-output,
-:root[data-theme="paper"] .prompt-builder__out,
-:root[data-theme="paper"] .hour-event,
-:root[data-theme="paper"] .error-page__term { background: rgba(236, 246, 246, .92); }
-:root[data-theme="paper"] .orbit-stage { background-color: #f4fbfb; }
-:root[data-theme="paper"] .map-inspect__quote,
-:root[data-theme="paper"] .persona-detail__quote,
-:root[data-theme="paper"] .mini-quote,
-:root[data-theme="paper"] .observation,
-:root[data-theme="paper"] .insight-box { background: rgba(232, 244, 245, .92); }
-:root[data-theme="paper"] .live-output { color: var(--text); }
-
 @media (max-width: 920px) {
   .page-head::before { width: 48%; opacity: .6; }
   .page-head::after { right: -180px; width: 320px; height: 320px; }
@@ -767,3 +676,67 @@ html.is-wiping body { overflow: hidden; }
 @media (prefers-reduced-motion: reduce) {
   .btn, .icon-btn, .panel, .voice-card, .resource-card { transition: none; }
 }
+
+/* =========================================================
+   DARK-ONLY SURFACES
+   全站不提供浅底：主题切换按钮已隐藏，纸面/大字卡改为深色版。
+   （打印样式在下方单独覆盖回黑白，保证打印可用）
+   ========================================================= */
+.theme-btn { display: none !important; }
+
+.document-sheet {
+  --doc-ink: var(--text-strong);
+  --doc-muted: var(--muted);
+  --doc-line: var(--line-mid);
+  --doc-accent: var(--signal);
+  background-image: linear-gradient(180deg, rgba(6, 20, 26, .96), rgba(3, 10, 14, .96));
+  background-color: var(--bg-raise);
+  color: var(--doc-ink);
+  border-color: var(--line-mid);
+}
+.document-sheet::before { color: var(--faint); }
+.document-sheet__head { border-bottom-color: var(--line-strong); }
+.document-sheet__body .doc-highlight {
+  background: rgba(75, 230, 255, .08);
+  border-left-color: var(--signal);
+  color: var(--text);
+}
+.doc-table th { background: var(--surface-2); color: var(--muted); border-color: var(--line); }
+.doc-table td { border-color: var(--line); color: var(--muted); }
+.doc-table td b, .doc-table td strong { color: var(--text); }
+
+.large-type-card {
+  background-image: linear-gradient(180deg, rgba(6, 20, 26, .96), rgba(3, 10, 14, .96));
+  background-color: var(--bg-raise);
+  color: var(--text);
+  border-color: var(--line-mid);
+}
+.large-type-card::after { color: var(--faint); }
+.large-type-card__label { color: var(--signal); }
+.large-type-card h3 { color: var(--text-strong); }
+.large-type-card li { color: var(--text); }
+.large-type-card li::before { color: var(--signal); border-color: var(--line-mid); }
+.large-type-card .card-note { border-color: var(--line); color: var(--muted); }
+
+@media print {
+  .document-sheet { background: #fff !important; color: #111 !important; box-shadow: none !important; }
+  .document-sheet .doc-title, .document-sheet__body h2, .document-sheet__body strong,
+  .large-type-card h3, .large-type-card li { color: #111 !important; }
+  .document-sheet__body p, .document-sheet__body li, .document-sheet__meta, .large-type-card .card-note { color: #333 !important; }
+  .document-sheet__body .doc-highlight { background: #f4f4f4 !important; color: #111 !important; border-left-color: #333 !important; }
+  .doc-table th, .doc-table td { background: #f7f7f7 !important; color: #111 !important; border-color: #999 !important; }
+  .large-type-card { background: #fff !important; border-color: #999 !important; }
+}
+
+/* 深色纸面：把原先写死的深色文字全部改成亮色（否则深底深字会看不见） */
+.document-sheet .doc-title,
+.document-sheet__body h2,
+.document-sheet__body strong,
+.document-sheet__body b { color: var(--text-strong); }
+.document-sheet__body p,
+.document-sheet__body li { color: var(--muted); }
+.document-sheet__meta { color: var(--muted); }
+.document-sheet__eyebrow { color: var(--signal); }
+.document-sheet__head { border-bottom-color: var(--line-strong); }
+.document-sheet::before { color: var(--faint); }
+.document-sheet__body ul li::marker { color: var(--signal); }
