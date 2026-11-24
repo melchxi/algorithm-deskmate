@@ -171,6 +171,12 @@
       if (lastFocus && lastFocus.focus) lastFocus.focus();
     };
 
+    const homeTarget = document.body.dataset.home || "home.html";
+    const contentPrefix = document.body.dataset.contentPrefix || "";
+    const resultHref = (item) => item.url === "home.html"
+      ? homeTarget
+      : contentPrefix + item.url;
+
     const render = (query) => {
       const q = query.trim().toLowerCase();
       let items = data;
@@ -188,7 +194,7 @@
         return;
       }
       results.innerHTML = items.map((item, i) => (
-        `<a class="search-result${i === current ? " is-current" : ""}" href="${item.url}" role="option" aria-selected="${i === current}">` +
+        `<a class="search-result${i === current ? " is-current" : ""}" href="${escapeHTML(resultHref(item))}" role="option" aria-selected="${i === current}">` +
         `<span class="search-result__num">${escapeHTML(item.num)}</span>` +
         `<span><span class="search-result__title">${escapeHTML(item.title)}</span><span class="search-result__desc">${escapeHTML(item.desc)}</span></span>` +
         `<span class="search-result__group">${escapeHTML(item.group)}</span>` +
