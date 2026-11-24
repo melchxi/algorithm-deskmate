@@ -1180,6 +1180,17 @@
     .fx__scan { animation-duration: 11s; }
   }
 
+  /* ---------- 流体层（canvas） ---------- */
+  .fx__flow {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    opacity: .85;
+    pointer-events: none;
+  }
+
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
       animation-duration: .001ms !important;
@@ -1201,7 +1212,7 @@
 <body>
   <main class="stage" id="stage" data-stage="boot">
     <div class="fx" aria-hidden="true">
-      <div class="fx__aura"></div>
+      <canvas class="fx__flow" aria-hidden="true"></canvas><div class="fx__aura"></div>
       <div class="fx__beam"></div>
       <div class="fx__scan"></div>
       <div class="fx__ruler fx__ruler--l"></div>
@@ -1494,5 +1505,189 @@
       }
     })();
   </script>
+
+<script>
+  /* 开屏流体场 + 发光粒子（canvas 2D，自包含，无依赖） */
+  (function () {
+    var canvas = document.querySelector(".fx__flow");
+    if (!canvas || !canvas.getContext) return;
+    var ctx = canvas.getContext("2d");
+    if (!ctx) return;
+
+    var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var W = 0, H = 0, dpr = 1, flow = null, fctx = null;
+    var particles = [], motes = [], raf = 0, running = false, t = 0;
+    var pointer = { x: -9999, y: -9999, active: false };
+    var shock = null, stage = document.getElementById("stage");
+
+    function rand(a, b) { return a + Math.random() * (b - a); }
+
+    function newParticle() {
+      return { x: rand(0, W), y: rand(0, H), px: 0, py: 0, vx: rand(-.3, .3), vy: rand(-.3, .3), w: Math.random() < 0.16 ? rand(1.9, 3.4) : rand(0.7, 1.5) };
+    }
+
+    function resize() {
+      var rect = canvas.getBoundingClientRect();
+      if (!rect.width || !rect.height) return;
+      var area = rect.width * rect.height;
+      dpr = Math.min(window.devicePixelRatio || 1, area > 900000 ? 1.25 : 1.5);
+      W = rect.width;
+      H = rect.height;
+      canvas.width = Math.round(W * dpr);
+      canvas.height = Math.round(H * dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      if (!flow) flow = document.createElement("canvas");
+      flow.width = canvas.width;
+      flow.height = canvas.height;
+      fctx = flow.getContext("2d");
+      fctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      var count = Math.round(Math.max(130, Math.min(320, area / 5600)));
+      particles = [];
+      for (var i = 0; i < count; i++) particles.push(newParticle());
+      var m = Math.round(Math.max(18, Math.min(44, area / 34000)));
+      motes = [];
+      for (var j = 0; j < m; j++) {
+        motes.push({ x: rand(0, W), y: rand(0, H), r: rand(5, 26), sp: rand(.12, .46), a: rand(.07, .18), drift: rand(-.14, .14) });
+      }
+    }
+
+    function step() {
+      fctx.globalCompositeOperation = "destination-out";
+      fctx.fillStyle = "rgba(0,0,0,0.046)";
+      fctx.fillRect(0, 0, W, H);
+      fctx.globalCompositeOperation = "lighter";
+      fctx.lineCap = "round";
+
+      for (var i = 0; i < particles.length; i++) {
+        var p = particles[i];
+        var ang = Math.sin(p.x * 0.0042 + t * 0.28) + Math.cos(p.y * 0.0036 - t * 0.21) + Math.sin((p.x + p.y) * 0.0026 + t * 0.15);
+        p.vx += Math.cos(ang) * 0.30;
+        p.vy += Math.sin(ang) * 0.30;
+        if (pointer.active) {
+          var dx = p.x - pointer.x, dy = p.y - pointer.y, d2 = dx * dx + dy * dy;
+          if (d2 < 22500 && d2 > 4) {
+            var inv = 30 / Math.sqrt(d2);
+            p.vx += dx * inv * 0.05;
+            p.vy += dy * inv * 0.05;
+          }
+        }
+        p.vx *= 0.958; p.vy *= 0.958;
+        var sp = Math.sqrt(p.vx * p.vx + p.vy * p.vy);
+        var cap = p.w > 1.8 ? 1.5 : 2.4;
+        if (sp > cap) { p.vx *= cap / sp; p.vy *= cap / sp; sp = cap; }
+        p.px = p.x; p.py = p.y;
+        p.x += p.vx; p.y += p.vy;
+        if (p.x < -24) { p.x = W + 16; p.px = p.x; }
+        else if (p.x > W + 24) { p.x = -16; p.px = p.x; }
+        if (p.y < -24) { p.y = H + 16; p.py = p.y; }
+        else if (p.y > H + 24) { p.y = -16; p.py = p.y; }
+        var k = sp > 2.2 ? 1 : sp / 2.2;
+        var r = Math.round(75 + 126 * k), g = Math.round(230 + 25 * k), b = Math.round(255 - 178 * k);
+        fctx.strokeStyle = "rgba(" + r + "," + g + "," + b + "," + (0.07 + k * 0.22).toFixed(3) + ")";
+        fctx.lineWidth = p.w * (0.75 + k * 0.85);
+        fctx.beginPath();
+        fctx.moveTo(p.px, p.py);
+        fctx.lineTo(p.x, p.y);
+        fctx.stroke();
+      }
+    }
+
+    function draw() {
+      ctx.clearRect(0, 0, W, H);
+      ctx.globalCompositeOperation = "lighter";
+      ctx.drawImage(flow, 0, 0, W, H);
+
+      for (var i = 0; i < motes.length; i++) {
+        var m = motes[i];
+        m.y -= m.sp;
+        m.x += m.drift;
+        if (m.y < -m.r * 2) { m.y = H + m.r * 2; m.x = rand(0, W); }
+        var g1 = ctx.createRadialGradient(m.x, m.y, 0, m.x, m.y, m.r);
+        g1.addColorStop(0, "rgba(170,245,255," + m.a + ")");
+        g1.addColorStop(0.45, "rgba(90,220,255," + (m.a * 0.45) + ")");
+        g1.addColorStop(1, "rgba(75,230,255,0)");
+        ctx.fillStyle = g1;
+        ctx.beginPath();
+        ctx.arc(m.x, m.y, m.r, 0, Math.PI * 2);
+        ctx.fill();
+      }
+
+      if (shock) {
+        shock.r += 26;
+        shock.a *= 0.94;
+        if (shock.a < 0.02) { shock = null; }
+        else {
+          ctx.strokeStyle = "rgba(152,243,255," + shock.a.toFixed(3) + ")";
+          ctx.lineWidth = 2;
+          ctx.beginPath();
+          ctx.arc(W * 0.52, H * 0.42, shock.r, 0, Math.PI * 2);
+          ctx.stroke();
+          ctx.strokeStyle = "rgba(201,255,77," + (shock.a * 0.5).toFixed(3) + ")";
+          ctx.lineWidth = 1;
+          ctx.beginPath();
+          ctx.arc(W * 0.52, H * 0.42, shock.r * 0.82, 0, Math.PI * 2);
+          ctx.stroke();
+        }
+      }
+      ctx.globalCompositeOperation = "source-over";
+    }
+
+    function loop() {
+      t += 1 / 60;
+      step();
+      draw();
+      raf = window.requestAnimationFrame(loop);
+    }
+
+    function start() {
+      if (running || reduced) return;
+      running = true;
+      raf = window.requestAnimationFrame(loop);
+    }
+    function stop() {
+      running = false;
+      window.cancelAnimationFrame(raf);
+    }
+
+    resize();
+    if (reduced) {
+      // 静态一帧：保留质感但不做动画
+      for (var i = 0; i < 90; i++) { t += 1 / 60; step(); }
+      draw();
+    } else {
+      start();
+    }
+
+    var rt = 0;
+    window.addEventListener("resize", function () {
+      window.clearTimeout(rt);
+      rt = window.setTimeout(function () { resize(); if (reduced) { draw(); } }, 180);
+    }, { passive: true });
+
+    document.addEventListener("visibilitychange", function () {
+      if (document.hidden) stop();
+      else start();
+    });
+
+    window.addEventListener("pointermove", function (e) {
+      var r = canvas.getBoundingClientRect();
+      pointer.x = e.clientX - r.left;
+      pointer.y = e.clientY - r.top;
+      pointer.active = true;
+    }, { passive: true });
+    window.addEventListener("pointerleave", function () { pointer.active = false; }, { passive: true });
+
+    if (stage) {
+      var lastStage = stage.dataset.stage;
+      new MutationObserver(function () {
+        var s = stage.dataset.stage;
+        if (s !== lastStage) {
+          lastStage = s;
+          if (s === "ready") { shock = { r: 10, a: 0.55 }; }
+        }
+      }).observe(stage, { attributes: true, attributeFilter: ["data-stage"] });
+    }
+  })();
+</script>
 </body>
 </html>
