@@ -1551,10 +1551,10 @@
       }
     }
 
-    // 粒子痕迹：轨迹按真实时间衰减，约 10 秒后消失
-    var TRAIL_LIFE_MS = 10000;
-    var TRAIL_TAU_MS = TRAIL_LIFE_MS / Math.log(50); // 约 10 秒后残留 2%
-    var TRAIL_TICK_MS = 200; // 每 0.2 秒擦除一步，绕开 8 位画布量化造成的残留
+    // 粒子痕迹：轨迹按真实时间衰减，约 2.5 秒后消失，不留背景残影
+    var TRAIL_LIFE_MS = 2500;
+    var TRAIL_TAU_MS = TRAIL_LIFE_MS / Math.log(50); // 约 2.5 秒后残留 2%
+    var TRAIL_TICK_MS = 100; // 每 0.1 秒擦除一步，绕开 8 位画布量化造成的残留
     var lastStepAt = 0, trailPendingMs = 0;
     function step(nowMs) {
       var stepDt = lastStepAt ? Math.min(100, Math.max(1, nowMs - lastStepAt)) : 1000 / 60;
